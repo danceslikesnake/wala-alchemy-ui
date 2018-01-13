@@ -1,2 +1,1 @@
-export { Test } from './Elements/Test';
-export { getHex, colorMatrix } from './Elements/Colors';
+export { WA_COLORS } from './Elements/Colors';
