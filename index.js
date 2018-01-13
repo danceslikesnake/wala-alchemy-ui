@@ -1,1 +1,2 @@
-export { WalaTeal } from './Elements/Colors';
+export { Test } from './Elements/Test';
+export { getHex, colorMatrix } from './Elements/Colors';
