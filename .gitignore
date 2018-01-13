@@ -54,4 +54,6 @@ buck-out/
 
 android/
 ios/
-__tests__/
+index.android.js
+App.js
+app.json

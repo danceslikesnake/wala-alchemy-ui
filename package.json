@@ -1,7 +1,14 @@
 {
   "name": "walaAlchemy",
   "version": "0.0.1",
-  "private": true,
+  "main": "index.js",
+  "description": "A set of Elements and Components to create UI for the Wala app",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GetWala/alchemy-ui.git"
+  },
+  "license": "MIT",
+  "author": "Dennis Ramirez",
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start",
     "test": "jest"
