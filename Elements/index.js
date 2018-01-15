@@ -27,3 +27,9 @@ export {
   Spacer,
   Divider
 } from './Layout/index';
+
+export {
+  Avatar,
+  CallToActionButton,
+  TransparentButton
+} from './Content/index';

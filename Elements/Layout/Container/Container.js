@@ -14,6 +14,7 @@ class Container extends Component {
   render(){
     const {
       variation,
+      actAsRow,
       children,
       ...props
     } = this.props;
@@ -21,7 +22,11 @@ class Container extends Component {
     return(
       <View
         {...props}
-        style={[ContainerStyles[variation], this.props.style]}
+        style={[
+          ContainerStyles[variation],
+          actAsRow ? {flexDirection: 'row'} : null,
+          this.props.style
+        ]}
       >
         {children}
       </View>
@@ -38,7 +43,8 @@ Container.propTypes = {
     'full',
     'wide',
     'card'
-  ])
+  ]),
+  actAsRow: PropTypes.bool
 };
 
 export {

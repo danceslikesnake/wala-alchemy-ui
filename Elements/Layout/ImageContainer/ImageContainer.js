@@ -15,6 +15,7 @@ class ImageContainer extends Component {
     const {
       variation,
       source,
+      actAsRow,
       children,
       ...props
     } = this.props;
@@ -26,6 +27,7 @@ class ImageContainer extends Component {
         imageStyle={{resizeMode: 'cover'}}
         style={[
           ContainerStyles[variation],
+          actAsRow ? {flexDirection: 'row'} : null,
           this.props.style
         ]}
       >
@@ -45,7 +47,8 @@ ImageContainer.propTypes = {
     'wide',
     'card'
   ]),
-  source: PropTypes.number.isRequired
+  source: PropTypes.number.isRequired,
+  actAsRow: PropTypes.bool
 };
 
 export {

@@ -13,6 +13,7 @@ class GradientContainer extends Component {
     const {
       variation,
       colors,
+      actAsRow,
       children,
       ...props
     } = this.props;
@@ -21,7 +22,11 @@ class GradientContainer extends Component {
       <LinearGradient
         {...props}
         colors={colors}
-        style={[ContainerStyles[variation], this.props.style]}
+        style={[
+          ContainerStyles[variation],
+          actAsRow ? {flexDirection: 'row'} : null,
+          this.props.style
+        ]}
         start={{ x: 0.0, y: 0.25 }} end={{ x: 0.5, y: 1.0 }}
       >
         {children}
@@ -40,7 +45,8 @@ GradientContainer.propTypes = {
     'wide',
     'card'
   ]),
-  colors: PropTypes.array.isRequired
+  colors: PropTypes.array.isRequired,
+  actAsRow: PropTypes.bool
 };
 
 export {
