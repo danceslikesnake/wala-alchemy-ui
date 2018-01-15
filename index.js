@@ -1,1 +1,0 @@
-export { WA_COLORS } from './Elements/Colors';

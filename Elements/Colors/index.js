@@ -1,21 +1,27 @@
 import chroma from 'chroma-js';
 
+/**
+ * rgba helper function
+ * @param rgb
+ * @param percent
+ * @returns {string}
+ */
 function rgba(rgb, percent) {
   return 'rgba(' +  rgb + ', ' + percent + ')';
 }
 
-function shade(color, percentage, mixColor, mixPercent) {
-  let initialColor = chroma.mix(color, WA_COLORS.Charcoal.hex, percentage);
-  if(mixColor) {
-    let mixedColor = chroma.mix(initialColor, mixColor, mixPercent);
-    return chroma(mixedColor).hex();
-  } else {
-    return chroma(initialColor).hex();
-  }
-}
-
-function tint(color, percentage, mixColor, mixPercent) {
-  let initialColor = chroma.mix(color, '#FFFFFF', percentage);
+/**
+ * range helper function (brightens or darkens colors)
+ * @param type
+ * @param color
+ * @param percentage
+ * @param mixColor
+ * @param mixPercent
+ * @returns {string}
+ */
+function range(type, color, percentage, mixColor, mixPercent) {
+  let mixType = (type == 'shade') ? WA_COLORS.Charcoal.hex : '#FFFFFF';
+  let initialColor = chroma.mix(color, mixType, percentage);
   if(mixColor) {
     let mixedColor = chroma.mix(initialColor, mixColor, mixPercent);
     return chroma(mixedColor).hex();
@@ -42,10 +48,10 @@ const WA_COLORS = {
       return rgba(this.r + ', ' + this.g + ', ' + this.b, opacity);
     },
     getShade: function(percent) {
-      return shade(this.hex, percent, WA_COLORS.ScampiPurple.hex, 0.15);
+      return range('shade', this.hex, percent, WA_COLORS.ScampiPurple.hex, 0.15);
     },
     getTint: function(percent) {
-      return tint(this.hex, percent, null, null);
+      return range('tint', this.hex, percent, null, null);
     }
   },
   Charcoal: {
@@ -61,10 +67,10 @@ const WA_COLORS = {
       return rgba(this.r + ', ' + this.g + ', ' + this.b, opacity);
     },
     getShade: function(percent) {
-      return shade(this.hex, percent, null, null);
+      return range('shade', this.hex, percent, null, null);
     },
     getTint: function(percent) {
-      return tint(this.hex, percent, null, null);
+      return range('tint', this.hex, percent, null, null);
     }
   },
   TorchRed: {
@@ -84,10 +90,10 @@ const WA_COLORS = {
       return rgba(this.r + ', ' + this.g + ', ' + this.b, opacity);
     },
     getShade: function(percent) {
-      return shade(this.hex, percent, WA_COLORS.ScampiPurple.hex, 0.15);
+      return range('shade', this.hex, percent, WA_COLORS.ScampiPurple.hex, 0.15);
     },
     getTint: function(percent) {
-      return tint(this.hex, percent, null, null);
+      return range('tint', this.hex, percent, null, null);
     }
   },
   PoppyYellow: {
@@ -107,10 +113,10 @@ const WA_COLORS = {
       return rgba(this.r + ', ' + this.g + ', ' + this.b, opacity);
     },
     getShade: function(percent) {
-      return shade(this.hex, percent, WA_COLORS.TorchRed.hex, 0.15);
+      return range('shade', this.hex, percent, WA_COLORS.TorchRed.hex, 0.15);
     },
     getTint: function(percent) {
-      return tint(this.hex, percent, WA_COLORS.TorchRed.hex, 0.05);
+      return range('tint', this.hex, percent, WA_COLORS.TorchRed.hex, 0.05);
     }
   },
   CuriousBlue: {
@@ -130,10 +136,10 @@ const WA_COLORS = {
       return rgba(this.r + ', ' + this.g + ', ' + this.b, opacity);
     },
     getShade: function(percent) {
-      return shade(this.hex, percent, WA_COLORS.TorchRed.hex, 0.10);
+      return range('shade', this.hex, percent, WA_COLORS.TorchRed.hex, 0.10);
     },
     getTint: function(percent) {
-      return tint(this.hex, percent, null, null);
+      return range('tint', this.hex, percent, null, null);
     }
   },
   ScampiPurple: {
@@ -153,10 +159,10 @@ const WA_COLORS = {
       return rgba(this.r + ', ' + this.g + ', ' + this.b, opacity);
     },
     getShade: function(percent) {
-      return shade(this.hex, percent, null, null);
+      return range('shade', this.hex, percent, null, null);
     },
     getTint: function(percent) {
-      return tint(this.hex, percent, null, null);
+      return range('tint', this.hex, percent, null, null);
     }
   },
   Slate: {
