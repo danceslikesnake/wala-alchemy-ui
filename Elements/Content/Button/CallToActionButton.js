@@ -7,7 +7,7 @@ import {
   StyleSheet
 } from 'react-native';
 import { WA_COLORS } from "../../Colors";
-import { WA_TYPOGRAPHY } from "../../Typography";
+import { WA_TYPOGRAPHY, SmallDisplay } from "../../Typography";
 import { WA_LAYOUT } from "../../Layout";
 
 class CallToActionButton extends Component {
@@ -36,9 +36,9 @@ class CallToActionButton extends Component {
             WA_LAYOUT.roundCorners
           ]}
         >
-          <Text style={styles[variation + 'Text']}>
-            {label.toUpperCase()}
-          </Text>
+          <SmallDisplay style={styles[variation + 'Text']}>
+            {label}
+          </SmallDisplay>
         </View>
       </TouchableNativeFeedback>
     );
@@ -70,25 +70,19 @@ const styles = StyleSheet.create({
     backgroundColor: WA_COLORS.WalaTeal.hex
   },
   primaryText: {
-    fontFamily: WA_TYPOGRAPHY.ProiximaNova.extrabold,
     color: 'white',
-    fontSize: WA_TYPOGRAPHY.typeScale.size12
   },
   secondary: {
     backgroundColor: WA_COLORS.Iron.hex
   },
   secondaryText: {
-    fontFamily: WA_TYPOGRAPHY.ProiximaNova.extrabold,
     color: 'white',
-    fontSize: WA_TYPOGRAPHY.typeScale.size12
   },
   disabled: {
     backgroundColor: 'transparent'
   },
   disabledText: {
-    fontFamily: WA_TYPOGRAPHY.ProiximaNova.extrabold,
-    color: WA_COLORS.Iron.hex,
-    fontSize: WA_TYPOGRAPHY.typeScale.size12
+    color: WA_COLORS.Iron.hex
   }
 });
 

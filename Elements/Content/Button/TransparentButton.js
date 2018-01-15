@@ -7,7 +7,7 @@ import {
   StyleSheet
 } from 'react-native';
 import { WA_COLORS } from "../../Colors";
-import { WA_TYPOGRAPHY } from "../../Typography";
+import { WA_TYPOGRAPHY, SmallDisplay } from "../../Typography";
 import { WA_LAYOUT } from "../../Layout";
 
 class TransparentButton extends Component {
@@ -35,9 +35,9 @@ class TransparentButton extends Component {
             WA_LAYOUT.roundCorners
           ]}
         >
-          <Text style={styles[variation + 'Text']}>
-            {label.toUpperCase()}
-          </Text>
+          <SmallDisplay style={styles[variation + 'Text']}>
+            {label}
+          </SmallDisplay>
         </View>
       </TouchableNativeFeedback>
     );
@@ -67,14 +67,10 @@ const styles = StyleSheet.create({
     paddingHorizontal: 13
   },
   primaryText: {
-    color: WA_COLORS.WalaTeal.hex,
-    fontFamily: WA_TYPOGRAPHY.ProiximaNova.extrabold,
-    fontSize: WA_TYPOGRAPHY.typeScale.size12
+    color: WA_COLORS.WalaTeal.hex
   },
   secondaryText: {
-    color: WA_COLORS.Iron.hex,
-    fontFamily: WA_TYPOGRAPHY.ProiximaNova.extrabold,
-    fontSize: WA_TYPOGRAPHY.typeScale.size12
+    color: WA_COLORS.Iron.hex
   }
 });
 
