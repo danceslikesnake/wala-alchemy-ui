@@ -30,8 +30,7 @@ class DenseBodyText extends Component {
 }
 
 DenseBodyText.propTypes = {
-  children: PropTypes.string.isRequired,
-  textStyles: PropTypes.object
+  children: PropTypes.string.isRequired
 };
 
 const styles = StyleSheet.create({

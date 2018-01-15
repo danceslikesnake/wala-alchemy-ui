@@ -30,8 +30,7 @@ class Subhead1 extends Component {
 }
 
 Subhead1.propTypes = {
-  children: PropTypes.string.isRequired,
-  textStyles: PropTypes.object
+  children: PropTypes.string.isRequired
 };
 
 const styles = StyleSheet.create({

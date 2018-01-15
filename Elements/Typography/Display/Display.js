@@ -30,8 +30,7 @@ class Display extends Component {
 }
 
 Display.propTypes = {
-  children: PropTypes.string.isRequired,
-  textStyles: PropTypes.object
+  children: PropTypes.string.isRequired
 };
 
 const styles = StyleSheet.create({

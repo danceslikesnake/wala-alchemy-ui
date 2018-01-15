@@ -30,8 +30,7 @@ class Headline1 extends Component {
 }
 
 Headline1.propTypes = {
-  children: PropTypes.string.isRequired,
-  textStyles: PropTypes.object
+  children: PropTypes.string.isRequired
 };
 
 const styles = StyleSheet.create({

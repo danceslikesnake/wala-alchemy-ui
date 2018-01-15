@@ -30,8 +30,7 @@ class BodyText extends Component {
 }
 
 BodyText.propTypes = {
-  children: PropTypes.string.isRequired,
-  textStyles: PropTypes.object
+  children: PropTypes.string.isRequired
 };
 
 const styles = StyleSheet.create({

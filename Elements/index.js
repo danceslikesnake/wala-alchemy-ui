@@ -12,3 +12,7 @@ export {
   Headline1,
   Headline2
 } from './Typography/index';
+export {
+  Logo,
+  Logomark
+} from './Logos/index';

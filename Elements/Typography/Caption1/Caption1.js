@@ -30,8 +30,7 @@ class Caption1 extends Component {
 }
 
 Caption1.propTypes = {
-  children: PropTypes.string.isRequired,
-  textStyles: PropTypes.object
+  children: PropTypes.string.isRequired
 };
 
 const styles = StyleSheet.create({
