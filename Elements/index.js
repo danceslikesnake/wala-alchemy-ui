@@ -31,5 +31,7 @@ export {
 export {
   Avatar,
   CallToActionButton,
-  TransparentButton
+  TransparentButton,
+  Badge,
+  Icons
 } from './Content/index';

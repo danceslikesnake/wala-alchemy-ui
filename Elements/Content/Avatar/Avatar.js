@@ -9,7 +9,7 @@ import {
 import { WA_COLORS } from "../../Colors";
 import { WA_TYPOGRAPHY } from "../../Typography";
 import { CachedImage } from 'react-native-cached-image';
-import Ionicons from 'react-native-vector-icons/Ionicons';
+import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 
 class Avatar extends Component {
 
@@ -46,8 +46,8 @@ class Avatar extends Component {
           <View
             style={[styles.noImageAvatar, styles[this.props.size].dimensions]}
           >
-            <Ionicons
-              name={'md-happy'}
+            <MaterialIcons
+              name={'tag-faces'}
               color={WA_COLORS.ScampiPurple.tint4}
               size={styles[this.props.size].iconSize}
             />
@@ -59,19 +59,13 @@ class Avatar extends Component {
 
   render(){
     const {
-      variation,
-      imageSource,
-      initials,
-      size,
-      badgeContent,
-      badgeColor,
-      ...props
+      size
     } = this.props;
 
     const content = this.getContent();
 
     return(
-      <View style={badgeContent ? [styles.badgeContainer, styles[size].dimensions] : styles[size].dimensions}>
+      <View style={styles[size].dimensions}>
         {content}
       </View>
     );
@@ -97,12 +91,7 @@ Avatar.propTypes = {
     'large',
     'larger',
     'largest'
-  ]),
-  badgeContent: PropTypes.oneOfType([
-    PropTypes.number,
-    PropTypes.element
-  ]),
-  badgeColor: PropTypes.string
+  ])
 };
 
 const styles = {
@@ -178,9 +167,6 @@ const styles = {
       height: 91,
       borderRadius: 91 / 2
     }
-  },
-  badgeContainer: {
-    position: 'relative'
   }
 };
 
