@@ -1,5 +1,4 @@
-import Dimensions from 'Dimensions';
-import React, { Component } from 'react';
+import React, { Component, Dimensions } from 'react';
 import PropTypes from 'prop-types';
 import {
   Image
