@@ -1,8 +1,8 @@
-import Dimensions from 'Dimensions';
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import {
-  Image
+  Image,
+  Dimensions
 } from 'react-native';
 
 let deviceWidth = Dimensions.get('window').width;
