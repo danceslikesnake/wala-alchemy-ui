@@ -1,5 +1,5 @@
 {
-  "name": "walaAlchemy",
+  "name": "alchemyUI",
   "version": "0.0.1",
   "main": "index.js",
   "description": "A set of Elements and Components to create UI for the Wala app",
