@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import {
-  ImageBackground
+  ImageBackground,
+  StyleSheet
 } from 'react-native';
-import { ContainerStyles } from "../layoutStyles";
+import { AUI_FUNCTIONS } from "../../../Helpers";
 
 class ImageContainer extends Component {
 
@@ -26,7 +27,7 @@ class ImageContainer extends Component {
         source={source}
         imageStyle={{resizeMode: 'cover'}}
         style={[
-          ContainerStyles[variation],
+          styles[variation],
           actAsRow ? {flexDirection: 'row'} : null,
           this.props.style
         ]}
@@ -50,6 +51,18 @@ ImageContainer.propTypes = {
   source: PropTypes.number.isRequired,
   actAsRow: PropTypes.bool
 };
+
+const styles = StyleSheet.create({
+  full: {
+  },
+  wide: {
+    marginHorizontal: 4,
+    paddingHorizontal: 9
+  },
+  card: {
+    marginHorizontal: AUI_FUNCTIONS.verticalRhythm()
+  }
+});
 
 export {
   ImageContainer

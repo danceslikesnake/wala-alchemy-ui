@@ -1,11 +1,9 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import {
-  Image,
-  Dimensions
+  Image
 } from 'react-native';
-
-let deviceWidth = Dimensions.get('window').width;
+import { AUI_FUNCTIONS } from "../../../Helpers";
 
 class Logomark extends Component {
 
@@ -31,14 +29,14 @@ class Logomark extends Component {
   render(){
     const {
       variation,
-      imgWidth,
+      imgHeight,
       ...props
     } = this.props;
 
-    const imageWidth = (imgWidth) ? imgWidth : Math.round(deviceWidth);
+    const imageHeight = (imgHeight) ? imgHeight : AUI_FUNCTIONS.verticalRhythm(8);
     const imgStyle = {
-      width: imageWidth,
-      height: Math.ceil(imageWidth * 0.571428571),
+      width: Math.ceil(imageHeight * 1.8),
+      height: imageHeight,
       resizeMode: 'contain'
     };
 
@@ -70,7 +68,7 @@ Logomark.propTypes = {
     'logomarkBlack',
     'logomarkWhite'
   ]),
-  imgWidth: PropTypes.oneOfType([
+  imgHeight: PropTypes.oneOfType([
     PropTypes.number,
     PropTypes.string
   ])

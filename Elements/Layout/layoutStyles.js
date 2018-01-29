@@ -1,16 +1,4 @@
-const ContainerStyles = {
-  full: {
-  },
-  wide: {
-    marginHorizontal: 4,
-    paddingHorizontal: 9
-  },
-  card: {
-    marginHorizontal: 13
-  }
-};
-
-const WA_LAYOUT = {
+const AUI_LAYOUT = {
   roundCorners: {
     borderRadius: 3
   },
@@ -45,10 +33,9 @@ const WA_LAYOUT = {
   elevation4: {
     elevation: 4,
     backgroundColor: 'white'
-  }
+  },
 };
 
 export {
-  ContainerStyles,
-  WA_LAYOUT
+  AUI_LAYOUT
 }

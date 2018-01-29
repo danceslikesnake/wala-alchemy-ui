@@ -4,7 +4,8 @@ import {
   View,
   StyleSheet
 } from 'react-native';
-import { WA_COLORS } from "../../Colors";
+import { AUI_COLORS } from "../../Colors";
+import { AUI_FUNCTIONS } from "../../../Helpers";
 import LinearGradient from 'react-native-linear-gradient';
 
 class Divider extends Component {
@@ -33,7 +34,7 @@ class Divider extends Component {
       >
         {size == 'large' &&
           <LinearGradient
-            colors={[WA_COLORS.ScampiPurple.hex, WA_COLORS.Silver.hex]}
+            colors={[AUI_COLORS.ScampiPurple.hex, AUI_COLORS.Silver.hex]}
             style={styles.gradient}
           />
         }
@@ -61,7 +62,7 @@ Divider.propTypes = {
 
 const styles = StyleSheet.create({
   divider: {
-    backgroundColor: WA_COLORS.Silver.hex
+    backgroundColor: AUI_COLORS.Silver.hex
   },
   gradient: {
     flex: 1,
@@ -79,7 +80,7 @@ const styles = StyleSheet.create({
     height: 8,
   },
   large: {
-    height: 13,
+    height: AUI_FUNCTIONS.verticalRhythm(),
   }
 });
 

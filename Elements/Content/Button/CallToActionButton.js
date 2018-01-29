@@ -6,9 +6,10 @@ import {
   TouchableNativeFeedback,
   StyleSheet
 } from 'react-native';
-import { WA_COLORS } from "../../Colors";
-import { WA_TYPOGRAPHY, SmallDisplay } from "../../Typography";
-import { WA_LAYOUT } from "../../Layout";
+import { AUI_COLORS } from "../../Colors";
+import { SmallDisplay } from "../../Typography";
+import { AUI_FUNCTIONS } from "../../../Helpers";
+import { AUI_LAYOUT } from "../../Layout";
 
 class CallToActionButton extends Component {
 
@@ -33,7 +34,7 @@ class CallToActionButton extends Component {
           style={[
             styles.button,
             styles[variation],
-            WA_LAYOUT.roundCorners
+            AUI_LAYOUT.roundCorners
           ]}
         >
           <SmallDisplay style={styles[variation + 'Text']}>
@@ -64,16 +65,16 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    height: 39
+    height: AUI_FUNCTIONS.verticalRhythm(3)
   },
   primary: {
-    backgroundColor: WA_COLORS.WalaTeal.hex
+    backgroundColor: AUI_COLORS.WalaTeal.hex
   },
   primaryText: {
     color: 'white',
   },
   secondary: {
-    backgroundColor: WA_COLORS.Iron.hex
+    backgroundColor: AUI_COLORS.Iron.hex
   },
   secondaryText: {
     color: 'white',
@@ -82,7 +83,7 @@ const styles = StyleSheet.create({
     backgroundColor: 'transparent'
   },
   disabledText: {
-    color: WA_COLORS.Iron.hex
+    color: AUI_COLORS.Iron.hex
   }
 });
 
