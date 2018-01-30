@@ -63,9 +63,9 @@ const styles = StyleSheet.create({
     flex: 0,
     justifyContent: 'center',
     alignItems: 'center',
-    height: AUI_FUNCTIONS.verticalRhythm(3),
+    height: AUI_FUNCTIONS.gridBaseMultiplier(3),
     backgroundColor: 'transparent',
-    paddingHorizontal: AUI_FUNCTIONS.verticalRhythm(1)
+    paddingHorizontal: AUI_FUNCTIONS.gridBaseMultiplier(1)
   },
   primaryText: {
     color: AUI_COLORS.WalaTeal.hex

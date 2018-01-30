@@ -18,7 +18,7 @@ class Spacer extends Component {
 
     return(
       <View
-        style={{height: multiplier * AUI_CONSTANTS.verticalRhythm}}
+        style={{height: multiplier * AUI_CONSTANTS.gridBase}}
       />
     );
   }

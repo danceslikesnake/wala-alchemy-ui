@@ -4,7 +4,8 @@ import { Dimensions, PixelRatio, StatusBar } from 'react-native';
 let { height, width } = Dimensions.get('window');
 
 const AUI_CONSTANTS = {
-  verticalRhythm: 13,
+  gridBase: 13,
+  gridBaseDense: 8,
   deviceWidth: width,
   deviceHeight: height,
   pixelDensity: PixelRatio.get(),
@@ -13,9 +14,9 @@ const AUI_CONSTANTS = {
 };
 
 const AUI_FUNCTIONS = {
-  verticalRhythm: (multiplier) => {
+  gridBaseMultiplier: (multiplier, dense = false) => {
     let scale = (multiplier) ? multiplier : 1;
-    return scale * AUI_CONSTANTS.verticalRhythm;
+    return (dense) ? scale * AUI_CONSTANTS.gridBaseDense : scale * AUI_CONSTANTS.gridBase;
   }
 };
 

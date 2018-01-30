@@ -98,12 +98,12 @@ Avatar.propTypes = {
   ])
 };
 
-const vr26 = AUI_FUNCTIONS.verticalRhythm(2);
-const vr39 = AUI_FUNCTIONS.verticalRhythm(3);
-const vr52 = AUI_FUNCTIONS.verticalRhythm(4);
-const vr65 = AUI_FUNCTIONS.verticalRhythm(5);
-const vr78 = AUI_FUNCTIONS.verticalRhythm(6);
-const vr91 = AUI_FUNCTIONS.verticalRhythm(7);
+const vr26 = AUI_FUNCTIONS.gridBaseMultiplier(2);
+const vr39 = AUI_FUNCTIONS.gridBaseMultiplier(3);
+const vr52 = AUI_FUNCTIONS.gridBaseMultiplier(4);
+const vr65 = AUI_FUNCTIONS.gridBaseMultiplier(5);
+const vr78 = AUI_FUNCTIONS.gridBaseMultiplier(6);
+const vr91 = AUI_FUNCTIONS.gridBaseMultiplier(7);
 
 const styles = {
   noImageAvatar: {

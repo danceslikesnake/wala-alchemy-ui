@@ -108,16 +108,16 @@ const localStyles = StyleSheet.create({
   },
   bottomSheetHeader: {
     backgroundColor: AUI_COLORS.ScampiPurple.hex,
-    height: AUI_FUNCTIONS.verticalRhythm(3),
+    height: AUI_FUNCTIONS.gridBaseMultiplier(3),
     justifyContent: 'center',
-    paddingLeft: AUI_FUNCTIONS.verticalRhythm(),
+    paddingLeft: AUI_FUNCTIONS.gridBaseMultiplier(),
   },
   bottomSheetQuestion: {
-    padding: AUI_FUNCTIONS.verticalRhythm(),
+    padding: AUI_FUNCTIONS.gridBaseMultiplier(),
   },
   bottomSheetAction: {
-    paddingHorizontal: AUI_FUNCTIONS.verticalRhythm(),
-    height: AUI_FUNCTIONS.verticalRhythm(4),
+    paddingHorizontal: AUI_FUNCTIONS.gridBaseMultiplier(),
+    height: AUI_FUNCTIONS.gridBaseMultiplier(4),
     alignItems: 'center',
     borderTopWidth: 1,
     borderTopColor: AUI_COLORS.Silver.hex,
@@ -127,7 +127,7 @@ const localStyles = StyleSheet.create({
     flex: 1,
   },
   bottomSheetCancel: {
-    padding: AUI_FUNCTIONS.verticalRhythm(),
+    padding: AUI_FUNCTIONS.gridBaseMultiplier(),
   },
 });
 

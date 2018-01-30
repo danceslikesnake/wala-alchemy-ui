@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { StyleSheet } from 'react-native';
 import { Container, Caption1, Spacer, AUI_COLORS, AUI_LAYOUT, AUI_TYPOGRAPHY } from '../../../Elements';
-import { AUI_FUNCTIONS, AUI_CONSTANTS } from "../../../Helpers";
+import { AUI_FUNCTIONS } from "../../../Helpers";
 
 import { TextInputMask } from 'react-native-masked-text';
 import LinearGradient from 'react-native-linear-gradient';
@@ -41,11 +41,11 @@ class CurrencyInput extends Component {
   }
 
   render() {
-    const { label, options, value, onChangeText } = this.props;
+    const { label, options, value, onChangeText, autoFocus } = this.props;
 
     return (
       <Container>
-        <Caption1 style={{ height: AUI_FUNCTIONS.verticalRhythm(2), color: this.state.labelColor }}>{label}</Caption1>
+        <Caption1 style={{ height: AUI_FUNCTIONS.gridBaseMultiplier(2), color: this.state.labelColor }}>{label}</Caption1>
         <Container style={[
             AUI_LAYOUT.roundCorners,
             styles.inputWrapper,
@@ -60,7 +60,7 @@ class CurrencyInput extends Component {
           />
           <TextInputMask
             ref={amount => (this._amount = amount)}
-            autoFocus={true}
+            autoFocus={autoFocus}
             type={'money'}
             editable={true}
             options={options}
@@ -91,6 +91,10 @@ class CurrencyInput extends Component {
   }
 }
 
+CurrencyInput.defaultProps = {
+  autoFocus: false
+};
+
 CurrencyInput.propTypes = {
   label: PropTypes.string,
   options: PropTypes.object,
@@ -98,20 +102,21 @@ CurrencyInput.propTypes = {
     PropTypes.number,
     PropTypes.string
   ]),
-  onChangeText: PropTypes.func
+  onChangeText: PropTypes.func,
+  autoFocus: PropTypes.bool
 };
 
 const styles = StyleSheet.create({
   inputWrapper: {
     position: 'relative',
-    height: AUI_FUNCTIONS.verticalRhythm(4),
+    height: AUI_FUNCTIONS.gridBaseMultiplier(4),
     width: '100%'
   },
   input: {
     backgroundColor: 'transparent',
     borderBottomWidth: 1,
     fontSize: 26,
-    height: AUI_FUNCTIONS.verticalRhythm(4),
+    height: AUI_FUNCTIONS.gridBaseMultiplier(4),
     fontFamily: AUI_TYPOGRAPHY.ProiximaNova.semibold,
     color: AUI_COLORS.Charcoal.hex,
     textAlign: 'center',

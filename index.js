@@ -25,7 +25,8 @@ export {
   Badge,
   Icons,
   CurrencyInput,
-  SliderForAccounts
+  SliderForAccounts,
+  TextField
 } from './Elements';
 
 export {

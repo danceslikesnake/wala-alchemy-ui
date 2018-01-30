@@ -38,5 +38,6 @@ export {
 
 export {
   CurrencyInput,
-  SliderForAccounts
+  SliderForAccounts,
+  TextField
 } from './Inputs/index';

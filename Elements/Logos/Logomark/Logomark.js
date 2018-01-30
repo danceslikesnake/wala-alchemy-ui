@@ -33,7 +33,7 @@ class Logomark extends Component {
       ...props
     } = this.props;
 
-    const imageHeight = (imgHeight) ? imgHeight : AUI_FUNCTIONS.verticalRhythm(8);
+    const imageHeight = (imgHeight) ? imgHeight : AUI_FUNCTIONS.gridBaseMultiplier(8);
     const imgStyle = {
       width: Math.ceil(imageHeight * 1.8),
       height: imageHeight,

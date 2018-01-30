@@ -58,7 +58,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 9
   },
   card: {
-    marginHorizontal: AUI_FUNCTIONS.verticalRhythm()
+    marginHorizontal: AUI_FUNCTIONS.gridBaseMultiplier()
   }
 });
 

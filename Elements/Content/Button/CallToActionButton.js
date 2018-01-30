@@ -65,7 +65,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    height: AUI_FUNCTIONS.verticalRhythm(3)
+    height: AUI_FUNCTIONS.gridBaseMultiplier(3)
   },
   primary: {
     backgroundColor: AUI_COLORS.WalaTeal.hex

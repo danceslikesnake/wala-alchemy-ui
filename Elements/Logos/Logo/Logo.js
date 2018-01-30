@@ -38,7 +38,7 @@ class Logo extends Component {
       ...props
     } = this.props;
 
-    const imageHeight = (imgHeight) ? imgHeight : AUI_FUNCTIONS.verticalRhythm(8);
+    const imageHeight = (imgHeight) ? imgHeight : AUI_FUNCTIONS.gridBaseMultiplier(8);
     const imgStyle = {
       width: (centeredAdjust) ? Math.ceil(imgHeight * 1.435692921) : Math.ceil(imgHeight * 1.607178465),
       height: imageHeight,

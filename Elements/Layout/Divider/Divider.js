@@ -80,7 +80,7 @@ const styles = StyleSheet.create({
     height: 8,
   },
   large: {
-    height: AUI_FUNCTIONS.verticalRhythm(),
+    height: AUI_FUNCTIONS.gridBaseMultiplier(),
   }
 });
 
