@@ -31,7 +31,7 @@ class TextField extends Component {
     const { label, value, title, error, ...props } = this.props;
 
     return (
-      <Container style={{paddingBottom: (title) ? 2 : 5}}>
+      <Container style={{paddingBottom: (title) ? 0 : 2}}>
         <Input
           {...props}
           label={label}
@@ -69,8 +69,7 @@ TextField.defaultProps = {
 
 TextField.propTypes = {
   label: PropTypes.string.isRequired,
-  value: PropTypes.string,
-  error: PropTypes.string
+  value: PropTypes.string
 };
 
 const styles = StyleSheet.create({
@@ -86,7 +85,7 @@ const styles = StyleSheet.create({
   },
   inputText: {
     fontFamily: AUI_TYPOGRAPHY.ProiximaNova.semibold,
-    lineHeight: 26
+    lineHeight: AUI_TYPOGRAPHY.typeScale.lineHeight26
   }
 });
 

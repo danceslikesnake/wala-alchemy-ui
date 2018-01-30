@@ -41,5 +41,6 @@ export {
   SliderForAccounts,
   TextField,
   CountryInput,
-  PhoneInput
+  PhoneInput,
+  DropdownMenu
 } from './Inputs/index';

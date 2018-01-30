@@ -28,7 +28,8 @@ export {
   SliderForAccounts,
   TextField,
   CountryInput,
-  PhoneInput
+  PhoneInput,
+  DropdownMenu
 } from './Elements';
 
 export {
