@@ -26,7 +26,9 @@ export {
   Icons,
   CurrencyInput,
   SliderForAccounts,
-  TextField
+  TextField,
+  CountryInput,
+  PhoneInput
 } from './Elements';
 
 export {
