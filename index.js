@@ -29,7 +29,8 @@ export {
   TextField,
   CountryInput,
   PhoneInput,
-  DropdownMenu
+  DropdownMenu,
+  CarouselForAccounts
 } from './Elements';
 
 export {

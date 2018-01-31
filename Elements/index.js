@@ -42,5 +42,6 @@ export {
   TextField,
   CountryInput,
   PhoneInput,
-  DropdownMenu
+  DropdownMenu,
+  CarouselForAccounts
 } from './Inputs/index';
