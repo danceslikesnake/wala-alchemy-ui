@@ -10,6 +10,7 @@ export {
   Subhead1,
   Subhead2,
   Display,
+  Display2,
   Headline1,
   Headline2
 } from './Typography/index';
