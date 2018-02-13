@@ -38,7 +38,7 @@ const styles = StyleSheet.create({
     color: AUI_COLORS.Slate.hex,
     fontFamily: AUI_TYPOGRAPHY.Poppins.regular,
     fontSize: AUI_TYPOGRAPHY.typeScale.size26,
-    lineHeight: AUI_TYPOGRAPHY.typeScale.lineHeight39
+    lineHeight: AUI_TYPOGRAPHY.typeScale.size26lineHeight
   }
 });
 

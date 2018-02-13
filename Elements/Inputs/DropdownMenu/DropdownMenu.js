@@ -106,11 +106,11 @@ const styles = StyleSheet.create({
   },
   inputText: {
     fontFamily: AUI_TYPOGRAPHY.ProiximaNova.semibold,
-    lineHeight: AUI_TYPOGRAPHY.typeScale.lineHeight26
+    lineHeight: AUI_TYPOGRAPHY.typeScale.size16lineHeight
   },
   itemText: {
     fontFamily: AUI_TYPOGRAPHY.ProiximaNova.semibold,
-    lineHeight: AUI_TYPOGRAPHY.typeScale.lineHeight26
+    lineHeight: AUI_TYPOGRAPHY.typeScale.size16lineHeight
   },
   inputContainer: {
     marginBottom: AUI_FUNCTIONS.gridBaseMultiplier(1, true),
