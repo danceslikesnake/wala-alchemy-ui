@@ -5,9 +5,9 @@ import {
   StyleSheet
 } from 'react-native';
 import {
-  AUI_COLORS,
+  WA_COLORS,
 } from "../../Colors/index";
-import {AUI_TYPOGRAPHY} from "../fontStyles";
+import {WA_TYPOGRAPHY} from "../fontStyles";
 
 class BodyText extends Component {
   constructor(props) {
@@ -35,10 +35,10 @@ BodyText.propTypes = {
 
 const styles = StyleSheet.create({
   text: {
-    color: AUI_COLORS.Slate.hex,
-    fontFamily: AUI_TYPOGRAPHY.ProiximaNova.regular,
-    fontSize: AUI_TYPOGRAPHY.typeScale.size16,
-    lineHeight: AUI_TYPOGRAPHY.typeScale.lineHeight26
+    color: WA_COLORS.Slate.hex,
+    fontFamily: WA_TYPOGRAPHY.ProiximaNova.regular,
+    fontSize: WA_TYPOGRAPHY.typeScale.size16,
+    lineHeight: WA_TYPOGRAPHY.typeScale.lineHeight26
   }
 });
 

@@ -1,7 +1,7 @@
 export {
-  AUI_COLORS,
-  AUI_TYPOGRAPHY,
-  AUI_LAYOUT,
+  WA_COLORS,
+  WA_TYPOGRAPHY,
+  WA_LAYOUT,
   SmallDisplay,
   Caption1,
   Caption2,
@@ -23,20 +23,5 @@ export {
   CallToActionButton,
   TransparentButton,
   Badge,
-  Icons,
-  CurrencyInput,
-  SliderForAccounts,
-  TextField,
-  CountryInput,
-  PhoneInput,
-  DropdownMenu,
-  CarouselForAccounts
+  Icons
 } from './Elements';
-
-export {
-  BottomSheet
-} from './Compounds';
-
-export {
-  AUI_CONSTANTS
-} from './Helpers';

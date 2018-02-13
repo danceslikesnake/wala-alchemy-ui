@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
-import { StyleSheet } from 'react-native';
 import PropTypes from 'prop-types';
 import LinearGradient from 'react-native-linear-gradient';
-import { AUI_FUNCTIONS } from "../../../Helpers";
+import { ContainerStyles } from "../layoutStyles";
 
 class GradientContainer extends Component {
 
@@ -24,7 +23,7 @@ class GradientContainer extends Component {
         {...props}
         colors={colors}
         style={[
-          styles[variation],
+          ContainerStyles[variation],
           actAsRow ? {flexDirection: 'row'} : null,
           this.props.style
         ]}
@@ -49,18 +48,6 @@ GradientContainer.propTypes = {
   colors: PropTypes.array.isRequired,
   actAsRow: PropTypes.bool
 };
-
-const styles = StyleSheet.create({
-  full: {
-  },
-  wide: {
-    marginHorizontal: 4,
-    paddingHorizontal: 9
-  },
-  card: {
-    marginHorizontal: AUI_FUNCTIONS.gridBaseMultiplier()
-  }
-});
 
 export {
   GradientContainer

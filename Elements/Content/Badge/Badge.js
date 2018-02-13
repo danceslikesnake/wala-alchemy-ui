@@ -5,9 +5,10 @@ import {
   Text,
   StyleSheet
 } from 'react-native';
-import { AUI_COLORS } from "../../Colors";
-import { AUI_TYPOGRAPHY } from "../../Typography";
+import { WA_COLORS } from "../../Colors";
+import { WA_TYPOGRAPHY } from "../../Typography";
 import { Icons } from "../../Icons/Icons";
+
 
 class Badge extends Component {
 
@@ -50,7 +51,7 @@ class Badge extends Component {
       <View
         style={[
           styles.badge,
-          badgeColor ? {backgroundColor: badgeColor} : {backgroundColor: AUI_COLORS.TorchRed.hex},
+          badgeColor ? {backgroundColor: badgeColor} : {backgroundColor: WA_COLORS.TorchRed.hex},
           pinToBottom ? {
             position: 'absolute',
             bottom: bottomAdjust ? bottomAdjust : 0,
@@ -91,7 +92,7 @@ const styles = StyleSheet.create({
   },
   text: {
     fontSize: 10,
-    fontFamily: AUI_TYPOGRAPHY.ProiximaNova.extrabold,
+    fontFamily: WA_TYPOGRAPHY.ProiximaNova.extrabold,
     color: 'white'
   }
 });

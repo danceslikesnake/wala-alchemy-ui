@@ -1,7 +1,7 @@
-export { AUI_COLORS } from './Colors/index';
+export { WA_COLORS } from './Colors/index';
 
 export {
-  AUI_TYPOGRAPHY,
+  WA_TYPOGRAPHY,
   SmallDisplay,
   Caption1,
   Caption2,
@@ -20,7 +20,7 @@ export {
 } from './Logos/index';
 
 export {
-  AUI_LAYOUT,
+  WA_LAYOUT,
   Container,
   GradientContainer,
   ImageContainer,
@@ -35,13 +35,3 @@ export {
   Badge,
   Icons
 } from './Content/index';
-
-export {
-  CurrencyInput,
-  SliderForAccounts,
-  TextField,
-  CountryInput,
-  PhoneInput,
-  DropdownMenu,
-  CarouselForAccounts
-} from './Inputs/index';

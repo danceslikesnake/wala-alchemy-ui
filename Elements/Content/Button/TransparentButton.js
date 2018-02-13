@@ -6,10 +6,9 @@ import {
   TouchableNativeFeedback,
   StyleSheet
 } from 'react-native';
-import { AUI_COLORS } from "../../Colors";
-import { SmallDisplay } from "../../Typography";
-import { AUI_FUNCTIONS } from "../../../Helpers";
-import { AUI_LAYOUT } from "../../Layout";
+import { WA_COLORS } from "../../Colors";
+import { WA_TYPOGRAPHY, SmallDisplay } from "../../Typography";
+import { WA_LAYOUT } from "../../Layout";
 
 class TransparentButton extends Component {
 
@@ -33,7 +32,7 @@ class TransparentButton extends Component {
         <View
           style={[
             styles.button,
-            AUI_LAYOUT.roundCorners
+            WA_LAYOUT.roundCorners
           ]}
         >
           <SmallDisplay style={styles[variation + 'Text']}>
@@ -63,15 +62,15 @@ const styles = StyleSheet.create({
     flex: 0,
     justifyContent: 'center',
     alignItems: 'center',
-    height: AUI_FUNCTIONS.gridBaseMultiplier(3),
+    height: 39,
     backgroundColor: 'transparent',
-    paddingHorizontal: AUI_FUNCTIONS.gridBaseMultiplier(1)
+    paddingHorizontal: 13
   },
   primaryText: {
-    color: AUI_COLORS.WalaTeal.hex
+    color: WA_COLORS.WalaTeal.hex
   },
   secondaryText: {
-    color: AUI_COLORS.Iron.hex
+    color: WA_COLORS.Iron.hex
   }
 });
 

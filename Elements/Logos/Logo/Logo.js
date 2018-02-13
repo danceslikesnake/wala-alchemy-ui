@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import {
-  Image
+  Image,
+  Dimensions
 } from 'react-native';
-import { AUI_FUNCTIONS } from "../../../Helpers";
+
+let deviceWidth = Dimensions.get('window').width;
 
 class Logo extends Component {
 
@@ -27,21 +29,21 @@ class Logo extends Component {
         return (centeredAdjust) ? require('../img/logos/logo-centered.png') : require('../img/logos/logo.png');
         break;
     }
-  };
+  }
 
   render(){
     const {
       variation,
       leftAlignAdjust,
       centeredAdjust,
-      imgHeight,
+      imgWidth,
       ...props
     } = this.props;
 
-    const imageHeight = (imgHeight) ? imgHeight : AUI_FUNCTIONS.gridBaseMultiplier(8);
+    const imageWidth = (imgWidth) ? imgWidth : Math.round(deviceWidth);
     const imgStyle = {
-      width: (centeredAdjust) ? Math.ceil(imgHeight * 1.435692921) : Math.ceil(imgHeight * 1.607178465),
-      height: imageHeight,
+      width: imageWidth,
+      height: (centeredAdjust) ? Math.ceil(imageWidth * 0.622208437) : Math.ceil(imageWidth * 0.696527778),
       marginLeft: (leftAlignAdjust) ? (0 - leftAlignAdjust) : 0,
       resizeMode: 'contain'
     };
@@ -80,7 +82,7 @@ Logo.propTypes = {
     PropTypes.string
   ]),
   centeredAdjust: PropTypes.bool,
-  imgHeight: PropTypes.oneOfType([
+  imgWidth: PropTypes.oneOfType([
     PropTypes.number,
     PropTypes.string
   ])

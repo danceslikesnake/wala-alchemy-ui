@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import {
   View
 } from 'react-native';
-import { AUI_CONSTANTS } from "../../../Helpers";
 
 class Spacer extends Component {
 
@@ -18,7 +17,7 @@ class Spacer extends Component {
 
     return(
       <View
-        style={{height: multiplier * AUI_CONSTANTS.gridBase}}
+        style={{height: multiplier * 13}}
       />
     );
   }

@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import {
-  View,
-  StyleSheet
+  View
 } from 'react-native';
-import { AUI_CONSTANTS } from "../../../Helpers";
+import { ContainerStyles } from "../layoutStyles";
 
 class Container extends Component {
 
@@ -24,7 +23,7 @@ class Container extends Component {
       <View
         {...props}
         style={[
-          styles[variation],
+          ContainerStyles[variation],
           actAsRow ? {flexDirection: 'row'} : null,
           this.props.style
         ]}
@@ -47,18 +46,6 @@ Container.propTypes = {
   ]),
   actAsRow: PropTypes.bool
 };
-
-const styles = StyleSheet.create({
-  full: {
-  },
-  wide: {
-    marginHorizontal: 4,
-    paddingHorizontal: 9
-  },
-  card: {
-    marginHorizontal: AUI_CONSTANTS.gridBase
-  }
-});
 
 export {
   Container

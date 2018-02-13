@@ -20,7 +20,7 @@ function rgba(rgb, percent) {
  * @returns {string}
  */
 function range(type, color, percentage, mixColor, mixPercent) {
-  let mixType = (type == 'shade') ? AUI_COLORS.Charcoal.hex : '#FFFFFF';
+  let mixType = (type == 'shade') ? WA_COLORS.Charcoal.hex : '#FFFFFF';
   let initialColor = chroma.mix(color, mixType, percentage);
   if(mixColor) {
     let mixedColor = chroma.mix(initialColor, mixColor, mixPercent);
@@ -30,7 +30,7 @@ function range(type, color, percentage, mixColor, mixPercent) {
   }
 }
 
-const AUI_COLORS = {
+const WA_COLORS = {
   WalaTeal: {
     hex: '#1DC4BD',
     r: 29,
@@ -48,7 +48,7 @@ const AUI_COLORS = {
       return rgba(this.r + ', ' + this.g + ', ' + this.b, opacity);
     },
     getShade: function(percent) {
-      return range('shade', this.hex, percent, AUI_COLORS.ScampiPurple.hex, 0.15);
+      return range('shade', this.hex, percent, WA_COLORS.ScampiPurple.hex, 0.15);
     },
     getTint: function(percent) {
       return range('tint', this.hex, percent, null, null);
@@ -90,7 +90,7 @@ const AUI_COLORS = {
       return rgba(this.r + ', ' + this.g + ', ' + this.b, opacity);
     },
     getShade: function(percent) {
-      return range('shade', this.hex, percent, AUI_COLORS.ScampiPurple.hex, 0.15);
+      return range('shade', this.hex, percent, WA_COLORS.ScampiPurple.hex, 0.15);
     },
     getTint: function(percent) {
       return range('tint', this.hex, percent, null, null);
@@ -113,10 +113,10 @@ const AUI_COLORS = {
       return rgba(this.r + ', ' + this.g + ', ' + this.b, opacity);
     },
     getShade: function(percent) {
-      return range('shade', this.hex, percent, AUI_COLORS.TorchRed.hex, 0.15);
+      return range('shade', this.hex, percent, WA_COLORS.TorchRed.hex, 0.15);
     },
     getTint: function(percent) {
-      return range('tint', this.hex, percent, AUI_COLORS.TorchRed.hex, 0.05);
+      return range('tint', this.hex, percent, WA_COLORS.TorchRed.hex, 0.05);
     }
   },
   CuriousBlue: {
@@ -136,7 +136,7 @@ const AUI_COLORS = {
       return rgba(this.r + ', ' + this.g + ', ' + this.b, opacity);
     },
     getShade: function(percent) {
-      return range('shade', this.hex, percent, AUI_COLORS.TorchRed.hex, 0.10);
+      return range('shade', this.hex, percent, WA_COLORS.TorchRed.hex, 0.10);
     },
     getTint: function(percent) {
       return range('tint', this.hex, percent, null, null);
@@ -169,31 +169,22 @@ const AUI_COLORS = {
     hex: '#6C7882',
     r: 108,
     g: 120,
-    b: 130,
-    getRgba: function(opacity) {
-      return rgba(this.r + ', ' + this.g + ', ' + this.b, opacity);
-    }
+    b: 130
   },
   Iron: {
     hex: '#B2B9BE',
     r: 178,
     g: 185,
-    b: 190,
-    getRgba: function(opacity) {
-      return rgba(this.r + ', ' + this.g + ', ' + this.b, opacity);
-    }
+    b: 190
   },
   Silver: {
     hex: '#E0E3E5',
-    r: 224,
-    g: 227,
-    b: 229,
-    getRgba: function(opacity) {
-      return rgba(this.r + ', ' + this.g + ', ' + this.b, opacity);
-    }
+    r: 0,
+    g: 0,
+    b: 0
   },
 };
 
 export {
-  AUI_COLORS
+  WA_COLORS
 }

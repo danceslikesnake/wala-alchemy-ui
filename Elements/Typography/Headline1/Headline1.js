@@ -5,9 +5,9 @@ import {
   StyleSheet
 } from 'react-native';
 import {
-  AUI_COLORS
+  WA_COLORS
 } from "../../index";
-import {AUI_TYPOGRAPHY} from "../fontStyles";
+import {WA_TYPOGRAPHY} from "../fontStyles";
 
 class Headline1 extends Component {
   constructor(props) {
@@ -35,10 +35,10 @@ Headline1.propTypes = {
 
 const styles = StyleSheet.create({
   text: {
-    color: AUI_COLORS.Slate.hex,
-    fontFamily: AUI_TYPOGRAPHY.Poppins.regular,
-    fontSize: AUI_TYPOGRAPHY.typeScale.size26,
-    lineHeight: AUI_TYPOGRAPHY.typeScale.lineHeight39
+    color: WA_COLORS.Slate.hex,
+    fontFamily: WA_TYPOGRAPHY.Poppins.regular,
+    fontSize: WA_TYPOGRAPHY.typeScale.size26,
+    lineHeight: WA_TYPOGRAPHY.typeScale.lineHeight39
   }
 });
 
