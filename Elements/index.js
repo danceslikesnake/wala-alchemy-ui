@@ -38,7 +38,6 @@ export {
 
 export {
   CurrencyInput,
-  SliderForAccounts,
   TextField,
   CountryInput,
   PhoneInput,

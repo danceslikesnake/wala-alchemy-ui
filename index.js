@@ -25,7 +25,6 @@ export {
   Badge,
   Icons,
   CurrencyInput,
-  SliderForAccounts,
   TextField,
   CountryInput,
   PhoneInput,
