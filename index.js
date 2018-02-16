@@ -38,5 +38,6 @@ export {
 } from './Compounds';
 
 export {
-  AUI_CONSTANTS
+  AUI_CONSTANTS,
+  AUI_FUNCTIONS
 } from './Helpers';
