@@ -16,22 +16,20 @@ const WA_TYPOGRAPHY = {
     size16: 16,
     size26: 26,
     size42: 42,
-    size68: 68,
-    lineHeight18: 18,
-    lineHeight26: 26,
-    lineHeight39: 39,
-    lineHeight52: 52,
+    size12lineHeight: 18,
+    size16lineHeight: 26,
+    size26lineHeight: 42,
+    size42lineHeight: 68,
   },
   typeScaleDense: {
     size12: 12,
     size14: 14,
     size23: 23,
     size37: 37,
-    size59: 59,
-    lineHeight18: 18,
-    lineHeight26: 21,
-    lineHeight42: 42,
-    lineHeight63: 63
+    size12lineHeight: 18,
+    size14lineHeight: 23,
+    size23lineHeight: 37,
+    size37lineheight: 60
   }
 };
 

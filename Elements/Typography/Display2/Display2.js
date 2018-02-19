@@ -9,7 +9,7 @@ import {
 } from "../../index";
 import {AUI_TYPOGRAPHY} from "../fontStyles";
 
-class Headline1 extends Component {
+class Display2 extends Component {
   constructor(props) {
     super(props);
   }
@@ -29,19 +29,18 @@ class Headline1 extends Component {
   }
 }
 
-Headline1.propTypes = {
+Display2.propTypes = {
   children: PropTypes.string.isRequired
 };
 
 const styles = StyleSheet.create({
   text: {
     color: AUI_COLORS.Slate.hex,
-    fontFamily: AUI_TYPOGRAPHY.Poppins.regular,
-    fontSize: AUI_TYPOGRAPHY.typeScale.size26,
-    lineHeight: AUI_TYPOGRAPHY.typeScale.size26lineHeight
+    fontFamily: AUI_TYPOGRAPHY.ProiximaNova.semibold,
+    fontSize: AUI_TYPOGRAPHY.typeScale.size26
   }
 });
 
 export {
-  Headline1
+  Display2
 }

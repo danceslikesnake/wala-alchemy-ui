@@ -7,6 +7,7 @@ import { BodyText } from './BodyText/BodyText';
 import { Subhead1 } from "./Subhead1/Subhead1";
 import { Subhead2 } from "./Subhead2/Subhead2";
 import { Display } from "./Display/Display";
+import { Display2 } from "./Display2/Display2";
 import { Headline1 } from "./Headline1/Headline1";
 import { Headline2 } from "./Headline2/Headline2";
 
@@ -20,6 +21,7 @@ export {
   Subhead1,
   Subhead2,
   Display,
+  Display2,
   Headline1,
   Headline2
 }
