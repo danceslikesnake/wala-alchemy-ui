@@ -6,8 +6,9 @@ import {
   Text,
   StyleSheet
 } from 'react-native';
-import { WA_COLORS } from "../../Colors";
-import { WA_TYPOGRAPHY } from "../../Typography";
+import { AUI_COLORS } from "../../Colors";
+import { AUI_TYPOGRAPHY } from "../../Typography";
+import { AUI_CONSTANTS, AUI_FUNCTIONS } from "../../../Helpers";
 import { CachedImage } from 'react-native-cached-image';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 
@@ -48,7 +49,7 @@ class Avatar extends Component {
           >
             <MaterialIcons
               name={'tag-faces'}
-              color={WA_COLORS.ScampiPurple.tint4}
+              color={AUI_COLORS.ScampiPurple.tint4}
               size={styles[this.props.size].iconSize}
             />
           </View>
@@ -83,7 +84,10 @@ Avatar.propTypes = {
     'initials',
     'image'
   ]),
-  imageSource: PropTypes.number,
+  imageSource: PropTypes.oneOfType([
+    PropTypes.number,
+    PropTypes.object
+  ]),
   initials: PropTypes.string,
   size: PropTypes.oneOf([
     'small',
@@ -94,78 +98,85 @@ Avatar.propTypes = {
   ])
 };
 
+const vr26 = AUI_FUNCTIONS.gridBaseMultiplier(2);
+const vr39 = AUI_FUNCTIONS.gridBaseMultiplier(3);
+const vr52 = AUI_FUNCTIONS.gridBaseMultiplier(4);
+const vr65 = AUI_FUNCTIONS.gridBaseMultiplier(5);
+const vr78 = AUI_FUNCTIONS.gridBaseMultiplier(6);
+const vr91 = AUI_FUNCTIONS.gridBaseMultiplier(7);
+
 const styles = {
   noImageAvatar: {
-    backgroundColor: WA_COLORS.ScampiPurple.hex,
+    backgroundColor: AUI_COLORS.ScampiPurple.hex,
     borderWidth: 4,
-    borderColor: WA_COLORS.ScampiPurple.tint4,
+    borderColor: AUI_COLORS.ScampiPurple.tint4,
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center'
   },
   small: {
     textSize: {
-      fontSize: WA_TYPOGRAPHY.typeScale.size12,
-      fontFamily: WA_TYPOGRAPHY.ProiximaNova.extrabold,
-      color: WA_COLORS.ScampiPurple.tint4
+      fontSize: AUI_TYPOGRAPHY.typeScale.size12,
+      fontFamily: AUI_TYPOGRAPHY.ProiximaNova.extrabold,
+      color: AUI_COLORS.ScampiPurple.tint4
     },
-    iconSize: 26,
+    iconSize: vr26,
     dimensions: {
-      width: 39,
-      height: 39,
-      borderRadius: 39 / 2
+      width: vr39,
+      height: vr39,
+      borderRadius: (vr39) / 2
     }
   },
   regular: {
     textSize: {
-      fontSize: WA_TYPOGRAPHY.typeScale.size16,
-      fontFamily: WA_TYPOGRAPHY.ProiximaNova.extrabold,
-      color: WA_COLORS.ScampiPurple.tint4
+      fontSize: AUI_TYPOGRAPHY.typeScale.size16,
+      fontFamily: AUI_TYPOGRAPHY.ProiximaNova.extrabold,
+      color: AUI_COLORS.ScampiPurple.tint4
     },
-    iconSize: 39,
+    iconSize: vr39,
     dimensions: {
-      width: 52,
-      height: 52,
-      borderRadius: 26
+      width: vr52,
+      height: vr52,
+      borderRadius: vr26
     }
   },
   large: {
     textSize: {
-      fontSize: WA_TYPOGRAPHY.typeScale.size26,
-      fontFamily: WA_TYPOGRAPHY.ProiximaNova.extrabold,
-      color: WA_COLORS.ScampiPurple.tint4
+      fontSize: AUI_TYPOGRAPHY.typeScale.size26,
+      fontFamily: AUI_TYPOGRAPHY.ProiximaNova.extrabold,
+      color: AUI_COLORS.ScampiPurple.tint4
     },
-    iconSize: 52,
+    iconSize: vr52,
     dimensions: {
-      width: 65,
-      height: 65,
-      borderRadius: 65 / 2
+      width: vr65,
+      height: vr65,
+      borderRadius: vr65 / 2
     }
   },
   larger: {
     textSize: {
-      fontSize: WA_TYPOGRAPHY.typeScale.size26,
-      fontFamily: WA_TYPOGRAPHY.ProiximaNova.extrabold,
-      color: WA_COLORS.ScampiPurple.tint4
+      fontSize: AUI_TYPOGRAPHY.typeScale.size26,
+      fontFamily: AUI_TYPOGRAPHY.ProiximaNova.extrabold,
+      color: AUI_COLORS.ScampiPurple.tint4
     },
-    iconSize: 65,
+    iconSize: vr65,
     dimensions: {
-      width: 78,
-      height: 78,
-      borderRadius: 39
+      width: vr78,
+      height: vr78,
+      borderRadius: vr39
     }
   },
   largest: {
     textSize: {
-      fontSize: WA_TYPOGRAPHY.typeScale.size42,
-      fontFamily: WA_TYPOGRAPHY.ProiximaNova.extrabold,
-      color: WA_COLORS.ScampiPurple.tint4
+      fontSize: AUI_TYPOGRAPHY.typeScale.size42,
+      fontFamily: AUI_TYPOGRAPHY.ProiximaNova.extrabold,
+      color: AUI_COLORS.ScampiPurple.tint4
     },
-    iconSize: 78,
+    iconSize: vr78,
     dimensions: {
-      width: 91,
-      height: 91,
-      borderRadius: 91 / 2
+      width: vr91,
+      height: vr91,
+      borderRadius: vr91 / 2
     }
   }
 };

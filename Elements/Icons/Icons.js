@@ -8,7 +8,7 @@ import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import { createIconSetFromFontello } from 'react-native-vector-icons';
 import fontelloConfig from './config.json';
 const WalaIcon = createIconSetFromFontello(fontelloConfig);
-import { WA_COLORS } from "../Colors";
+import { AUI_COLORS } from "../Colors";
 
 class Icons extends Component {
 
@@ -23,7 +23,7 @@ class Icons extends Component {
           <MaterialIcons
             name={this.props.iconName}
             size={this.props.iconSize ? this.props.iconSize : 21}
-            color={this.props.iconColor ? this.props.iconColor : WA_COLORS.ScampiPurple.tint2}
+            color={this.props.iconColor ? this.props.iconColor : AUI_COLORS.ScampiPurple.tint2}
           />
         );
         break;
@@ -33,7 +33,7 @@ class Icons extends Component {
           <WalaIcon
             name={this.props.iconName}
             size={this.props.iconSize ? this.props.iconSize : 21}
-            color={this.props.iconColor ? this.props.iconColor : WA_COLORS.ScampiPurple.tint2}
+            color={this.props.iconColor ? this.props.iconColor : AUI_COLORS.ScampiPurple.tint2}
           />
         );
         break;

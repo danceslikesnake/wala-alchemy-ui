@@ -5,9 +5,9 @@ import {
   StyleSheet
 } from 'react-native';
 import {
-  WA_COLORS
+  AUI_COLORS
 } from "../../index";
-import {WA_TYPOGRAPHY} from "../fontStyles";
+import {AUI_TYPOGRAPHY} from "../fontStyles";
 
 class Display extends Component {
   constructor(props) {
@@ -35,9 +35,9 @@ Display.propTypes = {
 
 const styles = StyleSheet.create({
   text: {
-    color: WA_COLORS.Slate.hex,
-    fontFamily: WA_TYPOGRAPHY.ProiximaNova.extrabold,
-    fontSize: WA_TYPOGRAPHY.typeScale.size26
+    color: AUI_COLORS.Slate.hex,
+    fontFamily: AUI_TYPOGRAPHY.ProiximaNova.extrabold,
+    fontSize: AUI_TYPOGRAPHY.typeScale.size26
   }
 });
 

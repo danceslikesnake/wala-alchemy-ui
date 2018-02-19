@@ -1,4 +1,4 @@
-const WA_TYPOGRAPHY = {
+const AUI_TYPOGRAPHY = {
   Poppins: {
     light: 'poppins_light',
     regular: 'poppins_regular',
@@ -34,5 +34,5 @@ const WA_TYPOGRAPHY = {
 };
 
 export {
-  WA_TYPOGRAPHY
+  AUI_TYPOGRAPHY
 }
