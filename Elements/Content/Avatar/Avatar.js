@@ -90,6 +90,7 @@ Avatar.propTypes = {
   ]),
   initials: PropTypes.string,
   size: PropTypes.oneOf([
+    'tiny',
     'small',
     'regular',
     'large',
@@ -98,6 +99,7 @@ Avatar.propTypes = {
   ])
 };
 
+const vr13 = AUI_CONSTANTS.gridBase;
 const vr26 = AUI_FUNCTIONS.gridBaseMultiplier(2);
 const vr39 = AUI_FUNCTIONS.gridBaseMultiplier(3);
 const vr52 = AUI_FUNCTIONS.gridBaseMultiplier(4);
@@ -113,6 +115,19 @@ const styles = {
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center'
+  },
+  tiny: {
+    textSize: {
+      fontSize: 10,
+      fontFamily: AUI_TYPOGRAPHY.ProiximaNova.extrabold,
+      color: AUI_COLORS.ScampiPurple.tint4
+    },
+    iconSize: vr13,
+    dimensions: {
+      width: vr26,
+      height: vr26,
+      borderRadius: (vr26) / 2
+    }
   },
   small: {
     textSize: {
