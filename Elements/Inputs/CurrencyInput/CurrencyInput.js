@@ -41,11 +41,18 @@ class CurrencyInput extends Component {
   }
 
   render() {
-    const { label, options, value, onChangeText, autoFocus } = this.props;
+    const { label, options, value, onChangeText, autoFocus, convertedValue } = this.props;
 
     return (
       <Container>
-        <Caption1 style={{ height: AUI_FUNCTIONS.gridBaseMultiplier(2), color: this.state.labelColor }}>{label}</Caption1>
+        <Container actAsRow>
+          <Caption1 style={{ height: AUI_FUNCTIONS.gridBaseMultiplier(2), color: this.state.labelColor }}>{label}</Caption1>
+          {convertedValue && (
+            <Caption1 style={{ height: 26, position: 'absolute', right: 0 }}>
+              {convertedValue}
+            </Caption1>
+          )}
+        </Container>
         <Container style={[
             AUI_LAYOUT.roundCorners,
             styles.inputWrapper,
@@ -67,6 +74,7 @@ class CurrencyInput extends Component {
             underlineColorAndroid="transparent"
             placeholderTextColor={AUI_COLORS.Iron.hex}
             selectionColor={AUI_COLORS.WalaTeal.hex}
+            caretHidden={true}
             keyboardType={'numeric'}
             onBlur={() => {
               this.onBlur();
