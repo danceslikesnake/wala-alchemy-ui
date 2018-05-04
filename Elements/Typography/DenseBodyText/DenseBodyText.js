@@ -38,7 +38,7 @@ const styles = StyleSheet.create({
     color: AUI_COLORS.Slate.hex,
     fontFamily: AUI_TYPOGRAPHY.ProiximaNova.regular,
     fontSize: AUI_TYPOGRAPHY.typeScaleDense.size14,
-    lineHeight: AUI_TYPOGRAPHY.typeScaleDense.size16lineHeight
+    lineHeight: AUI_TYPOGRAPHY.typeScaleDense.size14lineHeight
   }
 });
 

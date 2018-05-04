@@ -4,7 +4,7 @@ const AUI_TYPOGRAPHY = {
     regular: 'poppins_regular',
     medium: 'poppins_medium'
   },
-  ProiximaNova: {
+  ProximaNova: {
     regular: 'proximanova_regular',
     regular_italic: 'proximanova_regular_italic',
     semibold: 'proximanova_semibold',
@@ -29,7 +29,7 @@ const AUI_TYPOGRAPHY = {
     size12lineHeight: 18,
     size14lineHeight: 23,
     size23lineHeight: 37,
-    size37lineheight: 60
+    size37lineHeight: 60
   }
 };
 

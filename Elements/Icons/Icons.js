@@ -17,7 +17,7 @@ class Icons extends Component {
   }
 
   getContent = () => {
-    switch(this.props.variation) {
+    switch(this.props.iconSet) {
       case 'material-design':
         return(
           <MaterialIcons
@@ -56,11 +56,11 @@ class Icons extends Component {
 }
 
 Icons.defaultProps = {
-  variation: 'wala'
+  iconSet: 'wala'
 };
 
 Icons.propTypes = {
-  variation: PropTypes.oneOf([
+  iconSet: PropTypes.oneOf([
     'wala',
     'material-design'
   ]),
