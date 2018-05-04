@@ -36,7 +36,7 @@ Caption2.propTypes = {
 const styles = StyleSheet.create({
   text: {
     color: AUI_COLORS.Slate.hex,
-    fontFamily: AUI_TYPOGRAPHY.ProiximaNova.semibold_italic,
+    fontFamily: AUI_TYPOGRAPHY.ProximaNova.semibold_italic,
     fontSize: AUI_TYPOGRAPHY.typeScale.size12,
     lineHeight: AUI_TYPOGRAPHY.typeScale.size12lineHeight
   }

@@ -119,7 +119,7 @@ const styles = {
   tiny: {
     textSize: {
       fontSize: 10,
-      fontFamily: AUI_TYPOGRAPHY.ProiximaNova.extrabold,
+      fontFamily: AUI_TYPOGRAPHY.ProximaNova.extrabold,
       color: AUI_COLORS.ScampiPurple.tint4
     },
     iconSize: vr13,
@@ -132,7 +132,7 @@ const styles = {
   small: {
     textSize: {
       fontSize: AUI_TYPOGRAPHY.typeScale.size12,
-      fontFamily: AUI_TYPOGRAPHY.ProiximaNova.extrabold,
+      fontFamily: AUI_TYPOGRAPHY.ProximaNova.extrabold,
       color: AUI_COLORS.ScampiPurple.tint4
     },
     iconSize: vr26,
@@ -145,7 +145,7 @@ const styles = {
   regular: {
     textSize: {
       fontSize: AUI_TYPOGRAPHY.typeScale.size16,
-      fontFamily: AUI_TYPOGRAPHY.ProiximaNova.extrabold,
+      fontFamily: AUI_TYPOGRAPHY.ProximaNova.extrabold,
       color: AUI_COLORS.ScampiPurple.tint4
     },
     iconSize: vr39,
@@ -158,7 +158,7 @@ const styles = {
   large: {
     textSize: {
       fontSize: AUI_TYPOGRAPHY.typeScale.size26,
-      fontFamily: AUI_TYPOGRAPHY.ProiximaNova.extrabold,
+      fontFamily: AUI_TYPOGRAPHY.ProximaNova.extrabold,
       color: AUI_COLORS.ScampiPurple.tint4
     },
     iconSize: vr52,
@@ -171,7 +171,7 @@ const styles = {
   larger: {
     textSize: {
       fontSize: AUI_TYPOGRAPHY.typeScale.size26,
-      fontFamily: AUI_TYPOGRAPHY.ProiximaNova.extrabold,
+      fontFamily: AUI_TYPOGRAPHY.ProximaNova.extrabold,
       color: AUI_COLORS.ScampiPurple.tint4
     },
     iconSize: vr65,
@@ -184,7 +184,7 @@ const styles = {
   largest: {
     textSize: {
       fontSize: AUI_TYPOGRAPHY.typeScale.size42,
-      fontFamily: AUI_TYPOGRAPHY.ProiximaNova.extrabold,
+      fontFamily: AUI_TYPOGRAPHY.ProximaNova.extrabold,
       color: AUI_COLORS.ScampiPurple.tint4
     },
     iconSize: vr78,

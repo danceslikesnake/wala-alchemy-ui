@@ -91,7 +91,7 @@ const styles = StyleSheet.create({
   },
   text: {
     fontSize: 10,
-    fontFamily: AUI_TYPOGRAPHY.ProiximaNova.extrabold,
+    fontFamily: AUI_TYPOGRAPHY.ProximaNova.extrabold,
     color: 'white'
   }
 });

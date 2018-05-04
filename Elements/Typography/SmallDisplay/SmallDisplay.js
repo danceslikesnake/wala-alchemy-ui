@@ -37,7 +37,7 @@ const styles = StyleSheet.create({
   text: {
     fontSize: AUI_TYPOGRAPHY.typeScale.size12,
     color: AUI_COLORS.Slate.hex,
-    fontFamily: AUI_TYPOGRAPHY.ProiximaNova.extrabold
+    fontFamily: AUI_TYPOGRAPHY.ProximaNova.extrabold
   }
 });
 

@@ -36,7 +36,7 @@ DenseBodyText.propTypes = {
 const styles = StyleSheet.create({
   text: {
     color: AUI_COLORS.Slate.hex,
-    fontFamily: AUI_TYPOGRAPHY.ProiximaNova.regular,
+    fontFamily: AUI_TYPOGRAPHY.ProximaNova.regular,
     fontSize: AUI_TYPOGRAPHY.typeScaleDense.size14,
     lineHeight: AUI_TYPOGRAPHY.typeScaleDense.size14lineHeight
   }

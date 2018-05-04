@@ -36,7 +36,7 @@ Display2.propTypes = {
 const styles = StyleSheet.create({
   text: {
     color: AUI_COLORS.Slate.hex,
-    fontFamily: AUI_TYPOGRAPHY.ProiximaNova.semibold,
+    fontFamily: AUI_TYPOGRAPHY.ProximaNova.semibold,
     fontSize: AUI_TYPOGRAPHY.typeScale.size26
   }
 });

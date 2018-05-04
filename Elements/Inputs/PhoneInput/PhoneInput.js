@@ -119,7 +119,7 @@ const styles = StyleSheet.create({
   },
   input: {
     flex: 1,
-    fontFamily: AUI_TYPOGRAPHY.ProiximaNova.semibold,
+    fontFamily: AUI_TYPOGRAPHY.ProximaNova.semibold,
     color: AUI_COLORS.Charcoal.hex,
     fontSize: AUI_TYPOGRAPHY.typeScale.size16,
     paddingLeft: 9,

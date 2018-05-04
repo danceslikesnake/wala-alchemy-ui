@@ -98,18 +98,18 @@ DropdownMenu.propTypes = {
 
 const styles = StyleSheet.create({
   labelTextStyle: {
-    fontFamily: AUI_TYPOGRAPHY.ProiximaNova.semibold,
+    fontFamily: AUI_TYPOGRAPHY.ProximaNova.semibold,
     color: AUI_COLORS.Slate.hex
   },
   titleTextStyle: {
-    fontFamily: AUI_TYPOGRAPHY.ProiximaNova.semibold_italic
+    fontFamily: AUI_TYPOGRAPHY.ProximaNova.semibold_italic
   },
   inputText: {
-    fontFamily: AUI_TYPOGRAPHY.ProiximaNova.semibold,
+    fontFamily: AUI_TYPOGRAPHY.ProximaNova.semibold,
     lineHeight: AUI_TYPOGRAPHY.typeScale.size16lineHeight
   },
   itemText: {
-    fontFamily: AUI_TYPOGRAPHY.ProiximaNova.semibold,
+    fontFamily: AUI_TYPOGRAPHY.ProximaNova.semibold,
     lineHeight: AUI_TYPOGRAPHY.typeScale.size16lineHeight
   },
   inputContainer: {

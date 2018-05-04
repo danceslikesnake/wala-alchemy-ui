@@ -125,7 +125,7 @@ const styles = StyleSheet.create({
     borderBottomWidth: 1,
     fontSize: 26,
     height: AUI_FUNCTIONS.gridBaseMultiplier(4),
-    fontFamily: AUI_TYPOGRAPHY.ProiximaNova.semibold,
+    fontFamily: AUI_TYPOGRAPHY.ProximaNova.semibold,
     color: AUI_COLORS.Charcoal.hex,
     textAlign: 'center',
     fontWeight: '400',

@@ -36,7 +36,7 @@ BodyText.propTypes = {
 const styles = StyleSheet.create({
   text: {
     color: AUI_COLORS.Slate.hex,
-    fontFamily: AUI_TYPOGRAPHY.ProiximaNova.regular,
+    fontFamily: AUI_TYPOGRAPHY.ProximaNova.regular,
     fontSize: AUI_TYPOGRAPHY.typeScale.size16,
     lineHeight: AUI_TYPOGRAPHY.typeScale.size16lineHeight
   }
