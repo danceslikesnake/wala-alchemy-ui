@@ -63,7 +63,7 @@ class DropdownMenu extends Component {
             return <Icons
               containerStyles={{marginBottom: 4}}
               iconName={'arrow-drop-down'}
-              variation={'material-design'}
+              iconSet={'material-design'}
               iconSize={26}
               iconColor={AUI_COLORS.WalaTeal.hex}
             />;

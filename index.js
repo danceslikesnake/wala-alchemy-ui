@@ -34,7 +34,8 @@ export {
 } from './Elements';
 
 export {
-  BottomSheet
+  BottomSheet,
+  SectionHeader
 } from './Compounds';
 
 export {

@@ -56,7 +56,7 @@ class CarouselForAccounts extends Component {
               ]}
             >
               <Icons
-                variation={'material-design'}
+                iconSet={'material-design'}
                 iconName={'chevron-left'}
                 iconSize={24}
                 iconColor={AUI_COLORS.WalaTeal.hex}
@@ -103,7 +103,7 @@ class CarouselForAccounts extends Component {
               ]}
             >
               <Icons
-                variation={'material-design'}
+                iconSet={'material-design'}
                 iconName={'chevron-right'}
                 iconSize={24}
                 iconColor={AUI_COLORS.WalaTeal.hex}

@@ -20,7 +20,7 @@ class Badge extends Component {
       case 'icon':
         return(
           <Icons
-            variation={'material-design'}
+            iconSet={'material-design'}
             iconName={this.props.badgeIconName}
             iconSize={10}
             iconColor={'white'}

@@ -45,7 +45,7 @@ class PhoneInput extends Component {
               onChangeCountry(value);
             }}
             pickerIcon={<Icons
-              variation={'material-design'}
+              iconSet={'material-design'}
               iconName={'phone'}
               iconSize={26}
               iconColor={AUI_COLORS.WalaTeal.hex} />}
@@ -71,7 +71,7 @@ class PhoneInput extends Component {
             onPress={() => { this.input.focus(); }}
           >
             <Icons
-              variation={'material-design'}
+              iconSet={'material-design'}
               iconName={'phone'}
               iconSize={26}
               iconColor={AUI_COLORS.WalaTeal.hex}
@@ -84,7 +84,7 @@ class PhoneInput extends Component {
                 onPress={() => {onAddContactsSelect();}}
               >
                 <Icons
-                  variation={'material-design'}
+                  iconSet={'material-design'}
                   iconName={'contacts'}
                   iconSize={26}
                   iconColor={AUI_COLORS.WalaTeal.hex}

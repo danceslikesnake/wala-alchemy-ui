@@ -49,7 +49,7 @@ class BottomSheet extends Component {
           <Container actAsRow style={localStyles.bottomSheetAction}>
             <Subhead1 style={localStyles.bottomSheetActionText}>{option.label}</Subhead1>
             <Icons
-              variation={'material-design'}
+              iconSet={'material-design'}
               iconName={'chevron-right'}
               size={24}
               iconColor={AUI_COLORS.WalaTeal.hex}
