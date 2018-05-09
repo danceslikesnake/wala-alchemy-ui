@@ -4,7 +4,6 @@ import { StyleSheet } from 'react-native';
 import { TextField as Input } from 'react-native-material-textfield';
 
 import { Container, Caption1, Spacer, AUI_COLORS, AUI_LAYOUT, AUI_TYPOGRAPHY } from '../../../Elements';
-import { AUI_FUNCTIONS, AUI_CONSTANTS } from "../../../Helpers";
 
 class TextField extends Component {
   constructor(props) {
@@ -83,7 +82,8 @@ const styles = StyleSheet.create({
     color: AUI_COLORS.Slate.hex
   },
   titleTextStyle: {
-    fontFamily: AUI_TYPOGRAPHY.ProximaNova.semibold_italic
+    fontFamily: AUI_TYPOGRAPHY.ProximaNova.semibold_italic,
+    color: AUI_COLORS.Iron.hex
   },
   affixTextStyle: {
     color: AUI_COLORS.Iron.hex

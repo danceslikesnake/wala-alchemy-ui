@@ -16,6 +16,10 @@ class PhoneInput extends Component {
     this.input.focus();
   }
 
+  focusCountryPicker() {
+    this.countryPicker.openModal();
+  }
+
   render() {
     const {
       cca2,
@@ -41,6 +45,7 @@ class PhoneInput extends Component {
           style={[styles.inputWrapper, error ? {borderBottomColor: AUI_COLORS.TorchRed.hex} : null]}
         >
           <CountryPicker
+            ref={countryPicker => (this.countryPicker = countryPicker)}
             cca2={cca2}
             closeable={closeable}
             searchable={searchable}
