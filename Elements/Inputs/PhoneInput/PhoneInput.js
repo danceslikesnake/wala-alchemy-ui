@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { StyleSheet, TextInput, TouchableOpacity } from 'react-native';
+import { StyleSheet, TextInput, TouchableOpacity, InteractionManager } from 'react-native';
 import { Container, Caption1, Caption2, Spacer, AUI_COLORS, AUI_LAYOUT, AUI_TYPOGRAPHY } from '../../../Elements';
 import { AUI_FUNCTIONS } from "../../../Helpers";
 
@@ -10,6 +10,10 @@ import {Icons} from "../../";
 class PhoneInput extends Component {
   constructor(props) {
     super(props);
+  }
+
+  focus() {
+    this.input.focus();
   }
 
   render() {
@@ -46,6 +50,10 @@ class PhoneInput extends Component {
             requiredCountries={countries}
             onChange={(value) => {
               onChangeCountry(value);
+
+              InteractionManager.runAfterInteractions(() => {
+                this.focus();
+              });
             }}
             pickerIcon={<Icons
               iconSet={'material-design'}
