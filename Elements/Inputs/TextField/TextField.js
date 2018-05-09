@@ -15,6 +15,10 @@ class TextField extends Component {
     };
   }
 
+  focus() {
+    this.textInput.focus();
+  }
+
   onBlur() {
     this.setState({
       underlineColor: AUI_COLORS.Iron.hex
@@ -33,6 +37,7 @@ class TextField extends Component {
     return (
       <Container style={{paddingBottom: (title) ? 0 : 2}}>
         <Input
+          ref={textInput => (this.textInput = textInput)}
           {...props}
           label={label}
           value={value}
