@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { StyleSheet, TextInput, TouchableOpacity } from 'react-native';
-import { Container, Caption1, Spacer, AUI_COLORS, AUI_LAYOUT, AUI_TYPOGRAPHY } from '../../../Elements';
+import { Container, Caption1, Caption2, Spacer, AUI_COLORS, AUI_LAYOUT, AUI_TYPOGRAPHY } from '../../../Elements';
 import { AUI_FUNCTIONS } from "../../../Helpers";
 
 import CountryPicker from 'react-native-country-picker-modal';
@@ -17,6 +17,7 @@ class PhoneInput extends Component {
       cca2,
       onChangeCountry,
       searchable,
+      closeable,
       countries,
       phoneNumber,
       onChangePhoneText,
@@ -24,7 +25,8 @@ class PhoneInput extends Component {
       next,
       blurOnSubmit,
       addContacts,
-      onAddContactsSelect
+      onAddContactsSelect,
+      error
     } = this.props;
 
     return (
@@ -32,10 +34,11 @@ class PhoneInput extends Component {
         <Caption1>{'Mobile Phone'}</Caption1>
         <Container
           actAsRow={cca2 ? true : false}
-          style={styles.inputWrapper}
+          style={[styles.inputWrapper, error ? {borderBottomColor: AUI_COLORS.TorchRed.hex} : null]}
         >
           <CountryPicker
             cca2={cca2}
+            closeable={closeable}
             searchable={searchable}
             showLetters
             phoneSelector
@@ -93,6 +96,11 @@ class PhoneInput extends Component {
             </Container>
           )}
         </Container>
+        {error &&
+        <Container style={styles.error}>
+          <Caption2 style={styles.errorText}>{error}</Caption2>
+        </Container>
+        }
         <Spacer/>
       </Container>
     );
@@ -135,6 +143,12 @@ const styles = StyleSheet.create({
     height: 26,
     borderLeftWidth: 1,
     borderLeftColor: AUI_COLORS.Silver.hex
+  },
+  error: {
+    marginTop: 4
+  },
+  errorText: {
+    color: AUI_COLORS.TorchRed.hex
   }
 });
 
