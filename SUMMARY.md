@@ -3,7 +3,7 @@
 * Alchemy Design System
 * Introduction
 * Alchemy UI
-  * Philosophy
+  * Guidelines
     * Typography
     * Color
     * Vertical Rhythm
