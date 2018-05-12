@@ -31,11 +31,11 @@ function range(type, color, percentage, mixColor, mixPercent) {
 }
 
 const AUI_COLORS = {
-  hexToRgba: function(hex, opaciyty) {
+  getHexToRgba: function(hex, opacity) {
     let rgb = chroma(hex).rgb();
     return rgba(rgb[0] + ', ' + rgb[1] + ', ' + rgb[2], opacity);
   },
-  hexToRgb: function(hex) {
+  getHexToRgb: function(hex) {
     let rgb = chroma(hex).rgb();
     return rgb[0] + ', ' + rgb[1] + ', '+ rgb[2];
   },
@@ -73,9 +73,6 @@ const AUI_COLORS = {
     tint4: '#CCD0D4',
     getRgba: function(opacity) {
       return rgba(this.r + ', ' + this.g + ', ' + this.b, opacity);
-    },
-    getShade: function(percent) {
-      return range('shade', this.hex, percent, null, null);
     },
     getTint: function(percent) {
       return range('tint', this.hex, percent, null, null);
