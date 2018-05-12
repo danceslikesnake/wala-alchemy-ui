@@ -70,11 +70,13 @@ class DropdownMenu extends Component {
           }}
           onBlur={() => {
             this.onBlur();
-            onBlur();
+            if(onBlur)
+              onBlur();
           }}
           onFocus={() => {
             this.onFocus();
-            onFocus();
+            if(onFocus)
+              onFocus();
           }}
         />
       </Container>

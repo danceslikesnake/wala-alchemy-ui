@@ -39,7 +39,7 @@ class PhoneInput extends Component {
 
     return (
       <Container>
-        <Caption1>{'Mobile Phone'}</Caption1>
+        <Caption1 style={{color: AUI_COLORS.Iron.hex}}>{'Mobile Phone'}</Caption1>
         <Container
           actAsRow={cca2 ? true : false}
           style={[styles.inputWrapper, error ? {borderBottomColor: AUI_COLORS.TorchRed.hex} : null]}
@@ -97,7 +97,7 @@ class PhoneInput extends Component {
             <Container>
               <TouchableOpacity
                 style={styles.contactIcon}
-                onPress={() => {onAddContactsSelect();}}
+                onPress={() => { onAddContactsSelect ? onAddContactsSelect() : null; }}
               >
                 <Icons
                   iconSet={'material-design'}
@@ -136,7 +136,7 @@ const styles = StyleSheet.create({
   inputWrapper: {
     height: AUI_FUNCTIONS.gridBaseMultiplier(6, true),
     borderBottomWidth: 1,
-    borderBottomColor: AUI_COLORS.Iron.hex
+    borderBottomColor: AUI_COLORS.Slate.hex
   },
   input: {
     flex: 1,

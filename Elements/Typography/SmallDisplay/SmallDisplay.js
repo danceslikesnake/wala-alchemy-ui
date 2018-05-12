@@ -17,20 +17,22 @@ class SmallDisplay extends Component {
   render(){
     const {
       children,
+      color,
       ...props } = this.props;
     return(
       <Text
         {...props}
-        style={[styles.text, this.props.style]}
+        style={[styles.text, this.props.style, color ? {color: color} : null]}
       >
-        {children.toUpperCase()}
+        {children}
       </Text>
     );
   }
 }
 
 SmallDisplay.propTypes = {
-  children: PropTypes.string.isRequired
+  children: PropTypes.string.isRequired,
+  color: PropTypes.string
 };
 
 const styles = StyleSheet.create({

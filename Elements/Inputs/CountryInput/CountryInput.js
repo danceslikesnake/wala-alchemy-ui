@@ -15,7 +15,7 @@ class CountryInput extends Component {
 
     return (
       <Container>
-        <Caption1>{'Country'}</Caption1>
+        <Caption1 style={{color: AUI_COLORS.Iron.hex}}>{'Country'}</Caption1>
         <CountryPicker
           cca2={cca2}
           searchable={searchable}

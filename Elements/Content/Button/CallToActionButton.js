@@ -38,7 +38,7 @@ class CallToActionButton extends Component {
           ]}
         >
           <SmallDisplay style={styles[variation + 'Text']}>
-            {label}
+            {label.toUpperCase()}
           </SmallDisplay>
         </View>
       </TouchableNativeFeedback>

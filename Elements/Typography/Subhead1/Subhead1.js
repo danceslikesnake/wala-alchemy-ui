@@ -17,11 +17,12 @@ class Subhead1 extends Component {
   render(){
     const {
       children,
+      color,
       ...props } = this.props;
     return(
       <Text
         {...props}
-        style={[styles.text, this.props.style]}
+        style={[styles.text, this.props.style, color ? {color: color} : null]}
       >
         {children}
       </Text>
@@ -30,7 +31,8 @@ class Subhead1 extends Component {
 }
 
 Subhead1.propTypes = {
-  children: PropTypes.string.isRequired
+  children: PropTypes.string.isRequired,
+  color: PropTypes.string
 };
 
 const styles = StyleSheet.create({

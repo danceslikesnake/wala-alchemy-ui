@@ -14,12 +14,18 @@ class Spacer extends Component {
   render(){
     const {
       multiplier,
-      dense
+      dense,
+      horizontal
     } = this.props;
 
     return(
       <View
-        style={{height: dense ? multiplier * AUI_CONSTANTS.gridBaseDense : multiplier * AUI_CONSTANTS.gridBase}}
+        style={[
+          horizontal ?
+            {width: dense ? multiplier * AUI_CONSTANTS.gridBaseDense : multiplier * AUI_CONSTANTS.gridBase}
+            :
+            {height: dense ? multiplier * AUI_CONSTANTS.gridBaseDense : multiplier * AUI_CONSTANTS.gridBase}
+          ]}
       />
     );
   }
@@ -32,7 +38,8 @@ Spacer.defaultProps = {
 
 Spacer.propTypes = {
   multiplier: PropTypes.number,
-  dense: PropTypes.bool
+  dense: PropTypes.bool,
+  horizontal: PropTypes.bool
 };
 
 export {

@@ -82,8 +82,8 @@ const styles = StyleSheet.create({
     color: AUI_COLORS.Slate.hex
   },
   titleTextStyle: {
-    fontFamily: AUI_TYPOGRAPHY.ProximaNova.semibold_italic,
-    color: AUI_COLORS.Iron.hex
+    fontFamily: AUI_TYPOGRAPHY.ProximaNova.regular_italic,
+    color: AUI_COLORS.Slate.hex
   },
   affixTextStyle: {
     color: AUI_COLORS.Iron.hex
