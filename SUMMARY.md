@@ -1,8 +1,9 @@
 # Table of contents
 
 * Alchemy Design System
+* Introduction
 * Alchemy UI
-  * Principles
+  * Philosophy
     * Typography
     * Color
     * Vertical Rhythm
