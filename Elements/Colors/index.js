@@ -31,6 +31,14 @@ function range(type, color, percentage, mixColor, mixPercent) {
 }
 
 const AUI_COLORS = {
+  hexToRgba: function(hex, opaciyty) {
+    let rgb = chroma(hex).rgb();
+    return rgba(rgb[0] + ', ' + rgb[1] + ', ' + rgb[2], opacity);
+  },
+  hexToRgb: function(hex) {
+    let rgb = chroma(hex).rgb();
+    return rgb[0] + ', ' + rgb[1] + ', '+ rgb[2];
+  },
   WalaTeal: {
     hex: '#1DC4BD',
     r: 29,
