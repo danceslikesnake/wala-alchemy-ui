@@ -19,6 +19,9 @@ class Logomark extends Component {
       case 'logomarkBlack':
         return require('../img/logomarks/logomark-black.png');
         break;
+      case 'logomarkDala':
+        return require('../img/logomarks/logomark-dala.png');
+        break;
       case 'logomark':
       default:
         return require('../img/logomarks/logomark.png');
@@ -35,7 +38,7 @@ class Logomark extends Component {
 
     const imageHeight = (imgHeight) ? imgHeight : AUI_FUNCTIONS.gridBaseMultiplier(8);
     const imgStyle = {
-      width: Math.ceil(imageHeight * 1.8),
+      width: variation === 'logomarkDala' ? Math.ceil(imageHeight * 0.925) : Math.ceil(imageHeight * 1.8),
       height: imageHeight,
       resizeMode: 'contain'
     };
@@ -66,7 +69,8 @@ Logomark.propTypes = {
   variation: PropTypes.oneOf([
     'logomark',
     'logomarkBlack',
-    'logomarkWhite'
+    'logomarkWhite',
+    'logomarkDala'
   ]),
   imgHeight: PropTypes.oneOfType([
     PropTypes.number,
