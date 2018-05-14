@@ -16,6 +16,9 @@ class Logo extends Component {
       case 'logoWhiteText':
         return (centeredAdjust) ? require('../img/logos/logo-white-text-centered.png') : require('../img/logos/logo-white-text.png');
         break;
+      case 'logoPurpleText':
+        return (centeredAdjust) ? require('../img/logos/logo-purple-text-centered.png') : require('../img/logos/logo-purple-text.png');
+        break;
       case 'logoBlack':
         return (centeredAdjust) ? require('../img/logos/logo-black-centered.png') : require('../img/logos/logo-black.png');
         break;
@@ -72,8 +75,9 @@ Logo.propTypes = {
   variation: PropTypes.oneOf([
     'logo',
     'logoWhiteText',
+    'logoPurpleText',
     'logoBlack',
-    'logoWhite'
+    'logoWhite',
   ]),
   leftAlignAdjust: PropTypes.oneOfType([
     PropTypes.number,

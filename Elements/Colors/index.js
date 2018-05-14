@@ -31,11 +31,11 @@ function range(type, color, percentage, mixColor, mixPercent) {
 }
 
 const AUI_COLORS = {
-  getHexToRgba: function(hex, opacity) {
+  getRgbaFromHex: function(hex, opacity) {
     let rgb = chroma(hex).rgb();
     return rgba(rgb[0] + ', ' + rgb[1] + ', ' + rgb[2], opacity);
   },
-  getHexToRgb: function(hex) {
+  getRgbFromHex: function(hex) {
     let rgb = chroma(hex).rgb();
     return rgb[0] + ', ' + rgb[1] + ', '+ rgb[2];
   },
