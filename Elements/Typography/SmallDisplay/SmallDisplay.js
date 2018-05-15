@@ -24,7 +24,7 @@ class SmallDisplay extends Component {
         {...props}
         style={[styles.text, this.props.style, color ? {color: color} : null]}
       >
-        {children}
+        {children.toUpperCase()}
       </Text>
     );
   }
