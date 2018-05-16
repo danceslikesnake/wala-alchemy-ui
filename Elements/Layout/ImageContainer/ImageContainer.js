@@ -17,6 +17,9 @@ class ImageContainer extends Component {
       variation,
       source,
       actAsRow,
+      isFlex,
+      justifyContent,
+      alignItems,
       children,
       ...props
     } = this.props;
@@ -29,6 +32,8 @@ class ImageContainer extends Component {
         style={[
           styles[variation],
           actAsRow ? {flexDirection: 'row'} : null,
+          isFlex ? {flex: 1} : null,
+          {justifyContent: justifyContent, alignItems: alignItems},
           this.props.style
         ]}
       >
@@ -49,7 +54,22 @@ ImageContainer.propTypes = {
     'card'
   ]),
   source: PropTypes.number.isRequired,
-  actAsRow: PropTypes.bool
+  actAsRow: PropTypes.bool,
+  isFlex: PropTypes.bool,
+  justifyContent: PropTypes.oneOf([
+    'flex-start',
+    'center',
+    'flex-end',
+    'space-between',
+    'space-around',
+  ]),
+  alignItems: PropTypes.oneOf([
+    'flex-start',
+    'center',
+    'flex-end',
+    'baseline',
+    'stretch'
+  ])
 };
 
 const styles = StyleSheet.create({
@@ -61,7 +81,7 @@ const styles = StyleSheet.create({
   },
   card: {
     marginHorizontal: AUI_FUNCTIONS.gridBaseMultiplier()
-  }
+  },
 });
 
 export {

@@ -17,6 +17,9 @@ class GradientContainer extends Component {
       actAsRow,
       children,
       gradientDirection,
+      isFlex,
+      justifyContent,
+      alignItems,
       ...props
     } = this.props;
 
@@ -29,6 +32,8 @@ class GradientContainer extends Component {
             style={[
               styles[variation],
               actAsRow ? {flexDirection: 'row'} : null,
+              isFlex ? {flex: 1} : null,
+              {justifyContent: justifyContent, alignItems: alignItems},
               this.props.style
             ]}
           >
@@ -44,6 +49,7 @@ class GradientContainer extends Component {
             style={[
               styles[variation],
               actAsRow ? {flexDirection: 'row'} : null,
+              {justifyContent: justifyContent, alignItems: alignItems},
               this.props.style
             ]}
             start={{ x: 0.0, y: 0.25 }}
@@ -72,6 +78,21 @@ GradientContainer.propTypes = {
   gradientDirection: PropTypes.oneOf([
     'diagonal',
     'vertical'
+  ]),
+  isFlex: PropTypes.bool,
+  justifyContent: PropTypes.oneOf([
+    'flex-start',
+    'center',
+    'flex-end',
+    'space-between',
+    'space-around',
+  ]),
+  alignItems: PropTypes.oneOf([
+    'flex-start',
+    'center',
+    'flex-end',
+    'baseline',
+    'stretch'
   ])
 };
 

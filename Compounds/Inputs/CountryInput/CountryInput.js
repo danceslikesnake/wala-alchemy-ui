@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { Container, Caption1, Spacer, AUI_COLORS } from '../../../Elements';
+import { Container, Caption1, Spacer, AUI_COLORS } from '../../../Elements/index';
 
 import CountryPicker from 'react-native-country-picker-modal';
-import {Icons} from "../../";
+import {Icons} from "../../../Elements/index";
 
 class CountryInput extends Component {
   constructor(props) {

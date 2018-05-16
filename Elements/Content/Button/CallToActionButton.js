@@ -8,7 +8,7 @@ import {
 } from 'react-native';
 import { AUI_COLORS } from "../../Colors";
 import { SmallDisplay } from "../../Typography";
-import { AUI_FUNCTIONS } from "../../../Helpers";
+import {AUI_CONSTANTS, AUI_FUNCTIONS} from "../../../Helpers";
 import { AUI_LAYOUT } from "../../Layout";
 
 class CallToActionButton extends Component {
@@ -62,10 +62,10 @@ CallToActionButton.propTypes = {
 
 const styles = StyleSheet.create({
   button: {
-    flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    height: AUI_FUNCTIONS.gridBaseMultiplier(3)
+    height: AUI_FUNCTIONS.gridBaseMultiplier(3),
+    paddingHorizontal: AUI_CONSTANTS.gridBase
   },
   primary: {
     backgroundColor: AUI_COLORS.WalaTeal.hex

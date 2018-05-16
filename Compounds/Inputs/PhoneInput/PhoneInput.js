@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { StyleSheet, TextInput, TouchableOpacity, InteractionManager } from 'react-native';
-import { Container, Caption1, Caption2, Spacer, AUI_COLORS, AUI_LAYOUT, AUI_TYPOGRAPHY } from '../../../Elements';
-import { AUI_FUNCTIONS } from "../../../Helpers";
+import { Container, Caption1, Caption2, Spacer, AUI_COLORS, AUI_LAYOUT, AUI_TYPOGRAPHY } from '../../../Elements/index';
+import { AUI_FUNCTIONS } from "../../../Helpers/index";
 
 import CountryPicker from 'react-native-country-picker-modal';
-import {Icons} from "../../";
+import {Icons} from "../../../Elements/index";
 
 class PhoneInput extends Component {
   constructor(props) {
