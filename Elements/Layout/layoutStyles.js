@@ -34,6 +34,13 @@ const AUI_LAYOUT = {
     elevation: 4,
     backgroundColor: 'white'
   },
+  presets: {
+    card: {
+      borderRadius: 3,
+      elevation: 3,
+      backgroundColor: 'white'
+    }
+  }
 };
 
 export {
