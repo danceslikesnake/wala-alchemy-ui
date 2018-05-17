@@ -16,6 +16,9 @@ class Container extends Component {
     const {
       variation,
       actAsRow,
+      isFlex,
+      justifyContent,
+      alignItems,
       children,
       ...props
     } = this.props;
@@ -26,6 +29,8 @@ class Container extends Component {
         style={[
           styles[variation],
           actAsRow ? {flexDirection: 'row'} : null,
+          isFlex ? {flex: 1} : null,
+          {justifyContent: justifyContent, alignItems: alignItems},
           this.props.style
         ]}
       >
@@ -36,7 +41,9 @@ class Container extends Component {
 }
 
 Container.defaultProps = {
-  variation: 'full'
+  variation: 'full',
+  justifyContent: 'flex-start',
+  alignItems: 'stretch'
 };
 
 Container.propTypes = {
@@ -45,7 +52,22 @@ Container.propTypes = {
     'wide',
     'card'
   ]),
-  actAsRow: PropTypes.bool
+  actAsRow: PropTypes.bool,
+  isFlex: PropTypes.bool,
+  justifyContent: PropTypes.oneOf([
+    'flex-start',
+    'center',
+    'flex-end',
+    'space-between',
+    'space-around'
+  ]),
+  alignItems: PropTypes.oneOf([
+    'flex-start',
+    'center',
+    'flex-end',
+    'baseline',
+    'stretch'
+  ])
 };
 
 const styles = StyleSheet.create({

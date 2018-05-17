@@ -22,6 +22,7 @@ class TransparentButton extends Component {
       variation,
       onPress,
       label,
+      labelColor,
       ...props
     } = this.props;
 
@@ -36,7 +37,7 @@ class TransparentButton extends Component {
             AUI_LAYOUT.roundCorners
           ]}
         >
-          <SmallDisplay style={styles[variation + 'Text']}>
+          <SmallDisplay style={[styles[variation + 'Text'], labelColor ? {color: labelColor} : null]}>
             {label}
           </SmallDisplay>
         </View>
@@ -55,12 +56,12 @@ TransparentButton.propTypes = {
     'secondary'
   ]),
   onPress: PropTypes.func.isRequired,
-  label: PropTypes.string.isRequired
+  label: PropTypes.string.isRequired,
+  labelColor: PropTypes.string
 };
 
 const styles = StyleSheet.create({
   button: {
-    flex: 0,
     justifyContent: 'center',
     alignItems: 'center',
     height: AUI_FUNCTIONS.gridBaseMultiplier(3),

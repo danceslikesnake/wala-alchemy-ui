@@ -24,18 +24,18 @@ export {
   CallToActionButton,
   TransparentButton,
   Badge,
-  Icons,
+  Icons
+} from './Elements';
+
+export {
+  BottomSheet,
+  SectionHeader,
   CurrencyInput,
   TextField,
   CountryInput,
   PhoneInput,
   DropdownMenu,
   CarouselForAccounts
-} from './Elements';
-
-export {
-  BottomSheet,
-  SectionHeader
 } from './Compounds';
 
 export {

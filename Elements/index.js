@@ -36,12 +36,3 @@ export {
   Badge,
   Icons
 } from './Content/index';
-
-export {
-  CurrencyInput,
-  TextField,
-  CountryInput,
-  PhoneInput,
-  DropdownMenu,
-  CarouselForAccounts
-} from './Inputs/index';

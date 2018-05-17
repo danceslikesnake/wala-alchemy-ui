@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { StyleSheet, TouchableNativeFeedback } from 'react-native';
-import { Container, Subhead1, Caption1, Spacer, AUI_COLORS, AUI_LAYOUT } from '../../../Elements';
-import { AUI_CONSTANTS, AUI_FUNCTIONS } from "../../../Helpers";
+import { Container, Subhead1, Caption1, Spacer, AUI_COLORS, AUI_LAYOUT } from '../../../Elements/index';
+import { AUI_CONSTANTS, AUI_FUNCTIONS } from "../../../Helpers/index";
 import Carousel from 'react-native-snap-carousel';
 import LinearGradient from 'react-native-linear-gradient';
-import {Icons} from "../../";
+import {Icons} from "../../../Elements/index";
 
 class CarouselForAccounts extends Component {
   constructor(props) {
