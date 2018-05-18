@@ -11,11 +11,11 @@ class CountryInput extends Component {
   }
 
   render() {
-    const { cca2, onChange, searchable, countries, closeable, ...props } = this.props;
+    const { cca2, onChange, searchable, countries, closeable, inputLabel, ...props } = this.props;
 
     return (
       <Container>
-        <Caption1 style={{color: AUI_COLORS.Iron.hex}}>{'Country'}</Caption1>
+        <Caption1 style={{color: AUI_COLORS.Iron.hex}}>{inputLabel ? inputLabel : 'Country'}</Caption1>
         <CountryPicker
           cca2={cca2}
           closeable={closeable}
