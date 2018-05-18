@@ -11,13 +11,14 @@ class CountryInput extends Component {
   }
 
   render() {
-    const { cca2, onChange, searchable, countries, ...props } = this.props;
+    const { cca2, onChange, searchable, countries, closeable, ...props } = this.props;
 
     return (
       <Container>
         <Caption1 style={{color: AUI_COLORS.Iron.hex}}>{'Country'}</Caption1>
         <CountryPicker
           cca2={cca2}
+          closeable={closeable}
           searchable={searchable}
           showLetters
           enableEmptySections
