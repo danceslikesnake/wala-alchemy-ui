@@ -53,7 +53,10 @@ ImageContainer.propTypes = {
     'wide',
     'card'
   ]),
-  source: PropTypes.number.isRequired,
+  source: PropTypes.oneOfType([
+    PropTypes.number,
+    PropTypes.object
+  ]),
   actAsRow: PropTypes.bool,
   isFlex: PropTypes.bool,
   justifyContent: PropTypes.oneOf([
