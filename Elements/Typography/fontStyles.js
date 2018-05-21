@@ -22,11 +22,11 @@ const AUI_TYPOGRAPHY = {
     size42lineHeight: 68,
   },
   typeScaleDense: {
-    size12: 12,
+    size10: 10,
     size14: 14,
     size23: 23,
     size37: 37,
-    size12lineHeight: 18,
+    size10lineHeight: 16,
     size14lineHeight: 23,
     size23lineHeight: 37,
     size37lineHeight: 60
