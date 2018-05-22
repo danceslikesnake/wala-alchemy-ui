@@ -7,7 +7,7 @@ import Carousel from 'react-native-snap-carousel';
 import LinearGradient from 'react-native-linear-gradient';
 import {Icons} from "../../../Elements/index";
 
-class CarouselForAccounts extends Component {
+class AccountCarousel extends Component {
   constructor(props) {
     super(props);
   }
@@ -117,7 +117,7 @@ class CarouselForAccounts extends Component {
   }
 }
 
-CarouselForAccounts.propTypes = {
+AccountCarousel.propTypes = {
   label: PropTypes.string,
   slides: PropTypes.array.isRequired,
   onSnapToItem: PropTypes.func,
@@ -172,5 +172,5 @@ const styles = StyleSheet.create({
 });
 
 export {
-  CarouselForAccounts
+  AccountCarousel
 }

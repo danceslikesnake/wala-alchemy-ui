@@ -29,13 +29,12 @@ export {
 
 export {
   BottomSheet,
-  SectionHeader,
+  CategoryHeader,
   CurrencyInput,
   TextField,
   CountryInput,
   PhoneInput,
-  DropdownMenu,
-  CarouselForAccounts
+  DropdownMenu
 } from './Compounds';
 
 export {

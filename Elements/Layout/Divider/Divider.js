@@ -18,17 +18,22 @@ class Divider extends Component {
     const {
       size,
       extendLeftToFillContainer,
-      extendRightToFillContainer
+      extendRightToFillContainer,
+      extendBottomToFillContainer,
+      extendTopToFillContainer,
+      vertical
     } = this.props;
 
     return(
       <View
         style={[
-          styles[size],
+          vertical ? styles[size+ 'Vertical'] : styles[size],
           styles.divider,
           {
             marginLeft: 0 - extendLeftToFillContainer,
-            marginRight: 0 - extendRightToFillContainer
+            marginRight: 0 - extendRightToFillContainer,
+            marginTop: 0 - extendTopToFillContainer,
+            marginBottom: 0 - extendBottomToFillContainer
           }
         ]}
       >
@@ -46,7 +51,9 @@ class Divider extends Component {
 Divider.defaultProps = {
   size: 'tiny',
   extendLeftToFillContainer: 0,
-  extendRightToFillContainer: 0
+  extendRightToFillContainer: 0,
+  extendTopToFillContainer: 0,
+  extendBottomToFillContainer: 0
 };
 
 Divider.propTypes = {
@@ -57,7 +64,10 @@ Divider.propTypes = {
     'large'
   ]),
   extendLeftToFillContainer: PropTypes.number,
-  extendRightToFillContainer: PropTypes.number
+  extendRightToFillContainer: PropTypes.number,
+  extendTopToFillContainer: PropTypes.number,
+  extendBottomToFillContainer: PropTypes.number,
+  vertical: PropTypes.bool
 };
 
 const styles = StyleSheet.create({
@@ -73,14 +83,26 @@ const styles = StyleSheet.create({
   tiny: {
     height: 1,
   },
+  tinyVertical: {
+    width: 1
+  },
   small: {
     height: 4,
+  },
+  smallVertical: {
+    width: 1
   },
   medium: {
     height: 8,
   },
+  mediumVertical: {
+    width: 1
+  },
   large: {
     height: AUI_FUNCTIONS.gridBaseMultiplier(),
+  },
+  largeVertical: {
+    width: 1
   }
 });
 

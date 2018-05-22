@@ -1,10 +1,8 @@
-export { BottomSheet } from './BottomSheet/BottomSheet';
-export { SectionHeader } from './SectionHeader/SectionHeader';
+export { BottomSheet, DropdownMenu } from './Universal/Choices';
+export { CategoryHeader } from './Universal/Headers';
 export {
   CurrencyInput,
   TextField,
   CountryInput,
-  PhoneInput,
-  DropdownMenu,
-  CarouselForAccounts
-} from './Inputs/index';
+  PhoneInput
+} from './Universal/Inputs';

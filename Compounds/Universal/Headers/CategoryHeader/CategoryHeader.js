@@ -7,12 +7,12 @@ import {
   SmallDisplay,
   AUI_COLORS,
   AUI_LAYOUT
-} from '../../Elements';
+} from '../../../../Elements/index';
 import {
   AUI_FUNCTIONS
-} from "../../Helpers";
+} from "../../../../Helpers/index";
 
-class SectionHeader extends Component {
+class CategoryHeader extends Component {
   constructor(props) {
     super(props);
   }
@@ -31,7 +31,7 @@ class SectionHeader extends Component {
   }
 }
 
-SectionHeader.propTypes = {
+CategoryHeader.propTypes = {
   label: PropTypes.string
 };
 
@@ -45,5 +45,5 @@ const localStyles = StyleSheet.create({
 
 
 export {
-  SectionHeader
+  CategoryHeader
 }

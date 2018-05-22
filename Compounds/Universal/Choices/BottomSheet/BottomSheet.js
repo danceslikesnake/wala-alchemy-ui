@@ -11,10 +11,10 @@ import {
   Icons,
   Divider,
   AUI_COLORS,
-} from '../../Elements';
+} from '../../../../Elements/index';
 import {
   AUI_FUNCTIONS
-} from "../../Helpers";
+} from "../../../../Helpers/index";
 
 class BottomSheet extends Component {
   constructor(props) {
