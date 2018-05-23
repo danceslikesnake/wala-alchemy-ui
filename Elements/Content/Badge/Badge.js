@@ -22,7 +22,7 @@ class Badge extends Component {
           <Icons
             iconSet={'material-design'}
             iconName={this.props.badgeIconName}
-            iconSize={10}
+            iconSize={this.props.size === 'large' ? 13 : 10}
             iconColor={'white'}
           />
         );
@@ -41,7 +41,8 @@ class Badge extends Component {
       badgeColor,
       pinToBottom,
       bottomAdjust,
-      rightAdjust
+      rightAdjust,
+      size
     } = this.props;
 
     const content = this.getContent();
@@ -49,7 +50,7 @@ class Badge extends Component {
     return(
       <View
         style={[
-          styles.badge,
+          size === 'large' ? styles.badgeLarge : styles.badge,
           badgeColor ? {backgroundColor: badgeColor} : {backgroundColor: AUI_COLORS.TorchRed.hex},
           pinToBottom ? {
             position: 'absolute',
@@ -65,7 +66,8 @@ class Badge extends Component {
 }
 
 Badge.defaultProps = {
-  variation: 'number'
+  variation: 'number',
+  size: 'small'
 };
 
 Badge.propTypes = {
@@ -78,13 +80,24 @@ Badge.propTypes = {
   badgeColor: PropTypes.string,
   pinToBottom: PropTypes.bool,
   bottomAdjust: PropTypes.number,
-  rightAdjust: PropTypes.number
+  rightAdjust: PropTypes.number,
+  size: PropTypes.oneOf([
+    'small',
+    'large'
+  ])
 };
 
 const styles = StyleSheet.create({
   badge: {
     width: 16,
     height: 16,
+    borderRadius: 8,
+    justifyContent: 'center',
+    alignItems: 'center'
+  },
+  badgeLarge: {
+    width: 26,
+    height: 26,
     borderRadius: 8,
     justifyContent: 'center',
     alignItems: 'center'
