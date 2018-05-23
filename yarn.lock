@@ -4057,9 +4057,9 @@ react-native-clcasher@1.0.0:
   dependencies:
     mock-async-storage "^1.0.3"
 
-"react-native-country-picker-modal@git+https://github.com/GetWala/wala-react-native-country-picker-modal.git#alchemy-ui-changes":
-  version "0.3.9"
-  resolved "git+https://github.com/GetWala/wala-react-native-country-picker-modal.git#9835aafc35e5dba436156d20f47fe6725ac655f9"
+"react-native-country-picker-modal@git+https://github.com/GetWala/wala-react-native-country-picker-modal.git#0.4.3":
+  version "0.4.3"
+  resolved "git+https://github.com/GetWala/wala-react-native-country-picker-modal.git#20b72cecd0b9387901c7bbaf82a5a35792f2f9f5"
   dependencies:
     babel-preset-react-native-stage-0 "1.0.1"
     lodash "4.17.4"
