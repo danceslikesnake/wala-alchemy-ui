@@ -90,19 +90,19 @@ const styles = StyleSheet.create({
     height: 4,
   },
   smallVertical: {
-    width: 1
+    width: 4
   },
   medium: {
     height: 8,
   },
   mediumVertical: {
-    width: 1
+    width: 8
   },
   large: {
     height: AUI_FUNCTIONS.gridBaseMultiplier(),
   },
   largeVertical: {
-    width: 1
+    width: AUI_FUNCTIONS.gridBaseMultiplier()
   }
 });
 

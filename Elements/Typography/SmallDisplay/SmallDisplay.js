@@ -34,7 +34,7 @@ class SmallDisplay extends Component {
           isFlex ? {flex: 1} : null
         ]}
       >
-        {children}
+        {children.toUpperCase()}
       </Text>
     );
   }

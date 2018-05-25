@@ -34,7 +34,9 @@ export {
   TextField,
   CountryInput,
   PhoneInput,
-  DropdownMenu
+  DropdownMenu,
+  TileActions,
+  Banner
 } from './Compounds';
 
 export {
