@@ -49,6 +49,7 @@ class GradientContainer extends Component {
             style={[
               styles[variation],
               actAsRow ? {flexDirection: 'row'} : null,
+              isFlex ? {flex: 1} : null,
               {justifyContent: justifyContent, alignItems: alignItems},
               this.props.style
             ]}
