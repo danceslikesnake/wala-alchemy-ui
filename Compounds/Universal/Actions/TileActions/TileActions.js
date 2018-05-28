@@ -96,7 +96,7 @@ class TileActions extends Component {
               iconSize={26} iconColor={AUI_COLORS.WalaTeal.hex}
             />
             <Spacer dense/>
-            <Caption1>{tile.label.toUpperCase()}</Caption1>
+            <Caption1 color={AUI_COLORS.WalaTeal.shade2}>{tile.label.toUpperCase()}</Caption1>
           </Container>
         </TouchableNativeFeedback>
       );
