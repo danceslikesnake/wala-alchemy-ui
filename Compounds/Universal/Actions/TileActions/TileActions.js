@@ -30,7 +30,7 @@ class TileActions extends Component {
     this.props.tiles.map((obj, idx) => {
       if(obj.iconToggle) {
         let addVar = {};
-        addVar['tile_' + idx + '_toggle'] = false;
+        addVar['tile_' + idx + '_toggle'] = obj.iconToggle.initialToggleState;
         this.setState(addVar);
       }
     });
