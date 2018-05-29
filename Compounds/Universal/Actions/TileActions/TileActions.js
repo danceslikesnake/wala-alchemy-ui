@@ -26,10 +26,17 @@ class TileActions extends Component {
   }
 
   componentWillMount() {
-    const tilesToChunks = this._arrayChunk(this.props.tiles, this.props.rowCount);
-    switch(this.props.rowCount) {
+    // set any toggle state variables
+    this.props.tiles.map((obj, idx) => {
+      if(obj.iconToggle) {
+        let addVar = {};
+        addVar['tile_' + idx + '_toggle'] = false;
+        this.setState(addVar);
+      }
+    });
 
-    }
+    // chunk the tiles according to rowcount
+    const tilesToChunks = this._arrayChunk(this.props.tiles, this.props.rowCount);
     this.setState({
       tileArray: tilesToChunks,
       forcedWidth: (100 / this.props.rowCount) + '%'
@@ -37,7 +44,7 @@ class TileActions extends Component {
   }
 
   _arrayChunk = (myArray, chunk_size) => {
-    var results = [];
+    let results = [];
 
     while (myArray.length) {
       results.push(myArray.splice(0, chunk_size));
@@ -73,14 +80,21 @@ class TileActions extends Component {
           </Container>
         );
     }
-  }
+  };
 
   _renderTile = (tile, idx2, addBorder) => {
     if(tile.specialTile) {
       return this._renderSpecialTiles(tile.specialTile, tile.specialTileOptions, idx2, addBorder);
     } else {
       return (
-        <TouchableNativeFeedback key={idx2} onPress={tile.onPress}>
+        <TouchableNativeFeedback key={idx2} onPress={() => {
+          tile.onPress();
+          if(tile.iconToggle) {
+            let updateVar = {};
+            updateVar['tile_' + idx2 + '_toggle'] = !this.state['tile_' + idx2 + '_toggle'];
+            this.setState(updateVar);
+          }
+        }}>
           <Container
             isFlex
             alignItems={'center'}
@@ -91,8 +105,16 @@ class TileActions extends Component {
             ]}
           >
             <Icons
-              iconName={tile.iconName}
-              iconSet={tile.iconSet ? tile.iconSet : 'wala'}
+              iconName={
+                tile.iconToggle ?
+                  (this.state['tile_' + idx2 + '_toggle'] ? tile.iconToggle.activeIcon : tile.iconToggle.inActiveIcon)
+                  : tile.iconName
+              }
+              iconSet={
+                tile.iconToggle ? (
+                  this.state['tile_' + idx2 + '_toggle'] ? tile.iconToggle.activeIconSet : tile.iconToggle.inActiveIconSet
+                ) : (tile.iconSet ? tile.iconSet : 'wala')
+              }
               iconSize={26} iconColor={AUI_COLORS.WalaTeal.hex}
             />
             <Spacer dense/>
