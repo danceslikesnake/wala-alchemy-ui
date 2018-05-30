@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { StyleSheet } from 'react-native';
-import { Container, Caption1, Spacer, AUI_COLORS, AUI_LAYOUT, AUI_TYPOGRAPHY } from '../../../../Elements/index';
+import { Container, Caption1, Caption2, Spacer, AUI_COLORS, AUI_LAYOUT, AUI_TYPOGRAPHY } from '../../../../Elements/index';
 import { AUI_FUNCTIONS } from "../../../../Helpers/index";
 
 import { TextInputMask } from 'react-native-masked-text';
@@ -41,12 +41,12 @@ class CurrencyInput extends Component {
   }
 
   render() {
-    const { label, options, value, onChangeText, autoFocus, convertedValue } = this.props;
+    const { label, options, value, onChangeText, autoFocus, convertedValue, error } = this.props;
 
     return (
       <Container>
         <Container actAsRow>
-          <Caption1 style={{ height: AUI_FUNCTIONS.gridBaseMultiplier(2), color: this.state.labelColor }}>{label}</Caption1>
+          <Caption1 style={{ height: AUI_FUNCTIONS.gridBaseMultiplier(2), color: error ? AUI_COLORS.TorchRed.hex : this.state.labelColor }}>{label}</Caption1>
           {convertedValue && (
             <Caption1 style={{ height: 26, position: 'absolute', right: 0 }}>
               {convertedValue}
@@ -87,12 +87,15 @@ class CurrencyInput extends Component {
               AUI_LAYOUT.roundCorners,
               {
                 borderBottomColor: this.state.underline
-              },
+              }
             ]}
             value={value}
             onChangeText={onChangeText}
           />
         </Container>
+        {error &&
+        <Caption2 style={styles.errorText} color={AUI_COLORS.Slate.hex}>{error}</Caption2>
+        }
         <Spacer />
       </Container>
     );
@@ -126,7 +129,7 @@ const styles = StyleSheet.create({
     fontSize: 26,
     height: AUI_FUNCTIONS.gridBaseMultiplier(4),
     fontFamily: AUI_TYPOGRAPHY.ProximaNova.semibold,
-    color: AUI_COLORS.Charcoal.hex,
+    color: AUI_COLORS.Charcoal.tint1,
     textAlign: 'center',
     fontWeight: '400',
     position: 'absolute',
@@ -142,6 +145,10 @@ const styles = StyleSheet.create({
     top: 0,
     left: 0,
     zIndex: 4
+  },
+  errorText: {
+    fontFamily: AUI_TYPOGRAPHY.ProximaNova.regular_italic,
+    paddingTop: 4
   }
 });
 
