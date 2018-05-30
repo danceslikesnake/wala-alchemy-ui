@@ -162,7 +162,7 @@ TileActions.defaultProps = {
 
 TileActions.propTypes = {
   tiles: PropTypes.array.isRequired,
-  rowCount: PropTypes.oneOf([2, 3]),
+  rowCount: PropTypes.oneOf([1, 2, 3]),
   backgroundColor: PropTypes.string
 };
 

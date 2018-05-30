@@ -41,7 +41,7 @@ class DenseBodyText extends Component {
 }
 
 DenseBodyText.propTypes = {
-  children: PropTypes.string.isRequired,
+  children: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
   color: PropTypes.string,
   alignCenter: PropTypes.bool,
   alignRight: PropTypes.bool,
