@@ -36,7 +36,8 @@ export {
   PhoneInput,
   DropdownMenu,
   TileActions,
-  Banner
+  Banner,
+  ConnectionUserItem
 } from './Compounds';
 
 export {
