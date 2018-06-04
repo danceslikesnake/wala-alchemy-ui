@@ -1,4 +1,7 @@
 export {
+  ConnectionUserItem
+} from './Connections';
+export {
   BottomSheet,
   DropdownMenu,
   CategoryHeader,
