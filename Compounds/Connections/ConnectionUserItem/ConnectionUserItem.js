@@ -10,6 +10,7 @@ import {
   Subhead1,
   Icons,
   Spacer,
+  Avatar,
   AUI_COLORS,
   AUI_LAYOUT
 } from '../../../Elements/index';
@@ -64,11 +65,32 @@ class ConnectionUserItem extends Component {
     ];
   };
 
+  renderAvatar = (user) => {
+    if(user.profileImage) {
+      return(
+        <Avatar
+          variation={'image'}
+          imageSource={{uri: user.profileImage}}
+          size={'small'}
+        />
+      );
+    } else {
+      return(
+        <Avatar
+          variation={'initials'}
+          initials={`${user.firstName.charAt(0)} ${user.surname.charAt(0)}`}
+          size={'small'}
+        />
+      );
+    }
+  };
+
   render(){
     const {onRef, user, rightButtons, onPress, isFavourite, favouriteOnPress, bounceOnMount} = this.props;
     const itemHeight = AUI_FUNCTIONS.gridBaseMultiplier(5);
     const rightSwipeButtons = rightButtons ? this.renderRightButtons(rightButtons, itemHeight) : null;
     const rightButtonsWidth = (itemHeight * rightButtons.length) + 8 + (8 * rightButtons.length);
+    const avatar = this.renderAvatar(user);
 
     return(
       <Swipeable
@@ -87,6 +109,7 @@ class ConnectionUserItem extends Component {
               {height: itemHeight, marginBottom: 4}
             ]}
           >
+            {avatar}
             <Spacer dense horizontal />
             <Subhead1 color={AUI_COLORS.Charcoal.hex} isFlex>{`${user.firstName} ${user.surname}`}</Subhead1>
             {favouriteOnPress &&
