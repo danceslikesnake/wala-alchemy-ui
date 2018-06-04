@@ -78,7 +78,7 @@ class ConnectionUserItem extends Component {
       return(
         <Avatar
           variation={'initials'}
-          initials={`${user.firstName.charAt(0)} ${user.surname.charAt(0)}`}
+          initials={`${user.firstName.charAt(0)}${user.surname.charAt(0)}`}
           size={'small'}
         />
       );
