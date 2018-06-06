@@ -1,5 +1,4 @@
-import React  from 'react';
-import { Dimensions, PixelRatio, StatusBar } from 'react-native';
+import React, { Dimensions, PixelRatio, StatusBar } from 'react-native';
 
 let { height, width } = Dimensions.get('window');
 
