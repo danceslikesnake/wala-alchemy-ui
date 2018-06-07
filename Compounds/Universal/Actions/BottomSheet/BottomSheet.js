@@ -81,7 +81,7 @@ class BottomSheet extends Component {
         )}
         {actions}
         <Divider size={'large'} />
-        <Container actAsRow style={localStyles.bottomSheetCancel}>
+        <Container style={localStyles.bottomSheetCancel}>
           <CallToActionButton
             onPress={() => {
               this.refs.bottomSheet.close();
