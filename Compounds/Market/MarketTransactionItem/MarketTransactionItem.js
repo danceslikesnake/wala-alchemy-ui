@@ -109,7 +109,7 @@ class MarketTransactionItem extends Component {
         <TouchableNativeFeedback onPress={onPress}>
           <Container
             variation={'wide'}
-            style={[AUI_LAYOUT.presets.card, { backgroundColor: 'white' }]}>
+            style={[AUI_LAYOUT.presets.card, { backgroundColor: 'white', marginBottom: 4 }]}>
             <Container
               actAsRow
               alignItems={'center'}
