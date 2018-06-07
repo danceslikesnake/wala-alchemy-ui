@@ -37,7 +37,8 @@ export {
   DropdownMenu,
   TileActions,
   Banner,
-  ConnectionUserItem
+  ConnectionUserItem,
+  MarketTransactionItem
 } from './Compounds';
 
 export {
