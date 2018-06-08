@@ -21,12 +21,15 @@ class BodyText extends Component {
       alignCenter,
       alignRight,
       isFlex,
+      dense,
+      fontFamily,
       ...props } = this.props;
     return(
       <Text
         {...props}
         style={[
-          styles.text,
+          dense ? styles.denseText : styles.text,
+          fontFamily === 'Poppins' ? {fontFamily: AUI_TYPOGRAPHY.Poppins.regular} : {fontFamily: AUI_TYPOGRAPHY.ProximaNova.regular},
           this.props.style,
           color ? {color: color} : null,
           alignCenter ? {textAlign: 'center'} : null,
@@ -45,16 +48,25 @@ BodyText.propTypes = {
   color: PropTypes.string,
   alignCenter: PropTypes.bool,
   alignRight: PropTypes.bool,
-  isFlex: PropTypes.bool
+  isFlex: PropTypes.bool,
+  dense: PropTypes.bool,
+  fontFamily: PropTypes.oneOf([
+    'ProximaNova',
+    'Poppins'
+  ]),
 };
 
 const styles = StyleSheet.create({
   text: {
     color: AUI_COLORS.Slate.hex,
-    fontFamily: AUI_TYPOGRAPHY.ProximaNova.regular,
     fontSize: AUI_TYPOGRAPHY.typeScale.size16,
     lineHeight: AUI_TYPOGRAPHY.typeScale.size16lineHeight
-  }
+  },
+  denseText: {
+    color: AUI_COLORS.Slate.hex,
+    fontSize: AUI_TYPOGRAPHY.typeScaleDense.size14,
+    lineHeight: AUI_TYPOGRAPHY.typeScaleDense.size14lineHeight
+  },
 });
 
 export {

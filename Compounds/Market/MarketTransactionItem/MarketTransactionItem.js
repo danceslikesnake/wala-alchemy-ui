@@ -7,8 +7,8 @@ import {
 import {
   Container,
   Divider,
-  Caption1,
-  Subhead1,
+  Caption,
+  Subheadline,
   Icons,
   Spacer,
   SmallDisplay,
@@ -52,14 +52,14 @@ class MarketTransactionItem extends Component {
                 iconSize={26}
               />
               <Spacer dense />
-              <Caption1
+              <Caption
                 color={
                   btn.buttonType === 'negative'
                     ? AUI_COLORS.TorchRed.shade2
                     : AUI_COLORS.WalaTeal.shade2
                 }>
                 {btn.label.toUpperCase()}
-              </Caption1>
+              </Caption>
             </Container>
           </TouchableNativeFeedback>
         );
@@ -115,14 +115,14 @@ class MarketTransactionItem extends Component {
               alignItems={'center'}
               style={{ height: AUI_FUNCTIONS.gridBaseMultiplier(4) }}>
               <Container isFlex>
-                <Caption1 color={AUI_COLORS.Charcoal.hex}>{provider}</Caption1>
-                <Subhead1
+                <Caption color={AUI_COLORS.Charcoal.hex}>{provider}</Caption>
+                <Subheadline
                   color={AUI_COLORS.Charcoal.hex}
                   ellipsizeMode={'tail'}
                   numberOfLines={1}
                   style={{ marginTop: -4 }}>
                   {productName}
-                </Subhead1>
+                </Subheadline>
               </Container>
               {statusComponent}
             </Container>
@@ -131,10 +131,10 @@ class MarketTransactionItem extends Component {
               actAsRow
               alignItems={'center'}
               style={{ height: AUI_FUNCTIONS.gridBaseMultiplier(3) }}>
-              <Caption1>{'PRICE'}</Caption1>
-              <Subhead1 isFlex alignRight color={AUI_COLORS.Charcoal.hex}>
+              <Caption>{'PRICE'}</Caption>
+              <Subheadline isFlex alignRight color={AUI_COLORS.Charcoal.hex}>
                 {price}
-              </Subhead1>
+              </Subheadline>
             </Container>
           </Container>
         </TouchableNativeFeedback>

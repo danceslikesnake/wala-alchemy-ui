@@ -3,16 +3,13 @@ export { AUI_COLORS } from './Colors/index';
 export {
   AUI_TYPOGRAPHY,
   SmallDisplay,
-  Caption1,
-  Caption2,
-  DenseBodyText,
+  Caption,
+  CaptionEmphasis,
   BodyText,
-  Subhead1,
-  Subhead2,
+  Subheadline,
   Display,
-  Display2,
-  Headline1,
-  Headline2
+  Headline,
+  Title
 } from './Typography/index';
 
 export {

@@ -5,8 +5,8 @@ import Modal from 'react-native-modalbox';
 import {
   Container,
   SmallDisplay,
-  Subhead1,
-  Caption1,
+  Subheadline,
+  Caption,
   CallToActionButton,
   Icons,
   Divider,
@@ -47,7 +47,7 @@ class BottomSheet extends Component {
             option.onPress();
           }}>
           <Container actAsRow style={localStyles.bottomSheetAction}>
-            <Subhead1 style={localStyles.bottomSheetActionText}>{option.label}</Subhead1>
+            <Subheadline style={localStyles.bottomSheetActionText}>{option.label}</Subheadline>
             <Icons
               iconSet={'material-design'}
               iconName={'chevron-right'}
@@ -76,7 +76,7 @@ class BottomSheet extends Component {
         )}
         {description && (
           <Container style={localStyles.bottomSheetQuestion}>
-            <Caption1>{description}</Caption1>
+            <Caption>{description}</Caption>
           </Container>
         )}
         {actions}

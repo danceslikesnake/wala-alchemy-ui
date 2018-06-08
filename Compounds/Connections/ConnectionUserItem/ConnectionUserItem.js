@@ -7,7 +7,7 @@ import {
 import {
   Container,
   SmallDisplay,
-  Subhead1,
+  Subheadline,
   Icons,
   Spacer,
   Avatar,
@@ -111,7 +111,7 @@ class ConnectionUserItem extends Component {
           >
             {avatar}
             <Spacer dense horizontal />
-            <Subhead1 color={AUI_COLORS.Charcoal.hex} isFlex>{`${user.firstName} ${user.surname}`}</Subhead1>
+            <Subheadline color={AUI_COLORS.Charcoal.hex} isFlex>{`${user.firstName} ${user.surname}`}</Subheadline>
             {favouriteOnPress &&
             <TouchableNativeFeedback onPress={favouriteOnPress}>
               <Container justifyContent={'center'} style={[{height: itemHeight}, styles.favoriteButton]}>

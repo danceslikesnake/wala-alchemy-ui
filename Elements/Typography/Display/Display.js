@@ -21,12 +21,13 @@ class Display extends Component {
       alignCenter,
       alignRight,
       isFlex,
+      dense,
       ...props } = this.props;
     return(
       <Text
         {...props}
         style={[
-          styles.text,
+          dense ? styles.denseText : styles.text,
           this.props.style,
           color ? {color: color} : null,
           alignCenter ? {textAlign: 'center'} : null,
@@ -45,7 +46,8 @@ Display.propTypes = {
   color: PropTypes.string,
   alignCenter: PropTypes.bool,
   alignRight: PropTypes.bool,
-  isFlex: PropTypes.bool
+  isFlex: PropTypes.bool,
+  dense: PropTypes.bool
 };
 
 const styles = StyleSheet.create({
@@ -53,6 +55,11 @@ const styles = StyleSheet.create({
     color: AUI_COLORS.Slate.hex,
     fontFamily: AUI_TYPOGRAPHY.ProximaNova.extrabold,
     fontSize: AUI_TYPOGRAPHY.typeScale.size26
+  },
+  denseText: {
+    color: AUI_COLORS.Slate.hex,
+    fontFamily: AUI_TYPOGRAPHY.ProximaNova.extrabold,
+    fontSize: AUI_TYPOGRAPHY.typeScaleDense.size23
   }
 });
 

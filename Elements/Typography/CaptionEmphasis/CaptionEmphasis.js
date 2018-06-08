@@ -9,7 +9,7 @@ import {
 } from "../../index";
 import {AUI_TYPOGRAPHY} from "../fontStyles";
 
-class Headline2 extends Component {
+class CaptionEmphasis extends Component {
   constructor(props) {
     super(props);
   }
@@ -21,12 +21,13 @@ class Headline2 extends Component {
       alignCenter,
       alignRight,
       isFlex,
+      dense,
       ...props } = this.props;
     return(
       <Text
         {...props}
         style={[
-          styles.text,
+          dense ? styles.denseText : styles.text,
           this.props.style,
           color ? {color: color} : null,
           alignCenter ? {textAlign: 'center'} : null,
@@ -40,23 +41,30 @@ class Headline2 extends Component {
   }
 }
 
-Headline2.propTypes = {
+CaptionEmphasis.propTypes = {
   children: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
   color: PropTypes.string,
   alignCenter: PropTypes.bool,
   alignRight: PropTypes.bool,
-  isFlex: PropTypes.bool
+  isFlex: PropTypes.bool,
+  dense: PropTypes.bool
 };
 
 const styles = StyleSheet.create({
   text: {
     color: AUI_COLORS.Slate.hex,
-    fontFamily: AUI_TYPOGRAPHY.Poppins.light,
-    fontSize: AUI_TYPOGRAPHY.typeScale.size42,
-    lineHeight: AUI_TYPOGRAPHY.typeScale.size42lineHeight
-  }
+    fontSize: AUI_TYPOGRAPHY.typeScale.size12,
+    lineHeight: AUI_TYPOGRAPHY.typeScale.size12lineHeight,
+    fontFamily: AUI_TYPOGRAPHY.ProximaNova.semibold_italic
+  },
+  denseText: {
+    color: AUI_COLORS.Slate.hex,
+    fontSize: AUI_TYPOGRAPHY.typeScaleDense.size10,
+    lineHeight: AUI_TYPOGRAPHY.typeScaleDense.size10lineHeight,
+    fontFamily: AUI_TYPOGRAPHY.ProximaNova.semibold_italic
+  },
 });
 
 export {
-  Headline2
+  CaptionEmphasis
 }
