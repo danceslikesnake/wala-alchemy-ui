@@ -89,7 +89,7 @@ class ConnectionUserItem extends Component {
     const {onRef, user, rightButtons, onPress, isFavourite, favouriteOnPress, bounceOnMount} = this.props;
     const itemHeight = AUI_FUNCTIONS.gridBaseMultiplier(5);
     const rightSwipeButtons = rightButtons ? this.renderRightButtons(rightButtons, itemHeight) : null;
-    const rightButtonsWidth = (itemHeight * rightButtons.length) + 8 + (8 * rightButtons.length);
+    const rightButtonsWidth = rightButtons ? (itemHeight * rightButtons.length) + 8 + (8 * rightButtons.length) : null;
     const avatar = this.renderAvatar(user);
 
     return(
