@@ -1,6 +1,6 @@
 {
   "name": "alchemyUI",
-  "version": "0.7.10",
+  "version": "0.7.11",
   "main": "index.js",
   "description": "A set of Elements and Compounds to create UI for the Wala app",
   "repository": {
