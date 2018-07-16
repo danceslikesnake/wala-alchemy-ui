@@ -1,33 +1,25 @@
-import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import React, { Component } from 'react';
+import { StyleSheet, TouchableNativeFeedback } from 'react-native';
+import Swipeable from 'react-native-swipeable-row';
 import {
-  StyleSheet,
-  TouchableNativeFeedback
-} from 'react-native';
-import {
-  Container,
-  Divider,
-  Caption,
-  Subheadline,
-  Icons,
-  Spacer,
-  SmallDisplay,
   AUI_COLORS,
   AUI_LAYOUT,
-  AUI_TYPOGRAPHY
+  Caption,
+  Container,
+  Divider,
+  Icons,
+  Spacer,
+  Subhead,
 } from '../../../Elements/index';
-import {
-  AUI_CONSTANTS,
-  AUI_FUNCTIONS
-} from '../../../Helpers/index';
-import Swipeable from 'react-native-swipeable-row';
+import { AUI_CONSTANTS, AUI_FUNCTIONS } from '../../../Helpers/index';
 
 class MarketTransactionItem extends Component {
   constructor(props) {
     super(props);
   }
 
-  renderRightButtons = (buttons, itemHeight) => {
+  renderRightButtons = (buttons, itemHeight, itemWidth) => {
     const renderedButtons = buttons
       ? buttons.map((btn, idx) => {
         return (
@@ -36,11 +28,15 @@ class MarketTransactionItem extends Component {
               alignItems={'center'}
               justifyContent={'center'}
               style={[
-                { width: itemHeight, height: itemHeight - AUI_CONSTANTS.gridBase },
+                {
+                  width: itemWidth,
+                  height: itemHeight - AUI_CONSTANTS.gridBase,
+                },
                 AUI_LAYOUT.roundCorners,
                 AUI_LAYOUT.elevation2,
                 styles.swipeButton,
-              ]}>
+              ]}
+            >
               <Icons
                 iconName={btn.iconName}
                 iconSet={btn.iconSet ? btn.iconSet : 'wala'}
@@ -57,7 +53,8 @@ class MarketTransactionItem extends Component {
                   btn.buttonType === 'negative'
                     ? AUI_COLORS.TorchRed.shade2
                     : AUI_COLORS.WalaTeal.shade2
-                }>
+                }
+              >
                 {btn.label.toUpperCase()}
               </Caption>
             </Container>
@@ -71,17 +68,17 @@ class MarketTransactionItem extends Component {
         actAsRow
         alignItems={'center'}
         style={[
-          {height: itemHeight},
+          { height: itemHeight },
           styles.swipeButtonTrack,
-          AUI_LAYOUT.roundCorners
+          AUI_LAYOUT.roundCorners,
         ]}
       >
         {renderedButtons}
-      </Container>
+      </Container>,
     ];
   };
 
-  render(){
+  render() {
     const {
       onRef,
       provider,
@@ -94,12 +91,17 @@ class MarketTransactionItem extends Component {
     } = this.props;
 
     const itemHeight = AUI_FUNCTIONS.gridBaseMultiplier(7);
+    const itemWidth =
+      rightButtons && rightButtons.length > 2
+        ? AUI_FUNCTIONS.gridBaseMultiplier(5)
+        : itemHeight;
     const rightSwipeButtons = rightButtons
-      ? this.renderRightButtons(rightButtons, itemHeight)
+      ? this.renderRightButtons(rightButtons, itemHeight, itemWidth)
       : null;
-    const rightButtonsWidth = itemHeight * rightButtons.length + 8 + 8 * rightButtons.length;
+    const rightButtonsWidth =
+      itemWidth * rightButtons.length + 8 + 8 * rightButtons.length;
 
-    return(
+    return (
       <Swipeable
         onRef={onRef}
         bounceOnMount={bounceOnMount}
@@ -109,32 +111,42 @@ class MarketTransactionItem extends Component {
         <TouchableNativeFeedback onPress={onPress}>
           <Container
             variation={'wide'}
-            style={[AUI_LAYOUT.presets.card, { backgroundColor: 'white', marginBottom: 4 }]}>
+            style={[
+              AUI_LAYOUT.presets.card,
+              { backgroundColor: 'white', marginBottom: 4 },
+            ]}
+          >
             <Container
               actAsRow
               alignItems={'center'}
-              style={{ height: AUI_FUNCTIONS.gridBaseMultiplier(4) }}>
+              style={{ height: AUI_FUNCTIONS.gridBaseMultiplier(4) }}
+            >
               <Container isFlex>
                 <Caption color={AUI_COLORS.Charcoal.hex}>{provider}</Caption>
-                <Subheadline
+                <Subhead
                   color={AUI_COLORS.Charcoal.hex}
                   ellipsizeMode={'tail'}
                   numberOfLines={1}
-                  style={{ marginTop: -4 }}>
+                  style={{ marginTop: -4 }}
+                >
                   {productName}
-                </Subheadline>
+                </Subhead>
               </Container>
               {statusComponent}
             </Container>
-            <Divider extendRightToFillContainer={9} extendLeftToFillContainer={9} />
+            <Divider
+              extendRightToFillContainer={9}
+              extendLeftToFillContainer={9}
+            />
             <Container
               actAsRow
               alignItems={'center'}
-              style={{ height: AUI_FUNCTIONS.gridBaseMultiplier(3) }}>
+              style={{ height: AUI_FUNCTIONS.gridBaseMultiplier(3) }}
+            >
               <Caption>{'PRICE'}</Caption>
-              <Subheadline isFlex alignRight color={AUI_COLORS.Charcoal.hex}>
+              <Subhead isFlex alignRight color={AUI_COLORS.Charcoal.hex}>
                 {price}
-              </Subheadline>
+              </Subhead>
             </Container>
           </Container>
         </TouchableNativeFeedback>
@@ -156,14 +168,12 @@ MarketTransactionItem.propTypes = {
 const styles = StyleSheet.create({
   swipeButton: {
     borderRadius: 3,
-    marginRight: AUI_CONSTANTS.gridBaseDense
+    marginRight: AUI_CONSTANTS.gridBaseDense,
   },
   swipeButtonTrack: {
     paddingLeft: 8,
-    backgroundColor: AUI_COLORS.getRgbaFromHex(AUI_COLORS.WalaTeal.shade3, 0.5)
+    backgroundColor: AUI_COLORS.getRgbaFromHex(AUI_COLORS.WalaTeal.shade3, 0.5),
   },
 });
 
-export {
-  MarketTransactionItem
-}
+export { MarketTransactionItem };

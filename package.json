@@ -1,6 +1,6 @@
 {
   "name": "alchemyUI",
-  "version": "0.7.9",
+  "version": "0.7.12",
   "main": "index.js",
   "description": "A set of Elements and Compounds to create UI for the Wala app",
   "repository": {
@@ -18,14 +18,14 @@
     "prop-types": "^15.6.0",
     "react-native-animatable": "^1.2.4",
     "react-native-cached-image": "^1.4.3",
-    "react-native-country-picker-modal": "git+https://github.com/GetWala/wala-react-native-country-picker-modal.git#0.4.3",
+    "react-native-country-picker-modal": "git+https://github.com/GetWala/react-native-country-picker-modal.git#semver:0.4.3",
     "react-native-linear-gradient": "^2.4.0",
     "react-native-masked-text": "^1.6.5",
     "react-native-material-dropdown": "^0.7.1",
     "react-native-material-textfield": "^0.12.0",
     "react-native-modalbox": "^1.4.2",
     "react-native-snap-carousel": "^3.6.0",
-    "react-native-svg": "^6.0.1-rc.1",
+    "react-native-svg": "^6.3.1",
     "react-native-swipeable-row": "^0.8.1",
     "react-native-vector-icons": "^4.5.0"
   },
