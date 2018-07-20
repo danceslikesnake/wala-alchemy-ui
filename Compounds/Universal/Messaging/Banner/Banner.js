@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { TouchableNativeFeedback, StyleSheet } from 'react-native';
 import {
   Container,
-  DenseBodyText,
+  BodyText,
   SmallDisplay,
   Divider,
   Icons,
@@ -101,9 +101,9 @@ class Banner extends Component {
                 <Spacer horizontal />
               </Container>
             )}
-            <DenseBodyText color={textColor} style={{ flex: 1 }}>
+            <BodyText dense color={textColor} style={{ flex: 1 }}>
               {this.props.message}
-            </DenseBodyText>
+            </BodyText>
           </Container>
           <Spacer dense />
           <Container actAsRow style={{ justifyContent: 'flex-end' }}>

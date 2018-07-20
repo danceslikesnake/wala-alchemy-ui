@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { Container, Caption1, Spacer, Icons, AUI_COLORS } from '../../../../Elements/index';
+import { Container, Caption, Spacer, Icons, AUI_COLORS } from '../../../../Elements/index';
 
 import CountryPicker from 'react-native-country-picker-modal';
 
@@ -14,7 +14,7 @@ class CountryInput extends Component {
     return (
       <Container isFlex={tileSelector}>
         {!tileSelector &&
-          <Caption1 style={{color: AUI_COLORS.Iron.hex}}>{inputLabel ? inputLabel : 'Country'}</Caption1>
+          <Caption style={{color: AUI_COLORS.Iron.hex}}>{inputLabel ? inputLabel : 'Country'}</Caption>
         }
         <CountryPicker
           cca2={cca2}

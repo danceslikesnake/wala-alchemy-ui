@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { StyleSheet, TextInput, TouchableOpacity, InteractionManager } from 'react-native';
-import { Container, Caption1, Caption2, Spacer, AUI_COLORS, AUI_LAYOUT, AUI_TYPOGRAPHY } from '../../../../Elements/index';
+import { Container, Caption, CaptionEmphasis, Spacer, AUI_COLORS, AUI_LAYOUT, AUI_TYPOGRAPHY } from '../../../../Elements/index';
 import { AUI_FUNCTIONS } from "../../../../Helpers/index";
 
 import CountryPicker from 'react-native-country-picker-modal';
@@ -39,7 +39,7 @@ class PhoneInput extends Component {
 
     return (
       <Container>
-        <Caption1 style={{color: AUI_COLORS.Iron.hex}}>{'Mobile Phone'}</Caption1>
+        <Caption style={{color: AUI_COLORS.Iron.hex}}>{'Mobile Phone'}</Caption>
         <Container
           actAsRow={cca2 ? true : false}
           style={[styles.inputWrapper, error ? {borderBottomColor: AUI_COLORS.TorchRed.hex} : null]}
@@ -111,7 +111,7 @@ class PhoneInput extends Component {
         </Container>
         {error &&
         <Container style={styles.error}>
-          <Caption2 style={styles.errorText}>{error}</Caption2>
+          <CaptionEmphasis style={styles.errorText}>{error}</CaptionEmphasis>
         </Container>
         }
         <Spacer/>

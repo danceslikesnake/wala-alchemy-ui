@@ -5,12 +5,12 @@ import Swipeable from 'react-native-swipeable-row';
 import {
   AUI_COLORS,
   AUI_LAYOUT,
-  Caption1,
+  Caption,
   Container,
   Divider,
   Icons,
   Spacer,
-  Subhead1,
+  Subheadline,
 } from '../../../Elements/index';
 import { AUI_CONSTANTS, AUI_FUNCTIONS } from '../../../Helpers/index';
 
@@ -22,45 +22,45 @@ class MarketTransactionItem extends Component {
   renderRightButtons = (buttons, itemHeight, itemWidth) => {
     const renderedButtons = buttons
       ? buttons.map((btn, idx) => {
-          return (
-            <TouchableNativeFeedback key={idx} onPress={btn.onPress}>
-              <Container
-                alignItems={'center'}
-                justifyContent={'center'}
-                style={[
-                  {
-                    width: itemWidth,
-                    height: itemHeight - AUI_CONSTANTS.gridBase,
-                  },
-                  AUI_LAYOUT.roundCorners,
-                  AUI_LAYOUT.elevation2,
-                  styles.swipeButton,
-                ]}
+        return (
+          <TouchableNativeFeedback key={idx} onPress={btn.onPress}>
+            <Container
+              alignItems={'center'}
+              justifyContent={'center'}
+              style={[
+                {
+                  width: itemWidth,
+                  height: itemHeight - AUI_CONSTANTS.gridBase,
+                },
+                AUI_LAYOUT.roundCorners,
+                AUI_LAYOUT.elevation2,
+                styles.swipeButton,
+              ]}
+            >
+              <Icons
+                iconName={btn.iconName}
+                iconSet={btn.iconSet ? btn.iconSet : 'wala'}
+                iconColor={
+                  btn.buttonType === 'negative'
+                    ? AUI_COLORS.TorchRed.tint2
+                    : AUI_COLORS.WalaTeal.hex
+                }
+                iconSize={26}
+              />
+              <Spacer dense />
+              <Caption
+                color={
+                  btn.buttonType === 'negative'
+                    ? AUI_COLORS.TorchRed.shade2
+                    : AUI_COLORS.WalaTeal.shade2
+                }
               >
-                <Icons
-                  iconName={btn.iconName}
-                  iconSet={btn.iconSet ? btn.iconSet : 'wala'}
-                  iconColor={
-                    btn.buttonType === 'negative'
-                      ? AUI_COLORS.TorchRed.tint2
-                      : AUI_COLORS.WalaTeal.hex
-                  }
-                  iconSize={26}
-                />
-                <Spacer dense />
-                <Caption1
-                  color={
-                    btn.buttonType === 'negative'
-                      ? AUI_COLORS.TorchRed.shade2
-                      : AUI_COLORS.WalaTeal.shade2
-                  }
-                >
-                  {btn.label.toUpperCase()}
-                </Caption1>
-              </Container>
-            </TouchableNativeFeedback>
-          );
-        })
+                {btn.label.toUpperCase()}
+              </Caption>
+            </Container>
+          </TouchableNativeFeedback>
+        );
+      })
       : null;
 
     return [
@@ -122,15 +122,15 @@ class MarketTransactionItem extends Component {
               style={{ height: AUI_FUNCTIONS.gridBaseMultiplier(4) }}
             >
               <Container isFlex>
-                <Caption1 color={AUI_COLORS.Charcoal.hex}>{provider}</Caption1>
-                <Subhead1
+                <Caption color={AUI_COLORS.Charcoal.hex}>{provider}</Caption>
+                <Subheadline
                   color={AUI_COLORS.Charcoal.hex}
                   ellipsizeMode={'tail'}
                   numberOfLines={1}
                   style={{ marginTop: -4 }}
                 >
                   {productName}
-                </Subhead1>
+                </Subheadline>
               </Container>
               {statusComponent}
             </Container>
@@ -143,10 +143,10 @@ class MarketTransactionItem extends Component {
               alignItems={'center'}
               style={{ height: AUI_FUNCTIONS.gridBaseMultiplier(3) }}
             >
-              <Caption1>{'PRICE'}</Caption1>
-              <Subhead1 isFlex alignRight color={AUI_COLORS.Charcoal.hex}>
+              <Caption>{'PRICE'}</Caption>
+              <Subheadline isFlex alignRight color={AUI_COLORS.Charcoal.hex}>
                 {price}
-              </Subhead1>
+              </Subheadline>
             </Container>
           </Container>
         </TouchableNativeFeedback>

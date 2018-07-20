@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { StyleSheet } from 'react-native';
 import { Dropdown } from 'react-native-material-dropdown';
-import { Container, Caption1, Spacer, AUI_COLORS, AUI_LAYOUT, AUI_TYPOGRAPHY } from '../../../../Elements/index';
+import { Container, Caption, Spacer, AUI_COLORS, AUI_LAYOUT, AUI_TYPOGRAPHY } from '../../../../Elements/index';
 import {Icons} from "../../../../Elements/index";
 import {AUI_FUNCTIONS} from "../../../../Helpers/index";
 

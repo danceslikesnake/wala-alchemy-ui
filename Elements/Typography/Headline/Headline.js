@@ -9,7 +9,7 @@ import {
 } from "../../index";
 import {AUI_TYPOGRAPHY} from "../fontStyles";
 
-class Caption1 extends Component {
+class Headline extends Component {
   constructor(props) {
     super(props);
   }
@@ -21,12 +21,15 @@ class Caption1 extends Component {
       alignCenter,
       alignRight,
       isFlex,
+      dense,
+      fontFamily,
       ...props } = this.props;
     return(
       <Text
         {...props}
         style={[
-          styles.text,
+          dense ? styles.denseText : styles.text,
+          fontFamily === 'Poppins' ? {fontFamily: AUI_TYPOGRAPHY.Poppins.regular} : {fontFamily: AUI_TYPOGRAPHY.ProximaNova.semibold},
           this.props.style,
           color ? {color: color} : null,
           alignCenter ? {textAlign: 'center'} : null,
@@ -40,23 +43,32 @@ class Caption1 extends Component {
   }
 }
 
-Caption1.propTypes = {
+Headline.propTypes = {
   children: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
   color: PropTypes.string,
   alignCenter: PropTypes.bool,
   alignRight: PropTypes.bool,
-  isFlex: PropTypes.bool
+  isFlex: PropTypes.bool,
+  dense: PropTypes.bool,
+  fontFamily: PropTypes.oneOf([
+    'ProximaNova',
+    'Poppins'
+  ]),
 };
 
 const styles = StyleSheet.create({
   text: {
     color: AUI_COLORS.Slate.hex,
-    fontFamily: AUI_TYPOGRAPHY.ProximaNova.semibold,
-    fontSize: AUI_TYPOGRAPHY.typeScale.size12,
-    lineHeight: AUI_TYPOGRAPHY.typeScale.size12lineHeight
+    fontSize: AUI_TYPOGRAPHY.typeScale.size26,
+    lineHeight: AUI_TYPOGRAPHY.typeScale.size26lineHeight
+  },
+  denseText: {
+    color: AUI_COLORS.Slate.hex,
+    fontSize: AUI_TYPOGRAPHY.typeScaleDense.size23,
+    lineHeight: AUI_TYPOGRAPHY.typeScaleDense.size23lineHeight
   }
 });
 
 export {
-  Caption1
+  Headline
 }

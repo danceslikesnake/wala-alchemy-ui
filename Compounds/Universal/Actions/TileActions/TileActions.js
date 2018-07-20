@@ -6,7 +6,7 @@ import {
   Divider,
   Icons,
   Spacer,
-  Caption1,
+  Caption,
   AUI_COLORS,
 } from '../../../../Elements/index';
 import { CountryInput } from '../../../../Compounds/index';
@@ -118,7 +118,7 @@ class TileActions extends Component {
               iconSize={26} iconColor={AUI_COLORS.WalaTeal.hex}
             />
             <Spacer dense/>
-            <Caption1 color={AUI_COLORS.WalaTeal.shade2}>{tile.label.toUpperCase()}</Caption1>
+            <Caption color={AUI_COLORS.WalaTeal.shade2}>{tile.label.toUpperCase()}</Caption>
           </Container>
         </TouchableNativeFeedback>
       );
