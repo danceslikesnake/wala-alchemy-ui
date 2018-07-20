@@ -10,7 +10,7 @@ import {
   Divider,
   Icons,
   Spacer,
-  Subhead,
+  Subheadline,
 } from '../../../Elements/index';
 import { AUI_CONSTANTS, AUI_FUNCTIONS } from '../../../Helpers/index';
 
@@ -123,14 +123,14 @@ class MarketTransactionItem extends Component {
             >
               <Container isFlex>
                 <Caption color={AUI_COLORS.Charcoal.hex}>{provider}</Caption>
-                <Subhead
+                <Subheadline
                   color={AUI_COLORS.Charcoal.hex}
                   ellipsizeMode={'tail'}
                   numberOfLines={1}
                   style={{ marginTop: -4 }}
                 >
                   {productName}
-                </Subhead>
+                </Subheadline>
               </Container>
               {statusComponent}
             </Container>
@@ -144,9 +144,9 @@ class MarketTransactionItem extends Component {
               style={{ height: AUI_FUNCTIONS.gridBaseMultiplier(3) }}
             >
               <Caption>{'PRICE'}</Caption>
-              <Subhead isFlex alignRight color={AUI_COLORS.Charcoal.hex}>
+              <Subheadline isFlex alignRight color={AUI_COLORS.Charcoal.hex}>
                 {price}
-              </Subhead>
+              </Subheadline>
             </Container>
           </Container>
         </TouchableNativeFeedback>
