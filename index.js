@@ -36,6 +36,9 @@ export {
   Banner,
   ConnectionUserItem,
   MarketTransactionItem,
+  TimelineFeedCard,
+  TimelineFeedLikeAction,
+  PopoverMenu,
   FeedbackChoices
 } from './Compounds';
 

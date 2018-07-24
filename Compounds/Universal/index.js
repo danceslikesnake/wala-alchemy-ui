@@ -1,4 +1,4 @@
-export { TileActions, BottomSheet } from './Actions';
+export { TileActions, BottomSheet, PopoverMenu } from './Actions';
 export { DropdownMenu, FeedbackChoices } from './Choices';
 export { CategoryHeader } from './Headers';
 export {
