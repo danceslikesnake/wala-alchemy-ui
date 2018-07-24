@@ -35,7 +35,8 @@ export {
   TileActions,
   Banner,
   ConnectionUserItem,
-  MarketTransactionItem
+  MarketTransactionItem,
+  FeedbackChoices
 } from './Compounds';
 
 export {

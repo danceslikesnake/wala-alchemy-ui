@@ -13,5 +13,6 @@ export {
   CountryInput,
   PhoneInput,
   TileActions,
-  Banner
+  Banner,
+  FeedbackChoices
 } from './Universal';
