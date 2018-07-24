@@ -35,7 +35,10 @@ export {
   TileActions,
   Banner,
   ConnectionUserItem,
-  MarketTransactionItem
+  MarketTransactionItem,
+  TimelineFeedCard,
+  TimelineFeedLikeAction,
+  PopoverMenu
 } from './Compounds';
 
 export {
