@@ -115,7 +115,7 @@ class TimelineFeedCard extends Component {
                 source={bodyImage}
                 style={[
                   localStyles.bodyImage,
-                  {height: (AUI_CONSTANTS.deviceWidth - AUI_FUNCTIONS.gridBaseMultiplier(2)) * AUI_CONSTANTS.aspectRatios[bodyImageAspectRatio]}
+                  {height: (AUI_CONSTANTS.deviceWidth - AUI_FUNCTIONS.gridBaseMultiplier(2)) * AUI_LAYOUT.aspectRatios[bodyImageAspectRatio]}
                 ]}
                 resizeMode={'cover'}
               />

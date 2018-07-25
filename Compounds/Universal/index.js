@@ -1,5 +1,5 @@
 export { TileActions, BottomSheet, PopoverMenu } from './Actions';
-export { DropdownMenu } from './Choices';
+export { DropdownMenu, Feedback } from './Choices';
 export { CategoryHeader } from './Headers';
 export {
   CurrencyInput,

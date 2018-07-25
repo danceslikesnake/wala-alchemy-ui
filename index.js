@@ -38,7 +38,8 @@ export {
   MarketTransactionItem,
   TimelineFeedCard,
   TimelineFeedLikeAction,
-  PopoverMenu
+  PopoverMenu,
+  Feedback
 } from './Compounds';
 
 export {
