@@ -18,6 +18,6 @@ export {
   PhoneInput,
   TileActions,
   Banner,
-  FeedbackChoices,
+  Feedback,
   PopoverMenu
 } from './Universal';

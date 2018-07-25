@@ -39,7 +39,7 @@ export {
   TimelineFeedCard,
   TimelineFeedLikeAction,
   PopoverMenu,
-  FeedbackChoices
+  Feedback
 } from './Compounds';
 
 export {

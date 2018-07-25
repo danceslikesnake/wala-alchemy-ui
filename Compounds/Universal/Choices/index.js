@@ -1,2 +1,2 @@
 export {DropdownMenu} from './DropdownMenu/DropdownMenu';
-export {FeedbackChoices} from './FeedbackChoices/FeedbackChoices';
+export {Feedback} from './Feedback/Feedback';

@@ -1,3 +1,12 @@
+let aspectRatios = [];
+aspectRatios['narrow'] = 0.5;
+aspectRatios['widescreen'] = 0.5625;
+aspectRatios['landscape'] = 2/3;
+aspectRatios['standard'] = 0.75;
+aspectRatios['square'] = 1;
+aspectRatios['tall'] = 4/3;
+aspectRatios['portrait'] = 3/2;
+
 const AUI_LAYOUT = {
   roundCorners: {
     borderRadius: 3
@@ -34,6 +43,7 @@ const AUI_LAYOUT = {
     elevation: 4,
     backgroundColor: 'white'
   },
+  aspectRatios: aspectRatios,
   presets: {
     card: {
       borderRadius: 3,
