@@ -50,7 +50,7 @@ class AccountsHomeCard extends Component {
           <Headline color={hasBackground ? 'white' : AUI_COLORS.Charcoal.hex} style={{marginBottom: -4}}>{accountBalance}</Headline>
           {accountConvertedBalance && (
             <Caption color={hasBackground ? AUI_COLORS.Charcoal.tint4 : AUI_COLORS.Slate.hex}>
-              {'≈ ' + accountConvertedBalance}
+              {accountConvertedBalance}
             </Caption>
           )}
         </Container>
@@ -69,7 +69,7 @@ class AccountsHomeCard extends Component {
         {accountBrandingBackgroundImage ? (
           <ImageContainer source={accountBrandingBackgroundImage} style={[AUI_LAYOUT.roundTopCorners, {overflow: 'hidden'}]}>
             <GradientContainer
-              colors={[AUI_COLORS.Charcoal.getRgba(1), AUI_COLORS.ScampiPurple.getRgba(0)]}
+              colors={[AUI_COLORS.Charcoal.getRgba(0.5), AUI_COLORS.ScampiPurple.getRgba(0.15)]}
               style={[AUI_LAYOUT.roundTopCorners, {paddingHorizontal: AUI_CONSTANTS.gridBase}]}
             >
               <Spacer dense />
