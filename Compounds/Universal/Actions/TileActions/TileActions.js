@@ -64,7 +64,7 @@ class TileActions extends Component {
             alignItems={'center'}
             justifyContent={'center'}
             style={[
-              {backgroundColor: 'white', height: AUI_FUNCTIONS.gridBaseMultiplier(6)},
+              {backgroundColor: 'white', height: this.props.dense ? AUI_FUNCTIONS.gridBaseMultiplier(7, true) : AUI_FUNCTIONS.gridBaseMultiplier(6)},
               addBorder ? localStyles.addBorder : null
             ]}
           >
@@ -100,7 +100,7 @@ class TileActions extends Component {
             alignItems={'center'}
             justifyContent={'center'}
             style={[
-              {height: AUI_FUNCTIONS.gridBaseMultiplier(6), backgroundColor: 'white'},
+              {height: this.props.dense ? AUI_FUNCTIONS.gridBaseMultiplier(7, true): AUI_FUNCTIONS.gridBaseMultiplier(6), backgroundColor: 'white'},
               addBorder ? localStyles.addBorder : null
             ]}
           >
@@ -115,10 +115,17 @@ class TileActions extends Component {
                   this.state['tile_' + idx2 + '_toggle'] ? tile.iconToggle.activeIconSet : tile.iconToggle.inActiveIconSet
                 ) : (tile.iconSet ? tile.iconSet : 'wala')
               }
-              iconSize={26} iconColor={AUI_COLORS.WalaTeal.hex}
+              iconSize={this.props.dense ? 24 : 26}
+              iconColor={AUI_COLORS.WalaTeal.hex}
             />
-            <Spacer dense/>
-            <Caption color={AUI_COLORS.WalaTeal.shade2}>{tile.label.toUpperCase()}</Caption>
+            {!this.props.dense ? <Spacer dense /> : null}
+            <Caption
+              dense={this.props.dense}
+              color={AUI_COLORS.WalaTeal.shade2}
+              style={this.props.dense ? {marginBottom: -4} : null}
+            >
+              {tile.label.toUpperCase()}
+            </Caption>
           </Container>
         </TouchableNativeFeedback>
       );
@@ -163,7 +170,8 @@ TileActions.defaultProps = {
 TileActions.propTypes = {
   tiles: PropTypes.array.isRequired,
   rowCount: PropTypes.oneOf([1, 2, 3]),
-  backgroundColor: PropTypes.string
+  backgroundColor: PropTypes.string,
+  dense: PropTypes.bool
 };
 
 const localStyles = StyleSheet.create({

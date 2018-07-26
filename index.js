@@ -40,7 +40,8 @@ export {
   TimelineFeedLikeAction,
   PopoverMenu,
   Feedback,
-  LinearProgress
+  LinearProgress,
+  AccountsHomeCard
 } from './Compounds';
 
 export {

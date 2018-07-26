@@ -1,0 +1,1 @@
+export {AccountsHomeCard} from './Home';

@@ -1,4 +1,7 @@
 export {
+  AccountsHomeCard
+} from './Accounts';
+export {
   ConnectionUserItem
 } from './Connections';
 export {
