@@ -19,5 +19,6 @@ export {
   TileActions,
   Banner,
   Feedback,
-  PopoverMenu
+  PopoverMenu,
+  LinearProgress
 } from './Universal';

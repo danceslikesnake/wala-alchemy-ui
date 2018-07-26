@@ -39,7 +39,8 @@ export {
   TimelineFeedCard,
   TimelineFeedLikeAction,
   PopoverMenu,
-  Feedback
+  Feedback,
+  LinearProgress
 } from './Compounds';
 
 export {
