@@ -5,13 +5,12 @@ import {
   Container,
   Spacer,
   Caption,
-  SmallDisplay,
-  AUI_COLORS,
-  AUI_LAYOUT
+  AUI_COLORS
 } from '../../../../Elements/index';
 import {
   AUI_FUNCTIONS
 } from "../../../../Helpers/index";
+import * as Animatable from 'react-native-animatable';
 
 class LinearProgress extends Component {
   constructor(props) {
@@ -31,7 +30,9 @@ class LinearProgress extends Component {
     return (
       <Container actAsRow style={{height: AUI_FUNCTIONS.gridBaseMultiplier(2, true)}} alignItems={'center'}>
         <Container isFlex style={{height: 4, backgroundColor: trackColor}}>
-          <Container isFlex style={{width: '44%', backgroundColor: indicatorColor}} />
+          <Animatable.View animation="slideInLeft" easing="ease-out" duration={500}>
+            <Container style={{width: percentText + '%', backgroundColor: indicatorColor, height: 4}} />
+          </Animatable.View>
         </Container>
         <Spacer horizontal />
         <Caption color={percentTextColor}>{percentText + '%'}</Caption>
