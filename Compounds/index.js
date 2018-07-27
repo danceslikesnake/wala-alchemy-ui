@@ -1,4 +1,7 @@
 export {
+  AccountsHomeCard
+} from './Accounts';
+export {
   ConnectionUserItem
 } from './Connections';
 export {
@@ -19,5 +22,6 @@ export {
   TileActions,
   Banner,
   Feedback,
-  PopoverMenu
+  PopoverMenu,
+  LinearProgress
 } from './Universal';
