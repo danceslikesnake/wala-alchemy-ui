@@ -10,7 +10,21 @@ class Container extends Component {
 
   constructor(props) {
     super(props);
+
+    this.state = {
+      containerWidth: 0,
+      trackContainerWidth: true
+    }
   }
+
+  _setContainerWidth = event => {
+    if (this.state.trackContainerWidth) {
+      this.setState({
+        trackContainerWidth: false,
+        containerWidth: event.nativeEvent.layout.width
+      });
+    }
+  };
 
   render(){
     const {
@@ -19,6 +33,7 @@ class Container extends Component {
       isFlex,
       justifyContent,
       alignItems,
+      aspectRatio,
       children,
       ...props
     } = this.props;
@@ -26,11 +41,17 @@ class Container extends Component {
     return(
       <View
         {...props}
+        onLayout={(aspectRatio && this.state.trackContainerWidth) ? (nativeEvent) => {
+          this._setContainerWidth(nativeEvent);
+        } : null}
         style={[
           styles[variation],
           actAsRow ? {flexDirection: 'row'} : null,
           isFlex ? {flex: 1} : null,
           {justifyContent: justifyContent, alignItems: alignItems},
+          (aspectRatio && !this.state.trackContainerWidth) ?
+            {width: this.state.containerWidth, height: this.state.containerWidth * aspectRatio}
+            : null,
           this.props.style
         ]}
       >
@@ -67,7 +88,8 @@ Container.propTypes = {
     'flex-end',
     'baseline',
     'stretch'
-  ])
+  ]),
+  aspectRatio: PropTypes.number
 };
 
 const styles = StyleSheet.create({

@@ -23,6 +23,11 @@ import { CachedImage } from 'react-native-cached-image';
 class TimelineFeedCard extends Component {
   constructor(props) {
     super(props);
+
+    this.state = {
+      bodyImageWidth: 0,
+      trackBodyImageWidth: true
+    }
   }
 
   renderHeader = (headerTextColor, headerText, renderHeaderMenu) => {
@@ -77,6 +82,15 @@ class TimelineFeedCard extends Component {
     }
   };
 
+  _setBodyImageWidth = event => {
+    if (this.state.trackBodyImageWidth) {
+      this.setState({
+        trackBodyImageWidth: false,
+        bodyImageWidth: event.nativeEvent.layout.width
+      });
+    }
+  };
+
   render() {
     const {
       cardBorderColor,
@@ -111,14 +125,20 @@ class TimelineFeedCard extends Component {
         ) : (
           <Container>
             {bodyImage ? (
-              <CachedImage
-                source={bodyImage}
-                style={[
-                  localStyles.bodyImage,
-                  {height: (AUI_CONSTANTS.deviceWidth - AUI_FUNCTIONS.gridBaseMultiplier(2)) * AUI_LAYOUT.aspectRatios[bodyImageAspectRatio]}
-                ]}
-                resizeMode={'cover'}
-              />
+              <Container
+                onLayout={this.state.trackBodyImageWidth ? (nativeEvent) => {
+                  this._setBodyImageWidth(nativeEvent);
+                } : null}
+              >
+                <CachedImage
+                  source={bodyImage}
+                  style={[
+                    localStyles.bodyImage,
+                    {height: this.state.bodyImageWidth * bodyImageAspectRatio}
+                  ]}
+                  resizeMode={'cover'}
+                />
+              </Container>
             ) : null}
             {this.renderStandardBodyLayout(bodyHeadline, bodyDescription, bodyInsetIcon)}
             {callToActionOnPress &&
@@ -165,7 +185,7 @@ TimelineFeedCard.defaultProps = {
   cardBorderColor: AUI_COLORS.CuriousBlue.tint2,
   headerText: 'Timeline Card',
   headerTextColor: AUI_COLORS.CuriousBlue.hex,
-  bodyImageAspectRatio: 'widescreen',
+  bodyImageAspectRatio: AUI_LAYOUT.aspectRatios.widescreen,
   callToActionLabel: 'Learn More'
 };
 
@@ -181,15 +201,7 @@ TimelineFeedCard.propTypes = {
     PropTypes.number,
     PropTypes.object
   ]),
-  bodyImageAspectRatio: PropTypes.oneOf([
-    'narrow',
-    'widescreen',
-    'landscape',
-    'standard',
-    'square',
-    'tall',
-    'portrait'
-  ]),
+  bodyImageAspectRatio: PropTypes.number,
   bodyInsetIcon: PropTypes.element,
   bodyHeadline: PropTypes.string,
   bodyDescription: PropTypes.string,
