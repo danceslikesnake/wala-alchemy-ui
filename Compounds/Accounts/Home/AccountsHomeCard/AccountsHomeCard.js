@@ -93,6 +93,7 @@ class AccountsHomeCard extends Component {
     const {
       accountBrandingBackgroundImage,
       accountOptions,
+      renderAdditionalContent,
       isBadState
     } = this.props;
 
@@ -105,17 +106,25 @@ class AccountsHomeCard extends Component {
               style={[AUI_LAYOUT.roundTopCorners, {paddingHorizontal: AUI_CONSTANTS.gridBase}]}
             >
               {this._renderAccountDetails(true)}
+              {(renderAdditionalContent && !isBadState) &&
+                <Container>
+                  {renderAdditionalContent()}
+                  <Spacer dense />
+                </Container>
+              }
             </GradientContainer>
           </ImageContainer>
         ) : (
           <Container style={{paddingHorizontal: AUI_CONSTANTS.gridBase}}>
             {this._renderAccountDetails()}
+            {(renderAdditionalContent && !isBadState) ? renderAdditionalContent() : null}
           </Container>
         )}
         {(accountOptions && !isBadState) &&
         <Container style={{borderTopWidth: 4, borderTopColor: AUI_COLORS.ScampiPurple.hex}}>
           <TileActions
             tiles={accountOptions}
+            rowCount={accountOptions.length}
             dense
           />
         </Container>
@@ -140,6 +149,7 @@ AccountsHomeCard.propTypes = {
     PropTypes.number,
     PropTypes.object
   ]),
+  renderAdditionalContent: PropTypes.func,
   accountOptions: PropTypes.array,
   isBadState: PropTypes.bool,
   isBadStateHeadline: PropTypes.string,
