@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { StyleSheet } from 'react-native';
+import { StyleSheet, Linking } from 'react-native';
 import {
   Container,
   ImageContainer,
@@ -9,6 +9,9 @@ import {
   Subheadline,
   Headline,
   Caption,
+  Icons,
+  Divider,
+  TransparentButton,
   AUI_COLORS,
   AUI_LAYOUT
 } from '../../../../Elements/index';
@@ -25,24 +28,51 @@ class AccountsHomeCard extends Component {
     super(props);
   }
 
+  handleEmailPress = () => {
+    Linking.openURL('mailto:info@getwala.com');
+  };
+
   _renderAccountDetails = (hasBackground) => {
     const {
       accountName,
       accountBalance,
       accountConvertedBalance,
       accountBranding,
-      isBadState
+      isBadState,
+      isBadStateHeadline,
+      isBadStateDescription,
+      isBadStateButtonLabel,
+      isBadStateOnPress
     } = this.props;
 
     if(isBadState) {
       return(
         <Container>
-
+          <Spacer dense />
+          <Container actAsRow>
+            <Icons
+              iconName={'warning'}
+              iconSet={'material-design'}
+              iconSize={26}
+              iconColor={AUI_COLORS.PoppyYellow.hex}
+            />
+            <Spacer horizontal/>
+            <Container isFlex>
+              <Subheadline color={AUI_COLORS.Charcoal.tint1} dense>{isBadStateHeadline}</Subheadline>
+              <Caption>{isBadStateDescription}</Caption>
+            </Container>
+          </Container>
+          <Spacer />
+          <Divider/>
+          <Container actAsRow justifyContent={'flex-end'} style={{marginRight: -13}}>
+            <TransparentButton onPress={isBadStateOnPress ? isBadStateOnPress : this.handleEmailPress} label={isBadStateButtonLabel}/>
+          </Container>
         </Container>
       );
     } else {
       return(
         <Container>
+          <Spacer dense />
           <Container actAsRow style={{marginBottom: -8}}>
             <Subheadline color={hasBackground ? 'white' : AUI_COLORS.Charcoal.tint1} isFlex dense>{accountName}</Subheadline>
             {accountBranding}
@@ -53,6 +83,7 @@ class AccountsHomeCard extends Component {
               {accountConvertedBalance}
             </Caption>
           )}
+          <Spacer dense />
         </Container>
       );
     }
@@ -61,36 +92,33 @@ class AccountsHomeCard extends Component {
   render() {
     const {
       accountBrandingBackgroundImage,
-      accountOptions
+      accountOptions,
+      isBadState
     } = this.props;
 
     return (
-      <Container variation={'card'} style={[AUI_LAYOUT.presets.card]}>
+      <Container variation={'card'} style={[AUI_LAYOUT.presets.card, isBadState ? localStyles.badState : null]}>
         {accountBrandingBackgroundImage ? (
           <ImageContainer source={accountBrandingBackgroundImage} style={[AUI_LAYOUT.roundTopCorners, {overflow: 'hidden'}]}>
             <GradientContainer
               colors={[AUI_COLORS.Charcoal.getRgba(0.5), AUI_COLORS.ScampiPurple.getRgba(0.15)]}
               style={[AUI_LAYOUT.roundTopCorners, {paddingHorizontal: AUI_CONSTANTS.gridBase}]}
             >
-              <Spacer dense />
               {this._renderAccountDetails(true)}
-              <Spacer dense />
             </GradientContainer>
           </ImageContainer>
         ) : (
           <Container style={{paddingHorizontal: AUI_CONSTANTS.gridBase}}>
-            <Spacer dense />
             {this._renderAccountDetails()}
-            <Spacer dense />
           </Container>
         )}
-        {accountOptions &&
-          <Container style={{borderTopWidth: 4, borderTopColor: AUI_COLORS.ScampiPurple.hex}}>
-            <TileActions
-              tiles={accountOptions}
-              dense
-            />
-          </Container>
+        {(accountOptions && !isBadState) &&
+        <Container style={{borderTopWidth: 4, borderTopColor: AUI_COLORS.ScampiPurple.hex}}>
+          <TileActions
+            tiles={accountOptions}
+            dense
+          />
+        </Container>
         }
       </Container>
     );
@@ -98,7 +126,9 @@ class AccountsHomeCard extends Component {
 }
 
 AccountsHomeCard.defaultProps = {
-
+  isBadStateHeadline: 'Oops!',
+  isBadStateDescription: 'Something has gone wrong with this feature! Please let us know about this by emailing info@getwala.com',
+  isBadStateButtonLabel: 'Email Us'
 };
 
 AccountsHomeCard.propTypes = {
@@ -111,11 +141,18 @@ AccountsHomeCard.propTypes = {
     PropTypes.object
   ]),
   accountOptions: PropTypes.array,
-  isBadState: PropTypes.bool
+  isBadState: PropTypes.bool,
+  isBadStateHeadline: PropTypes.string,
+  isBadStateDescription: PropTypes.string,
+  isBadStateButtonLabel: PropTypes.string,
+  isBadStateOnPress: PropTypes.func
 };
 
 const localStyles = StyleSheet.create({
-
+  badState: {
+    borderTopWidth: 4,
+    borderTopColor: AUI_COLORS.PoppyYellow.tint2
+  }
 });
 
 export {
