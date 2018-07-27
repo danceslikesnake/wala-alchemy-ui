@@ -97,9 +97,9 @@ class AccountsHomeCard extends Component {
     } = this.props;
 
     return (
-      <Container variation={'card'} style={[AUI_LAYOUT.presets.card, isBadState ? localStyles.badState : null]}>
+      <Container variation={'card'} style={[AUI_LAYOUT.presets.card, {overflow: 'hidden'},  isBadState ? localStyles.badState : null]}>
         {accountBrandingBackgroundImage ? (
-          <ImageContainer source={accountBrandingBackgroundImage} style={[AUI_LAYOUT.roundTopCorners, {overflow: 'hidden'}]}>
+          <ImageContainer source={accountBrandingBackgroundImage} style={[AUI_LAYOUT.roundTopCorners]}>
             <GradientContainer
               colors={[AUI_COLORS.Charcoal.getRgba(0.5), AUI_COLORS.ScampiPurple.getRgba(0.15)]}
               style={[AUI_LAYOUT.roundTopCorners, {paddingHorizontal: AUI_CONSTANTS.gridBase}]}
