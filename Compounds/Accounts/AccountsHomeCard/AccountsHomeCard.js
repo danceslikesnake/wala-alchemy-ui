@@ -14,14 +14,13 @@ import {
   TransparentButton,
   AUI_COLORS,
   AUI_LAYOUT
-} from '../../../../Elements/index';
+} from '../../../Elements/index';
 import {
   TileActions
-} from '../../../../Compounds/index';
+} from '../../index';
 import {
   AUI_CONSTANTS,
-  AUI_FUNCTIONS
-} from "../../../../Helpers/index";
+} from "../../../Helpers/index";
 
 class AccountsHomeCard extends Component {
   constructor(props) {
@@ -37,7 +36,7 @@ class AccountsHomeCard extends Component {
       accountName,
       accountBalance,
       accountConvertedBalance,
-      accountBranding,
+      branding,
       isBadState,
       isBadStateHeadline,
       isBadStateDescription,
@@ -75,7 +74,7 @@ class AccountsHomeCard extends Component {
           <Spacer dense />
           <Container actAsRow style={{marginBottom: -8}}>
             <Subheadline color={hasBackground ? 'white' : AUI_COLORS.Charcoal.tint1} isFlex dense>{accountName}</Subheadline>
-            {accountBranding}
+            {branding}
           </Container>
           <Headline color={hasBackground ? 'white' : AUI_COLORS.Charcoal.hex} style={{marginBottom: -4}}>{accountBalance}</Headline>
           {accountConvertedBalance && (
@@ -91,7 +90,7 @@ class AccountsHomeCard extends Component {
 
   render() {
     const {
-      accountBrandingBackgroundImage,
+      brandingBgImage,
       accountOptions,
       renderAdditionalContent,
       isBadState
@@ -99,8 +98,8 @@ class AccountsHomeCard extends Component {
 
     return (
       <Container variation={'card'} style={[AUI_LAYOUT.presets.card, {overflow: 'hidden'},  isBadState ? localStyles.badState : null]}>
-        {accountBrandingBackgroundImage ? (
-          <ImageContainer source={accountBrandingBackgroundImage} style={[AUI_LAYOUT.roundTopCorners]}>
+        {brandingBgImage ? (
+          <ImageContainer source={brandingBgImage} style={[AUI_LAYOUT.roundTopCorners]}>
             <GradientContainer
               colors={[AUI_COLORS.Charcoal.getRgba(0.5), AUI_COLORS.ScampiPurple.getRgba(0.15)]}
               style={[AUI_LAYOUT.roundTopCorners, {paddingHorizontal: AUI_CONSTANTS.gridBase}]}
@@ -144,8 +143,8 @@ AccountsHomeCard.propTypes = {
   accountName: PropTypes.string,
   accountBalance: PropTypes.string,
   accountConvertedBalance: PropTypes.string,
-  accountBranding: PropTypes.element,
-  accountBrandingBackgroundImage: PropTypes.oneOfType([
+  branding: PropTypes.element,
+  brandingBgImage: PropTypes.oneOfType([
     PropTypes.number,
     PropTypes.object
   ]),

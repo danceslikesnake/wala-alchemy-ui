@@ -57,7 +57,7 @@ class DropdownMenu extends Component {
           labelTextStyle={styles.labelTextStyle}
           itemTextStyle={styles.itemText}
           style={styles.inputText}
-          onChangeText={() => {onChangeText();}}
+          onChangeText={(text) => {onChangeText(text);}}
           inputContainerStyle={[{borderBottomColor: this.state.underlineColor}, styles.inputContainer]}
           renderAccessory={() => {
             return <Icons
