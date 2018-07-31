@@ -41,7 +41,9 @@ export {
   PopoverMenu,
   Feedback,
   LinearProgress,
-  AccountsHomeCard
+  AccountsHomeCard,
+  DateTextField,
+  StepProgress
 } from './Compounds';
 
 export {
