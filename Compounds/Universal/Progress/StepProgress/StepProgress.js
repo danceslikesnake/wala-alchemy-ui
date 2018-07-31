@@ -61,7 +61,6 @@ class StepProgress extends Component {
 
     return (
       <Container>
-        <Divider size={'small'} />
         <Spacer dense />
         <Caption alignCenter dense>{`STEP ${currentStep >= numberOfSteps ? numberOfSteps : currentStep} OF ${numberOfSteps}`}</Caption>
         <Container actAsRow variation={'card'} style={{height: 24}} alignItems={'center'}>
