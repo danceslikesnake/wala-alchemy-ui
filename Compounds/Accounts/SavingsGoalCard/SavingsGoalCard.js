@@ -50,34 +50,34 @@ class SavingsGoalCard extends Component {
     switch(goalState) {
       case 'overdue':
         borderColor = AUI_COLORS.TorchRed.tint2;
-        trackColor = AUI_COLORS.TorchRed.tint4;
         goalDueDateMessage = 'OVERDUE - Due ' + goalDueDate;
         goalDueDateHighlight = {
           backgroundColor: AUI_COLORS.TorchRed.tint2,
           color: 'white',
-          marginTop: 4
+          marginTop: 4,
+          paddingHorizontal: 8
         };
         break;
       case 'impending':
         borderColor = AUI_COLORS.PoppyYellow.tint2;
-        trackColor = AUI_COLORS.PoppyYellow.tint4;
         goalDueDateMessage = 'Almost Due - ' + goalDueDate;
         goalDueDateHighlight = {
-          backgroundColor: AUI_COLORS.PoppyYellow.hex,
+          backgroundColor: AUI_COLORS.PoppyYellow.tint2,
           color: 'white',
-          marginTop: 4
+          marginTop: 4,
+          paddingHorizontal: 8
         };
         break;
       case 'complete':
         borderColor = AUI_COLORS.WalaTeal.tint2;
-        trackColor = AUI_COLORS.WalaTeal.tint4;
         indicatorColor = AUI_COLORS.WalaTeal.hex;
         percentTextColor = AUI_COLORS.WalaTeal.hex;
         goalDueDateMessage = 'GOAL ACHIEVED!';
         goalDueDateHighlight = {
           backgroundColor: AUI_COLORS.WalaTeal.tint2,
           color: 'white',
-          marginTop: 4
+          marginTop: 4,
+          paddingHorizontal: 8
         };
         break;
     }
@@ -91,13 +91,13 @@ class SavingsGoalCard extends Component {
           {borderColor: borderColor}
         ]}>
         <Container style={{ paddingHorizontal: AUI_CONSTANTS.gridBase }}>
-          <Subheadline alignCenter color={AUI_COLORS.Charcoal.hex}>{goalName}</Subheadline>
+          <Subheadline color={AUI_COLORS.Charcoal.hex}>{goalName}</Subheadline>
           {goalDueDate &&
-            <Container actAsRow justifyContent={'center'}>
-              <Caption style={[{borderRadius: 3, paddingHorizontal: 8}, goalDueDateHighlight]}>
-                {goalDueDateMessage}
-              </Caption>
-            </Container>
+          <Container actAsRow>
+            <Caption style={[{borderRadius: 3}, goalDueDateHighlight]}>
+              {goalDueDateMessage}
+            </Caption>
+          </Container>
           }
           <Spacer />
           <LinearProgress percent={goalPercentComplete} trackColor={trackColor} indicatorColor={indicatorColor} percentTextColor={percentTextColor} />
@@ -109,7 +109,7 @@ class SavingsGoalCard extends Component {
                 {goalSavedAmount}
               </Subheadline>
               {goalSavedConvertedAmount &&
-                <Caption style={{marginTop: -4}} alignRight>{goalSavedConvertedAmount}</Caption>
+              <Caption style={{marginTop: -4}} alignRight>{goalSavedConvertedAmount}</Caption>
               }
             </Container>
           </Container>
@@ -123,7 +123,7 @@ class SavingsGoalCard extends Component {
                 {goalTargetAmount}
               </Subheadline>
               {goalTargetConvertedAmount &&
-                <Caption style={{marginTop: -4}} alignRight>{goalTargetConvertedAmount}</Caption>
+              <Caption style={{marginTop: -4}} alignRight>{goalTargetConvertedAmount}</Caption>
               }
             </Container>
           </Container>
