@@ -1,5 +1,6 @@
 export {
-  AccountsHomeCard
+  AccountsHomeCard,
+  SavingsGoalCard
 } from './Accounts';
 export {
   ConnectionUserItem

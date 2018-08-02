@@ -43,7 +43,8 @@ export {
   LinearProgress,
   AccountsHomeCard,
   DateTextField,
-  StepProgress
+  StepProgress,
+  SavingsGoalCard
 } from './Compounds';
 
 export {
