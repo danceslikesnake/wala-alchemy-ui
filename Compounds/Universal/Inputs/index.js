@@ -4,6 +4,7 @@ import { CountryInput } from "./CountryInput/CountryInput";
 import { PhoneInput } from "./PhoneInput/PhoneInput";
 import { DropdownMenu } from "./DropdownMenu/DropdownMenu";
 import { DateTextField } from './DateTextField/DateTextField';
+import { DrawerInput } from './DrawerInput/DrawerInput';
 
 export {
   CurrencyInput,
@@ -11,5 +12,6 @@ export {
   CountryInput,
   PhoneInput,
   DropdownMenu,
-  DateTextField
+  DateTextField,
+  DrawerInput
 }

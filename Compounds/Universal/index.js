@@ -7,7 +7,8 @@ export {
   CountryInput,
   PhoneInput,
   DropdownMenu,
-  DateTextField
+  DateTextField,
+  DrawerInput
 } from './Inputs';
 export {Banner} from './Messaging';
 export {

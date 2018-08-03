@@ -44,7 +44,9 @@ export {
   AccountsHomeCard,
   DateTextField,
   StepProgress,
-  SavingsGoalCard
+  SavingsGoalCard,
+  DrawerInput,
+  AccountSelector
 } from './Compounds';
 
 export {
