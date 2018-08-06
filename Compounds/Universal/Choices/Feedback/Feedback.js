@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { StyleSheet, TouchableNativeFeedback } from 'react-native';
+import { StyleSheet, TouchableNativeFeedback, View } from 'react-native';
 import {
   Container,
   Caption,
@@ -200,14 +200,14 @@ class Feedback extends Component {
                 </Container>
               </TouchableNativeFeedback>
             </Container>
-            <Container
+            <View
               onLayout={this.state.trackDescriptionOnLayout ? (nativeEvent) => {
                 this._trackDescriptionHeight(nativeEvent);
               } : null}
               style={localStyles.headerDescription}
             >
               <Caption color={'white'}>{headerDescription}</Caption>
-            </Container>
+            </View>
           </Animatable.View>
           <Container
             style={[

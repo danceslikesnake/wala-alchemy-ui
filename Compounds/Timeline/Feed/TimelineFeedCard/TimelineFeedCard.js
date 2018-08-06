@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { StyleSheet, TouchableNativeFeedback } from 'react-native';
+import { StyleSheet, TouchableNativeFeedback, View } from 'react-native';
 import {
   Container,
   Caption,
@@ -125,7 +125,7 @@ class TimelineFeedCard extends Component {
         ) : (
           <Container>
             {bodyImage ? (
-              <Container
+              <View
                 onLayout={this.state.trackBodyImageWidth ? (nativeEvent) => {
                   this._setBodyImageWidth(nativeEvent);
                 } : null}
@@ -138,7 +138,7 @@ class TimelineFeedCard extends Component {
                   ]}
                   resizeMode={'cover'}
                 />
-              </Container>
+              </View>
             ) : null}
             {this.renderStandardBodyLayout(bodyHeadline, bodyDescription, bodyInsetIcon)}
             {callToActionOnPress &&
