@@ -1,6 +1,6 @@
 {
   "name": "alchemyUI",
-  "version": "0.7.21",
+  "version": "0.7.22",
   "main": "index.js",
   "description": "A set of Elements and Compounds to create UI for the Wala app",
   "repository": {
@@ -37,9 +37,9 @@
     "babel-jest": "22.0.6",
     "babel-preset-react-native": "4.0.0",
     "jest": "22.0.6",
-    "react-test-renderer": "16.2.0",
     "react": "^16.2.0",
-    "react-native": "0.52.0"
+    "react-native": "0.52.0",
+    "react-test-renderer": "16.2.0"
   },
   "jest": {
     "preset": "react-native"
