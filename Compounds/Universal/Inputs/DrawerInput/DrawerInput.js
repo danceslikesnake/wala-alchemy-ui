@@ -39,7 +39,7 @@ class DrawerInput extends Component {
             displaySelectedIndex: idx,
             showDrawer: false
           });
-          this.props.onSelectChoice(choice.id);
+          this.props.onSelectChoice(idx);
         }}>
           <Container style={idx === this.state.displaySelectedIndex ? {borderLeftWidth: 4, borderLeftColor: AUI_COLORS.WalaTeal.hex} : null}>
             {choice.displayComponent}

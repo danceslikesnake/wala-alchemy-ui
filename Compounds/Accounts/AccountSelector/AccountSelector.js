@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
-import {StyleSheet} from 'react-native';
 import {
   Container,
   AUI_COLORS,
@@ -65,12 +64,13 @@ class AccountSelector extends Component {
 }
 
 AccountSelector.defaultProps = {
-  drawerHeaderText: 'Options...'
+  drawerHeaderText: 'Options...',
+  label: 'Choose an account'
 };
 
 AccountSelector.propTypes = {
-  drawerChoices: PropTypes.array,
-  onSelectAccount: PropTypes.func,
+  drawerChoices: PropTypes.array.isRequired,
+  onSelectAccount: PropTypes.func.isRequired,
   drawerHeaderText: PropTypes.string,
   label: PropTypes.string
 };
