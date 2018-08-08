@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import {
-  View,
-  Text
+  View
 } from 'react-native';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
-import { createIconSetFromFontello } from 'react-native-vector-icons';
+import { createIconSetFromFontello, createIconSetFromIcoMoon } from 'react-native-vector-icons';
 import fontelloConfig from './config.json';
 const WalaIcon = createIconSetFromFontello(fontelloConfig);
+import icoMoonConfig from './FontAwesome5ProSolid.json';
+const Fa5ProSolidIcon = createIconSetFromIcoMoon(icoMoonConfig);
 import { AUI_COLORS } from "../Colors";
 
 class Icons extends Component {
@@ -26,7 +27,14 @@ class Icons extends Component {
             color={this.props.iconColor ? this.props.iconColor : AUI_COLORS.ScampiPurple.tint2}
           />
         );
-        break;
+      case 'font-awesome':
+        return(
+          <Fa5ProSolidIcon
+            name={this.props.iconName}
+            size={this.props.iconSize ? this.props.iconSize : 21}
+            color={this.props.iconColor ? this.props.iconColor : AUI_COLORS.ScampiPurple.tint2}
+          />
+        );
       case 'wala':
       default:
         return(
@@ -36,7 +44,6 @@ class Icons extends Component {
             color={this.props.iconColor ? this.props.iconColor : AUI_COLORS.ScampiPurple.tint2}
           />
         );
-        break;
     }
   };
 
@@ -62,7 +69,8 @@ Icons.defaultProps = {
 Icons.propTypes = {
   iconSet: PropTypes.oneOf([
     'wala',
-    'material-design'
+    'material-design',
+    'font-awesome'
   ]),
   iconName: PropTypes.string.isRequired,
   iconSize: PropTypes.number,
