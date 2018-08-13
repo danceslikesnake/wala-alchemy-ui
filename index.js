@@ -46,7 +46,9 @@ export {
   StepProgress,
   SavingsGoalCard,
   DrawerInput,
-  AccountSelector
+  AccountSelector,
+  Dialog,
+  Bubble
 } from './Compounds';
 
 export {

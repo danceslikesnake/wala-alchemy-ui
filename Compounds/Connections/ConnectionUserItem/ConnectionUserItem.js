@@ -6,7 +6,7 @@ import {
 } from 'react-native';
 import {
   Container,
-  SmallDisplay,
+  Caption,
   Subheadline,
   Icons,
   Spacer,
@@ -33,7 +33,11 @@ class ConnectionUserItem extends Component {
             alignItems={'center'}
             justifyContent={'center'}
             style={[
-              {width: itemHeight, height: itemHeight - AUI_CONSTANTS.gridBase},
+              {
+                width: itemHeight,
+                height: itemHeight - AUI_CONSTANTS.gridBase,
+                paddingTop: 2
+              },
               AUI_LAYOUT.roundCorners,
               AUI_LAYOUT.elevation2,
               styles.swipeButton
@@ -41,10 +45,10 @@ class ConnectionUserItem extends Component {
             <Icons
               iconName={btn.iconName}
               iconSet={btn.iconSet ? btn.iconSet : 'wala'}
-              iconColor={'white'}
+              iconColor={AUI_COLORS.WalaTeal.hex}
               iconSize={21}
             />
-            <SmallDisplay color={'white'}>{btn.label}</SmallDisplay>
+            <Caption style={{marginTop: 1}} dense color={AUI_COLORS.WalaTeal.shade2}>{btn.label.toUpperCase()}</Caption>
           </Container>
         </TouchableNativeFeedback>
       );
@@ -86,10 +90,10 @@ class ConnectionUserItem extends Component {
   };
 
   render(){
-    const {onRef, user, rightButtons, onPress, isFavourite, favouriteOnPress, bounceOnMount} = this.props;
+    const {onRef, user, swipeActions, onPress, isFavourite, favouriteOnPress, bounceOnMount} = this.props;
     const itemHeight = AUI_FUNCTIONS.gridBaseMultiplier(5);
-    const rightSwipeButtons = rightButtons ? this.renderRightButtons(rightButtons, itemHeight) : null;
-    const rightButtonsWidth = rightButtons ? (itemHeight * rightButtons.length) + 8 + (8 * rightButtons.length) : null;
+    const rightSwipeButtons = swipeActions ? this.renderRightButtons(swipeActions, itemHeight) : null;
+    const rightButtonsWidth = swipeActions ? (itemHeight * swipeActions.length) + 8 + (8 * swipeActions.length) : null;
     const avatar = this.renderAvatar(user);
 
     return(
@@ -132,9 +136,9 @@ class ConnectionUserItem extends Component {
 }
 
 ConnectionUserItem.propTypes = {
-  user: PropTypes.object,
-  rightButtons: PropTypes.array,
-  onPress: PropTypes.func,
+  user: PropTypes.object.isRequired,
+  swipeActions: PropTypes.array,
+  onPress: PropTypes.func.isRequired,
   isFavourite: PropTypes.bool,
   favouriteOnPress: PropTypes.func,
   bounceOnMount: PropTypes.bool
@@ -142,9 +146,8 @@ ConnectionUserItem.propTypes = {
 
 const styles = StyleSheet.create({
   swipeButton: {
-    backgroundColor: AUI_COLORS.WalaTeal.hex,
     borderRadius: 3,
-    marginRight: 8
+    marginRight: AUI_CONSTANTS.gridBaseDense
   },
   swipeButtonTrack: {
     paddingLeft: 8,

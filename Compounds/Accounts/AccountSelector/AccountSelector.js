@@ -54,7 +54,9 @@ class AccountSelector extends Component {
       <Container>
         <DrawerInput
           label={label}
-          onSelectChoice={onSelectAccount}
+          onSelectChoice={(idx) => {
+            onSelectAccount(drawerChoices[idx]);
+          }}
           drawerChoices={this.renderAccounts(drawerChoices)}
           drawerHeaderText={drawerHeaderText}
         />

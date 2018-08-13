@@ -28,5 +28,7 @@ export {
   LinearProgress,
   DateTextField,
   StepProgress,
-  DrawerInput
+  DrawerInput,
+  Dialog,
+  Bubble
 } from './Universal';

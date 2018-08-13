@@ -1,7 +1,6 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { StyleSheet, TouchableNativeFeedback } from 'react-native';
-import Swipeable from 'react-native-swipeable-row';
 import {
   AUI_COLORS,
   AUI_LAYOUT,
@@ -13,6 +12,7 @@ import {
   Subheadline,
 } from '../../../Elements/index';
 import { AUI_CONSTANTS, AUI_FUNCTIONS } from '../../../Helpers/index';
+import Swipeable from 'react-native-swipeable-row';
 
 class MarketTransactionItem extends Component {
   constructor(props) {
@@ -85,21 +85,22 @@ class MarketTransactionItem extends Component {
       productName,
       price,
       statusComponent,
-      rightButtons,
+      swipeActions,
       onPress,
       bounceOnMount,
     } = this.props;
 
     const itemHeight = AUI_FUNCTIONS.gridBaseMultiplier(7);
     const itemWidth =
-      rightButtons && rightButtons.length > 2
+      swipeActions && swipeActions.length > 2
         ? AUI_FUNCTIONS.gridBaseMultiplier(5)
         : itemHeight;
-    const rightSwipeButtons = rightButtons
-      ? this.renderRightButtons(rightButtons, itemHeight, itemWidth)
+    const rightSwipeButtons = swipeActions
+      ? this.renderRightButtons(swipeActions, itemHeight, itemWidth)
       : null;
-    const rightButtonsWidth =
-      itemWidth * rightButtons.length + 8 + 8 * rightButtons.length;
+    const rightButtonsWidth = swipeActions
+      ? itemWidth * swipeActions.length + 8 + 8 * swipeActions.length
+      : null;
 
     return (
       <Swipeable
@@ -156,12 +157,12 @@ class MarketTransactionItem extends Component {
 }
 
 MarketTransactionItem.propTypes = {
-  provider: PropTypes.string,
-  productName: PropTypes.string,
-  price: PropTypes.string,
+  provider: PropTypes.string.isRequired,
+  productName: PropTypes.string.isRequired,
+  price: PropTypes.string.isRequired,
+  onPress: PropTypes.func.isRequired,
   statusComponent: PropTypes.element,
-  rightButtons: PropTypes.array,
-  onPress: PropTypes.func,
+  swipeActions: PropTypes.array,
   bounceOnMount: PropTypes.bool,
 };
 

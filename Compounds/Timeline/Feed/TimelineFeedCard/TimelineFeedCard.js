@@ -124,6 +124,30 @@ class TimelineFeedCard extends Component {
           </Container>
         ) : (
           <Container>
+            {this.renderStandardBodyLayout(bodyHeadline, bodyDescription, bodyInsetIcon)}
+            {callToActionOnPress &&
+            <TouchableNativeFeedback onPress={callToActionOnPress}>
+              <Container
+                actAsRow
+                alignItems={'center'}
+                style={[localStyles.callToAction, AUI_LAYOUT.roundCorners]}
+              >
+                <SmallDisplay isFlex color={'white'}>{callToActionLabel}</SmallDisplay>
+                <Container
+                  style={[localStyles.callToActionOrnament, AUI_LAYOUT.roundRightCorners]}
+                  alignItems={'center'}
+                  justifyContent={'center'}
+                >
+                  <Icons
+                    iconName={'chevron-right'}
+                    iconColor={'white'}
+                    iconSet={'material-design'}
+                    iconSize={26}
+                  />
+                </Container>
+              </Container>
+            </TouchableNativeFeedback>
+            }
             {bodyImage ? (
               <View
                 onLayout={this.state.trackBodyImageWidth ? (nativeEvent) => {
@@ -140,30 +164,6 @@ class TimelineFeedCard extends Component {
                 />
               </View>
             ) : null}
-            {this.renderStandardBodyLayout(bodyHeadline, bodyDescription, bodyInsetIcon)}
-            {callToActionOnPress &&
-              <TouchableNativeFeedback onPress={callToActionOnPress}>
-                <Container
-                  actAsRow
-                  alignItems={'center'}
-                  style={[localStyles.callToAction, AUI_LAYOUT.roundCorners]}
-                >
-                  <SmallDisplay isFlex color={'white'}>{callToActionLabel}</SmallDisplay>
-                  <Container
-                    style={[localStyles.callToActionOrnament, AUI_LAYOUT.roundRightCorners]}
-                    alignItems={'center'}
-                    justifyContent={'center'}
-                  >
-                    <Icons
-                      iconName={'chevron-right'}
-                      iconColor={'white'}
-                      iconSet={'material-design'}
-                      iconSize={26}
-                    />
-                  </Container>
-                </Container>
-              </TouchableNativeFeedback>
-            }
           </Container>
         )}
         {footerActions &&
@@ -220,8 +220,7 @@ const localStyles = StyleSheet.create({
     paddingLeft: AUI_CONSTANTS.gridBase
   },
   bodyImage: {
-    width: '100%',
-    marginBottom: AUI_FUNCTIONS.gridBaseMultiplier(2, true),
+    width: '100%'
   },
   bodyHeadline: {
     paddingHorizontal: AUI_CONSTANTS.gridBase,

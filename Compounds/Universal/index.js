@@ -10,7 +10,11 @@ export {
   DateTextField,
   DrawerInput
 } from './Inputs';
-export {Banner} from './Messaging';
+export {
+  Banner,
+  Dialog,
+  Bubble
+} from './Messaging';
 export {
   LinearProgress,
   StepProgress

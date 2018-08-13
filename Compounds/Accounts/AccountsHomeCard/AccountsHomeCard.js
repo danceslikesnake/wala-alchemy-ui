@@ -91,7 +91,7 @@ class AccountsHomeCard extends Component {
   render() {
     const {
       brandingBgImage,
-      accountOptions,
+      accountTileActions,
       renderAdditionalContent,
       isBadState
     } = this.props;
@@ -119,11 +119,11 @@ class AccountsHomeCard extends Component {
             {(renderAdditionalContent && !isBadState) ? renderAdditionalContent() : null}
           </Container>
         )}
-        {(accountOptions && !isBadState) &&
+        {(accountTileActions && !isBadState) &&
         <Container style={{borderTopWidth: 4, borderTopColor: AUI_COLORS.ScampiPurple.hex}}>
           <TileActions
-            tiles={accountOptions}
-            rowCount={accountOptions.length}
+            tiles={accountTileActions}
+            rowCount={accountTileActions.length}
             dense
           />
         </Container>
@@ -134,8 +134,8 @@ class AccountsHomeCard extends Component {
 }
 
 AccountsHomeCard.defaultProps = {
-  isBadStateHeadline: 'Oops!',
-  isBadStateDescription: 'Something has gone wrong with this feature! Please let us know about this by emailing info@getwala.com',
+  isBadStateHeadline: 'Something\'s Wrong With This Account :(',
+  isBadStateDescription: 'Don\'t worry, though, your money is safe! Please let us know about this problem by emailing info@getwala.com',
   isBadStateButtonLabel: 'Email Us'
 };
 
@@ -149,7 +149,7 @@ AccountsHomeCard.propTypes = {
     PropTypes.object
   ]),
   renderAdditionalContent: PropTypes.func,
-  accountOptions: PropTypes.array,
+  accountTileActions: PropTypes.array,
   isBadState: PropTypes.bool,
   isBadStateHeadline: PropTypes.string,
   isBadStateDescription: PropTypes.string,
