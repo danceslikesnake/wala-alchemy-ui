@@ -11,7 +11,8 @@
   "author": "Dennis Ramirez",
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start",
-    "test": "jest"
+    "test": "jest",
+    "createVersion": "npm version patch && git push && git push --tags"
   },
   "dependencies": {
     "chroma-js": "^1.3.5",
