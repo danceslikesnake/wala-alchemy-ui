@@ -70,20 +70,20 @@ class DrawerInput extends Component {
         }}>
           <Container
             actAsRow
-            style={[{backgroundColor: 'white', borderRadius: 3, elevation: 1, marginHorizontal: 1, borderWidth: 1, borderColor: AUI_COLORS.Iron.hex}]}
+            style={styles.baseContainer}
           >
             <Container isFlex>
               {drawerChoices ? drawerChoices[this.state.displaySelectedIndex].displayComponent : null}
             </Container>
             <Container
-              style={{borderLeftWidth: 1, borderLeftColor: AUI_COLORS.Iron.hex, width: 32}}
+              style={styles.iconWrapper}
               justifyContent={'center'}
               alignItems={'center'}
             >
               <Icons
                 iconColor={AUI_COLORS.WalaTeal.hex}
-                iconSet={'material-design'}
-                iconSize={26}
+                iconSet={'font-awesome'}
+                iconSize={16}
                 iconName={'chevron-left'}
               />
             </Container>
@@ -106,10 +106,10 @@ class DrawerInput extends Component {
           }}
           backdropColor={AUI_COLORS.Charcoal.hex}
           backdropopacity={0.8}
-          style={{marginTop: 0, marginBottom: 0, marginRight: 0, marginLeft: 52}}
+          style={styles.modal}
         >
-          <Container isFlex style={{ backgroundColor: 'white', elevation: 8 }}>
-            <Container style={{height: 39, backgroundColor: AUI_COLORS.ScampiPurple.hex, paddingLeft: 13}} justifyContent={'center'}>
+          <Container isFlex style={styles.drawerContainer}>
+            <Container style={styles.drawerheader} justifyContent={'center'}>
               <Subheadline color={'white'}>{drawerHeaderText}</Subheadline>
             </Container>
             <ScrollView>
@@ -134,7 +134,35 @@ DrawerInput.propTypes = {
   label: PropTypes.string
 };
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  baseContainer: {
+    backgroundColor: 'white',
+    borderRadius: 3,
+    elevation: 1,
+    marginHorizontal: 1,
+    borderWidth: 1,
+    borderColor: AUI_COLORS.Iron.hex
+  },
+  iconWrapper: {
+    borderLeftWidth: 1,
+    borderLeftColor: AUI_COLORS.Iron.hex, width: 32
+  },
+  modal: {
+    marginTop: 0,
+    marginBottom: 0,
+    marginRight: 0,
+    marginLeft: 52
+  },
+  drawerContainer: {
+    backgroundColor: 'white',
+    elevation: 8
+  },
+  drawerHeader: {
+    height: 39,
+    backgroundColor: AUI_COLORS.ScampiPurple.hex,
+    paddingLeft: 13
+  }
+});
 
 export {
   DrawerInput
