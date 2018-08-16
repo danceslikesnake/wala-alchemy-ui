@@ -30,5 +30,6 @@ export {
   StepProgress,
   DrawerInput,
   Dialog,
-  Bubble
+  Bubble,
+  RadioButtonGroup
 } from './Universal';

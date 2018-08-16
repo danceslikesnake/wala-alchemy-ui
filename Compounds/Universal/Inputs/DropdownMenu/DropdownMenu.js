@@ -4,7 +4,7 @@ import { StyleSheet, TouchableNativeFeedback } from 'react-native';
 import { Dropdown } from 'react-native-material-dropdown';
 import { Container, Caption, Spacer, Subheadline, AUI_COLORS, AUI_LAYOUT, AUI_TYPOGRAPHY } from '../../../../Elements/index';
 import {Icons} from "../../../../Elements/index";
-import {AUI_FUNCTIONS} from "../../../../Helpers/index";
+import {AUI_FUNCTIONS, AUI_CONSTANTS} from "../../../../Helpers/index";
 
 class DropdownMenu extends Component {
   constructor(props) {
@@ -56,6 +56,7 @@ class DropdownMenu extends Component {
           error={error}
           value={value}
           itemColor={AUI_COLORS.Slate.hex}
+          itemTextStyle={styles.itemTextStyle}
           selectedItemColor={AUI_COLORS.WalaTeal.hex}
           onChangeText={(text) => {
             this.setState({
@@ -122,8 +123,12 @@ const styles = StyleSheet.create({
     marginHorizontal: 1,
     borderWidth: 1,
     borderColor: AUI_COLORS.Iron.hex,
-    height: 52,
-    paddingHorizontal: 13
+    height: AUI_FUNCTIONS.gridBaseMultiplier(4),
+    paddingHorizontal: AUI_CONSTANTS.gridBase
+  },
+  itemTextStyle: {
+    fontFamily: AUI_TYPOGRAPHY.ProximaNova.semibold,
+    fontSize: AUI_TYPOGRAPHY.typeScale.size16
   }
 });
 

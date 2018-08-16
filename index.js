@@ -48,7 +48,8 @@ export {
   DrawerInput,
   AccountSelector,
   Dialog,
-  Bubble
+  Bubble,
+  RadioButtonGroup
 } from './Compounds';
 
 export {
