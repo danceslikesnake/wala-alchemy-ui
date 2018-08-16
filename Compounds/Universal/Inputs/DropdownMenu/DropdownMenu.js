@@ -35,6 +35,7 @@ class DropdownMenu extends Component {
       error,
       onChangeText,
       value,
+      placeholder,
       onBlur,
       onFocus
     } = this.props;
@@ -70,7 +71,7 @@ class DropdownMenu extends Component {
                   alignItems={'center'}
                   style={styles.customInput}
                 >
-                  <Subheadline color={AUI_COLORS.Charcoal.tint1} isFlex>{this.state.customLabel ? labelsArr[this.state.customLabel] : label}</Subheadline>
+                  <Subheadline color={AUI_COLORS.Charcoal.tint1} isFlex>{this.state.customLabel ? labelsArr[this.state.customLabel] : placeholder}</Subheadline>
                   <Icons
                     iconColor={AUI_COLORS.WalaTeal.hex}
                     iconSet={'font-awesome'}
@@ -99,14 +100,15 @@ class DropdownMenu extends Component {
 }
 
 DropdownMenu.defaultProps = {
-
+  placeholder: 'Select...'
 };
 
 DropdownMenu.propTypes = {
   label: PropTypes.string,
+  placeholder: PropTypes.string,
   data: PropTypes.array.isRequired,
   error: PropTypes.string,
-  onChangeText: PropTypes.func,
+  onChangeText: PropTypes.func.isRequired,
   value: PropTypes.string,
   onBlur: PropTypes.func,
   onFocus: PropTypes.func
