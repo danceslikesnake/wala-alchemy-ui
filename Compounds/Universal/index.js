@@ -13,7 +13,8 @@ export {
 export {
   Banner,
   Dialog,
-  Bubble
+  Bubble,
+  BusyOverlay
 } from './Messaging';
 export {
   LinearProgress,

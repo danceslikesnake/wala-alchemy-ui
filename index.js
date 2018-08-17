@@ -49,7 +49,8 @@ export {
   AccountSelector,
   Dialog,
   Bubble,
-  RadioButtonGroup
+  RadioButtonGroup,
+  BusyOverlay
 } from './Compounds';
 
 export {
