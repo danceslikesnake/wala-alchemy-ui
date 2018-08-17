@@ -12,7 +12,9 @@
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start",
     "test": "jest",
-    "createVersion": "npm version patch && git push && git push --tags"
+    "createVersionPatch": "npm version patch && git push && git push --tags",
+    "createVersionMinor": "npm version minor && git push && git push --tags",
+    "createVersionMajor": "npm version major && git push && git push --tags"
   },
   "dependencies": {
     "chroma-js": "^1.3.5",
