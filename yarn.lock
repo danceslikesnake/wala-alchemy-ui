@@ -4056,9 +4056,9 @@ react-native-clcasher@1.0.0:
   dependencies:
     mock-async-storage "^1.0.3"
 
-"react-native-country-picker-modal@git+https://github.com/GetWala/react-native-country-picker-modal.git#semver:0.4.3":
-  version "0.4.3"
-  resolved "git+https://github.com/GetWala/react-native-country-picker-modal.git#20b72cecd0b9387901c7bbaf82a5a35792f2f9f5"
+"react-native-country-picker-modal@git+https://github.com/GetWala/react-native-country-picker-modal.git#semver:0.4.4":
+  version "0.4.4"
+  resolved "git+https://github.com/GetWala/react-native-country-picker-modal.git#083870d098db746ee46efa096df86fbe82474484"
   dependencies:
     babel-preset-react-native-stage-0 "1.0.1"
     lodash "4.17.4"
@@ -4105,9 +4105,9 @@ react-native-material-dropdown@^0.11.1:
     react-native-material-ripple "^0.8.0"
     react-native-material-textfield "^0.12.0"
 
-"react-native-material-menu@git://github.com/mxck/react-native-material-menu#44ac934":
-  version "0.3.2"
-  resolved "git://github.com/mxck/react-native-material-menu#44ac9345dd5b1538f079ca9f8882a942b2ad454e"
+react-native-material-menu@^0.4.0:
+  version "0.4.0"
+  resolved "https://registry.yarnpkg.com/react-native-material-menu/-/react-native-material-menu-0.4.0.tgz#e892dd1425c872c05fc08cc65bc82879751b87ad"
   dependencies:
     prop-types "^15.6.0"
 
@@ -4136,7 +4136,7 @@ react-native-modal-datetime-picker@^6.0.0:
     prop-types "^15.6.1"
     react-native-modal "^6.2.0"
 
-react-native-modal@^6.2.0:
+react-native-modal@^6.2.0, react-native-modal@^6.5.0:
   version "6.5.0"
   resolved "https://registry.yarnpkg.com/react-native-modal/-/react-native-modal-6.5.0.tgz#46220b2289a41597d344c1db17454611b426a758"
   dependencies:
@@ -4163,6 +4163,12 @@ react-native-snap-carousel@^3.6.0:
   dependencies:
     prop-types "^15.6.1"
     react-addons-shallow-compare "15.6.2"
+
+react-native-spinkit@^1.1.1:
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/react-native-spinkit/-/react-native-spinkit-1.1.1.tgz#3ae512f3978bc750b7c02639911e1710750d8539"
+  dependencies:
+    prop-types "^15.5.8"
 
 react-native-svg@^6.3.1:
   version "6.4.1"
@@ -4271,9 +4277,9 @@ react-transform-hmr@^1.0.4:
     global "^4.3.0"
     react-proxy "^1.1.7"
 
-react@16.2.0:
-  version "16.2.0"
-  resolved "https://registry.yarnpkg.com/react/-/react-16.2.0.tgz#a31bd2dab89bff65d42134fa187f24d054c273ba"
+react@^16.2.0:
+  version "16.4.2"
+  resolved "https://registry.yarnpkg.com/react/-/react-16.4.2.tgz#2cd90154e3a9d9dd8da2991149fdca3c260e129f"
   dependencies:
     fbjs "^0.8.16"
     loose-envify "^1.1.0"
