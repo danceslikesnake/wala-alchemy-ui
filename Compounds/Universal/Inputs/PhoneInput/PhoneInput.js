@@ -39,7 +39,7 @@ class PhoneInput extends Component {
 
     return (
       <Container>
-        <Caption style={{color: AUI_COLORS.Iron.hex}}>{'Mobile Phone'}</Caption>
+        <Caption>{'Mobile Phone'}</Caption>
         <Container
           actAsRow={cca2 ? true : false}
           style={[styles.inputWrapper, error ? {borderBottomColor: AUI_COLORS.TorchRed.hex} : null]}

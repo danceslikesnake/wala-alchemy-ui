@@ -169,7 +169,7 @@ class TimelineFeedCard extends Component {
         {footerActions &&
           <Container style={localStyles.footer}>
             <Divider />
-            <Container actAsRow justifyContent={'flex-end'} style={{marginRight: -13}}>
+            <Container actAsRow justifyContent={'flex-end'}>
               {footerActions.map((action, idx) => {
                 return <Container key={idx}>{action.component}</Container>;
               })}
@@ -245,7 +245,6 @@ const localStyles = StyleSheet.create({
   },
   footer: {
     height: AUI_FUNCTIONS.gridBaseMultiplier(5, true),
-    marginHorizontal: 13
   }
 });
 

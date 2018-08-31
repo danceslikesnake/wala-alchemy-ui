@@ -1,6 +1,16 @@
-export { TileActions, BottomSheet, PopoverMenu } from './Actions';
-export { Feedback, RadioButtonGroup } from './Choices';
-export { CategoryHeader } from './Headers';
+export {
+  TileActions,
+  BottomSheet,
+  PopoverMenu,
+  ActionCard
+} from './Actions';
+export {
+  Feedback,
+  RadioButtonGroup
+} from './Choices';
+export {
+  CategoryHeader
+} from './Headers';
 export {
   CurrencyInput,
   TextField,

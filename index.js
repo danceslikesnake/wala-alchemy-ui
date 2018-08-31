@@ -50,7 +50,8 @@ export {
   Dialog,
   Bubble,
   RadioButtonGroup,
-  BusyOverlay
+  BusyOverlay,
+  ActionCard
 } from './Compounds';
 
 export {

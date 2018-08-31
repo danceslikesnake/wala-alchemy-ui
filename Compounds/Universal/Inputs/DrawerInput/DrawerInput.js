@@ -109,7 +109,7 @@ class DrawerInput extends Component {
           style={styles.modal}
         >
           <Container isFlex style={styles.drawerContainer}>
-            <Container style={styles.drawerheader} justifyContent={'center'}>
+            <Container style={styles.drawerHeader} justifyContent={'center'}>
               <Subheadline color={'white'}>{drawerHeaderText}</Subheadline>
             </Container>
             <ScrollView>
