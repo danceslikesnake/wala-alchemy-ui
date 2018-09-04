@@ -1,24 +1,20 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { StyleSheet, TouchableNativeFeedback, View } from 'react-native';
+import { StyleSheet, TouchableNativeFeedback} from 'react-native';
 import {
   Container,
   Caption,
-  SmallDisplay,
-  Icons,
+  Subheadline,
   Divider,
   Spacer,
   CallToActionButton,
   AUI_COLORS,
-  AUI_LAYOUT,
-  AUI_TYPOGRAPHY
 } from '../../../../Elements/index';
 import {
   AUI_CONSTANTS,
   AUI_FUNCTIONS
 } from '../../../../Helpers/index';
 import Modal from 'react-native-modalbox';
-import * as Animatable from 'react-native-animatable';
 
 class Feedback extends Component {
   constructor(props) {
@@ -63,43 +59,6 @@ class Feedback extends Component {
     this.feedback.close();
   }
 
-  _setModalHeight = event => {
-    if (this.state.trackModalOnLayout) {
-      this.setState({
-        trackModalOnLayout: false,
-        modalFinalHeight: event.nativeEvent.layout.height,
-        headerPosition: 'absolute'
-      });
-    }
-  };
-
-  _trackDescriptionHeight = event => {
-    if (this.state.trackDescriptionOnLayout) {
-      this.setState({
-        trackDescriptionOnLayout: false,
-        descriptionFinalHeight: event.nativeEvent.layout.height,
-        headerY: event.nativeEvent.layout.height
-      });
-    }
-  };
-
-  _feedbackControl = () => {
-    if(!this.state.descriptionVisible)
-      this._openFeedbackDescription();
-    else
-      this._closeFeedbackDescription();
-  };
-
-  _openFeedbackDescription = () => {
-    this.feedbackDescription.transition({top: this.state.descriptionFinalHeight}, {top: 0}, 200, 'ease-out');
-    this.setState({descriptionVisible: true});
-  };
-
-  _closeFeedbackDescription = () => {
-    this.feedbackDescription.transition({top: 0}, {top: this.state.descriptionFinalHeight}, 200, 'ease-out');
-    this.setState({descriptionVisible: false});
-  };
-
   _resetChoices = () => {
     this.props.choices.map((choice, idx) => {
       let resetVar = {};
@@ -133,7 +92,7 @@ class Feedback extends Component {
               {borderLeftColor: this.state['id' + choice.choiceId + 'Selected'] ? AUI_COLORS.WalaTeal.hex : 'white'}
               ]}
           >
-            <Caption color={this.state['id' + choice.choiceId + 'Selected'] ? AUI_COLORS.WalaTeal.hex : AUI_COLORS.Charcoal.hex}>{choice.choiceText}</Caption>
+            <Caption color={this.state['id' + choice.choiceId + 'Selected'] ? AUI_COLORS.WalaTeal.hex : AUI_COLORS.Slate.hex}>{choice.choiceText}</Caption>
           </Container>
         </TouchableNativeFeedback>
       );
@@ -143,7 +102,6 @@ class Feedback extends Component {
   render() {
     const {
       headerText,
-      headerDescription,
       choices,
       callToActionDisabledText,
       callToActionActiveText,
@@ -153,7 +111,7 @@ class Feedback extends Component {
     const feedbackChoices = choices ? this._renderChoices(choices) : null;
     return (
       <Modal
-        style={[localStyles.bottomSheet, {height: this.state.modalFinalHeight}]}
+        style={[localStyles.bottomSheet]}
         position={'bottom'}
         ref={feedback => this.feedback = feedback}
         coverScreen
@@ -161,77 +119,27 @@ class Feedback extends Component {
         backdropColor={AUI_COLORS.Charcoal.getRgba(0.8)}
         onClosed={() => {this._resetAll();}}
       >
-        <Container
-          onLayout={this.state.trackModalOnLayout ? (nativeEvent) => {
-            this._setModalHeight(nativeEvent);
-          } : null}
-        >
-          <Animatable.View
-            style={[
-              localStyles.headerWrapper,
-              {position: this.state.headerPosition, top: this.state.headerY}
-              ]}
-            ref={feedbackDescription => this.feedbackDescription = feedbackDescription}
-          >
-            <Container
-              actAsRow
-              alignItems={'center'}
-              style={localStyles.header}
-            >
-              <SmallDisplay isFlex color={'white'}>{headerText}</SmallDisplay>
-              <TouchableNativeFeedback onPress={() => {this._feedbackControl();}}>
-                <Container
-                  style={localStyles.headerButton}
-                  justifyContent={'flex-end'}
-                  alignItems={'center'}
-                >
-                  <SmallDisplay
-                    color={AUI_COLORS.CuriousBlue.tint4}
-                    style={{lineHeight: 13}}>
-                    {this.state.descriptionVisible ? 'ok!' : 'why?'}
-                  </SmallDisplay>
-                  <Icons
-                    iconName={'keyboard-arrow-down'}
-                    iconSet={'material-design'}
-                    iconColor={AUI_COLORS.CuriousBlue.tint4}
-                    iconSize={16}
-                    containerStyles={{marginTop: -4}}
-                  />
-                </Container>
-              </TouchableNativeFeedback>
-            </Container>
-            <View
-              onLayout={this.state.trackDescriptionOnLayout ? (nativeEvent) => {
-                this._trackDescriptionHeight(nativeEvent);
-              } : null}
-              style={localStyles.headerDescription}
-            >
-              <Caption color={'white'}>{headerDescription}</Caption>
-            </View>
-          </Animatable.View>
-          <Container
-            style={[
-              localStyles.contentWrapper,
-              !this.state.trackModalOnLayout ? {marginTop: this.state.descriptionFinalHeight + AUI_FUNCTIONS.gridBaseMultiplier(3)} : null
-            ]}
-          >
-            {feedbackChoices}
-            <Divider size={'small'}/>
-            <Spacer/>
-            <Container variation={'card'}>
-              <CallToActionButton
-                onPress={() => {
-                  if(this.state.selectedChoice) {
-                    callToActionOnPress(this.state.selectedChoice);
-                    this._resetAll();
-                  }
-                }}
-                label={this.state.selectedChoice ? callToActionActiveText : callToActionDisabledText}
-                variation={this.state.selectedChoice ? 'primary' : 'disabled'}
-              />
-            </Container>
-            <Spacer/>
+        <Container style={[localStyles.contentWrapper]} variation={'card'}>
+          <Container style={{height: AUI_FUNCTIONS.gridBaseMultiplier(5)}} justifyContent={'center'}>
+            <Subheadline alignCenter color={AUI_COLORS.Charcoal.hex} style={{paddingHorizontal: AUI_CONSTANTS.gridBase}}>{headerText}</Subheadline>
           </Container>
+          <Divider />
+          {feedbackChoices}
+          <Spacer/>
+          <Container variation={'card'}>
+            <Spacer />
+            <CallToActionButton
+              onPress={() => {
+                if(this.state.selectedChoice) {
+                  callToActionOnPress(this.state.selectedChoice);
+                  this._resetAll();
+                }
+              }}
+              label={this.state.selectedChoice ? callToActionActiveText : callToActionDisabledText}
+              variation={this.state.selectedChoice ? 'primary' : 'disabled'}
+            />
+          </Container>
+          <Spacer/>
         </Container>
       </Modal>
     );
@@ -246,7 +154,6 @@ Feedback.defaultProps = {
 
 Feedback.propTypes = {
   headerText: PropTypes.string,
-  headerDescription: PropTypes.string,
   choices: PropTypes.array.isRequired,
   callToActionDisabledText: PropTypes.string,
   callToActionActiveText: PropTypes.string,
@@ -256,7 +163,8 @@ Feedback.propTypes = {
 const localStyles = StyleSheet.create({
   bottomSheet: {
     position: 'relative',
-    backgroundColor: 'transparent'
+    backgroundColor: 'transparent',
+    height: null
   },
   headerWrapper: {
     backgroundColor: AUI_COLORS.CuriousBlue.hex,
@@ -277,8 +185,11 @@ const localStyles = StyleSheet.create({
   },
   contentWrapper: {
     backgroundColor: 'white',
-    zIndex: 5,
-    width: '100%'
+    borderTopWidth: 8,
+    borderTopColor: AUI_COLORS.CuriousBlue.tint2,
+    borderRadius: 3,
+    elevation: 4,
+    marginBottom: AUI_CONSTANTS.gridBase
   },
   feedbackItem: {
     padding: AUI_CONSTANTS.gridBase,
