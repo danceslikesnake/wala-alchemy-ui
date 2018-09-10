@@ -70,6 +70,7 @@ class TileActions extends Component {
           >
             <CountryInput
               tileSelector
+              searchable
               cca2={this.state.cca2 ? this.state.cca2 : options.cca2}
               countries={options.countries}
               onChange={(data) => {

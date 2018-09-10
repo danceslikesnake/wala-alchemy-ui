@@ -7,6 +7,7 @@ import {
   Subheadline,
   SmallDisplay,
   Icons,
+  BodyText,
   AUI_COLORS,
   AUI_LAYOUT,
   AUI_TYPOGRAPHY, Divider
@@ -49,7 +50,7 @@ class TimelineFeedCard extends Component {
           <Container isFlex>
             {bodyHeadline &&
             <Subheadline
-              dense
+
               style={localStyles.bodyHeadline}
               color={AUI_COLORS.Charcoal.hex}
             >
@@ -57,7 +58,7 @@ class TimelineFeedCard extends Component {
             </Subheadline>
             }
             {bodyDescription &&
-            <Caption style={localStyles.bodyDescription}>{bodyDescription}</Caption>
+            <BodyText dense style={localStyles.bodyDescription}>{bodyDescription}</BodyText>
             }
           </Container>
         </Container>
@@ -67,7 +68,6 @@ class TimelineFeedCard extends Component {
         <Container>
           {bodyHeadline &&
           <Subheadline
-            dense
             style={localStyles.bodyHeadline}
             color={AUI_COLORS.Charcoal.hex}
           >
@@ -75,7 +75,7 @@ class TimelineFeedCard extends Component {
           </Subheadline>
           }
           {bodyDescription &&
-          <Caption style={localStyles.bodyDescription}>{bodyDescription}</Caption>
+          <BodyText dense style={localStyles.bodyDescription}>{bodyDescription}</BodyText>
           }
         </Container>
       );
