@@ -15,20 +15,25 @@ import {
 } from "../../../../Helpers/index";
 
 class TileActions extends Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      tileArray: null,
-      forcedWidth: null,
-      cca2: null
-    }
+  state = {
+    tileArray: [],
+    forcedWidth: null,
+    cca2: null
   }
 
-  componentWillMount() {
+  componentDidMount() {
+    this.propsToState(this.props);
+  }
+
+  componentWillReceiveProps(nextProps) {
+    this.propsToState(nextProps);
+  }
+
+  propsToState = props => {
+    const { tiles, rowCount } = props;
     // set any toggle state variables
-    this.props.tiles.map((obj, idx) => {
-      if(obj.iconToggle) {
+    tiles.map((obj, idx) => {
+      if (obj.iconToggle) {
         let addVar = {};
         addVar['tile_' + idx + '_toggle'] = obj.iconToggle.initialToggleState;
         this.setState(addVar);
@@ -36,12 +41,12 @@ class TileActions extends Component {
     });
 
     // chunk the tiles according to rowcount
-    const tilesToChunks = this._arrayChunk(this.props.tiles, this.props.rowCount);
+    const tilesToChunks = this._arrayChunk(tiles, rowCount);
     this.setState({
       tileArray: tilesToChunks,
-      forcedWidth: (100 / this.props.rowCount) + '%'
+      forcedWidth: 100 / rowCount + '%',
     });
-  }
+  };
 
   _arrayChunk = (myArray, chunk_size) => {
     let results = [];
