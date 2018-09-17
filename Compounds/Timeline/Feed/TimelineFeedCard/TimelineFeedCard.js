@@ -185,7 +185,7 @@ TimelineFeedCard.defaultProps = {
   cardBorderColor: AUI_COLORS.CuriousBlue.tint2,
   headerText: 'Timeline Card',
   headerTextColor: AUI_COLORS.CuriousBlue.hex,
-  bodyImageAspectRatio: AUI_LAYOUT.aspectRatios.widescreen,
+  bodyImageAspectRatio: AUI_LAYOUT.aspectRatios.landscape,
   callToActionLabel: 'Learn More'
 };
 
