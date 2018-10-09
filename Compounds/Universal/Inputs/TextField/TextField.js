@@ -16,15 +16,18 @@ class TextField extends Component {
 
   focus() {
     this.textInput.focus();
+    this.props.onFocus && this.props.onFocus();
   }
 
   onBlur() {
+    this.props.onBlur && this.props.onBlur();
     this.setState({
       underlineColor: AUI_COLORS.Iron.hex
     });
   }
 
   onFocus() {
+    this.props.onFocus && this.props.onFocus();
     this.setState({
       underlineColor: AUI_COLORS.WalaTeal.hex
     });

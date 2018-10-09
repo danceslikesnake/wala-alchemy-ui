@@ -14,6 +14,7 @@ class PhoneInput extends Component {
 
   focus() {
     this.input.focus();
+    this.props.onFocus && this.props.onFocus();
   }
 
   focusCountryPicker() {
