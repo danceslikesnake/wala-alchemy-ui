@@ -1,24 +1,16 @@
-import React, {Component} from 'react';
 import PropTypes from 'prop-types';
-import {StyleSheet, TouchableNativeFeedback, ScrollView} from 'react-native';
+import React, { Component } from 'react';
+import { ScrollView, StyleSheet, TouchableNativeFeedback } from 'react-native';
+import Modal from 'react-native-modal';
 import {
-  Container,
-  Headline,
   AUI_COLORS,
-  AUI_LAYOUT,
-  AUI_TYPOGRAPHY,
-  BodyText,
-  Subheadline,
   Caption,
-  Spacer,
+  Container,
   Divider,
-  Icons, SmallDisplay
+  Icons,
+  Spacer,
+  Subheadline,
 } from '../../../../Elements/index';
-import {
-  AUI_FUNCTIONS,
-  AUI_CONSTANTS
-} from "../../../../Helpers/index";
-import Modal from "react-native-modal";
 
 class DrawerInput extends Component {
   constructor(props) {
@@ -26,60 +18,66 @@ class DrawerInput extends Component {
 
     this.state = {
       displaySelectedIndex: 0,
-      showDrawer: false
+      showDrawer: false,
     };
   }
 
-  renderDrawerChoices = (choices) => {
-    let choiceArray = [];
-    choices.map((choice, idx) => {
-      choiceArray.push(
-        <TouchableNativeFeedback key={idx} onPress={() => {
+  _hideDrawer = () => {
+    this.setState({
+      showDrawer: false,
+    });
+  };
+
+  _showDrawer = () => {
+    this.setState({
+      showDrawer: true,
+    });
+  };
+
+  renderDrawerChoices = (choices = []) => {
+    return choices.map((choice, idx) => (
+      <TouchableNativeFeedback
+        key={idx}
+        onPress={() => {
           this.setState({
             displaySelectedIndex: idx,
-            showDrawer: false
+            showDrawer: false,
           });
           this.props.onSelectChoice(idx);
         }}>
-          <Container style={idx === this.state.displaySelectedIndex ? {borderLeftWidth: 4, borderLeftColor: AUI_COLORS.WalaTeal.hex} : null}>
-            {choice.displayComponent}
-            <Divider />
-          </Container>
-        </TouchableNativeFeedback>
-      );
-    });
-    return choiceArray;
+        <Container
+          style={
+            idx === this.state.displaySelectedIndex
+              ? { borderLeftWidth: 4, borderLeftColor: AUI_COLORS.WalaTeal.hex }
+              : null
+          }>
+          {choice.displayComponent}
+          <Divider />
+        </Container>
+      </TouchableNativeFeedback>
+    ));
   };
 
   render() {
-    const {
-      drawerChoices,
-      drawerHeaderText,
-      label
-    } = this.props;
+    const { drawerChoices, drawerHeaderText, label } = this.props;
+    const { displaySelectedIndex } = this.state;
 
+    const currentChoice =
+      drawerChoices &&
+      displaySelectedIndex < drawerChoices.length &&
+      drawerChoices[displaySelectedIndex];
+    const currentDisplayComponent = (currentChoice && currentChoice.displayComponent) || null;
+
+    const renderedDrawerChoices = this.renderDrawerChoices(drawerChoices);
 
     return (
       <Container>
         <Caption>{label}</Caption>
         <Spacer dense />
-        <TouchableNativeFeedback onPress={() => {
-          this.setState({
-            showDrawer: true
-          });
-        }}>
-          <Container
-            actAsRow
-            style={styles.baseContainer}
-          >
-            <Container isFlex>
-              {drawerChoices ? drawerChoices[this.state.displaySelectedIndex].displayComponent : null}
-            </Container>
-            <Container
-              style={styles.iconWrapper}
-              justifyContent={'center'}
-              alignItems={'center'}
-            >
+        <TouchableNativeFeedback onPress={this._showDrawer}>
+          <Container actAsRow style={styles.baseContainer}>
+            <Container isFlex>{currentDisplayComponent}</Container>
+            <Container style={styles.iconWrapper} justifyContent={'center'} alignItems={'center'}>
               <Icons
                 iconColor={AUI_COLORS.WalaTeal.hex}
                 iconSet={'font-awesome'}
@@ -94,27 +92,16 @@ class DrawerInput extends Component {
           isVisible={this.state.showDrawer}
           animationIn={'slideInRight'}
           animationOut={'slideOutRight'}
-          onBackdropPress={() => {
-            this.setState({
-              showDrawer: false
-            });
-          }}
-          onBackButtonPress={() => {
-            this.setState({
-              showDrawer: false
-            });
-          }}
+          onBackdropPress={this._hideDrawer}
+          onBackButtonPress={this._hideDrawer}
           backdropColor={AUI_COLORS.Charcoal.hex}
           backdropopacity={0.8}
-          style={styles.modal}
-        >
+          style={styles.modal}>
           <Container isFlex style={styles.drawerContainer}>
             <Container style={styles.drawerHeader} justifyContent={'center'}>
               <Subheadline color={'white'}>{drawerHeaderText}</Subheadline>
             </Container>
-            <ScrollView>
-              {drawerChoices ? this.renderDrawerChoices(drawerChoices) : null}
-            </ScrollView>
+            <ScrollView>{renderedDrawerChoices}</ScrollView>
           </Container>
         </Modal>
       </Container>
@@ -124,14 +111,15 @@ class DrawerInput extends Component {
 
 DrawerInput.defaultProps = {
   drawerHeaderText: 'Select One...',
-  label: 'Choices'
+  label: 'Choices',
+  drawerChoices: [],
 };
 
 DrawerInput.propTypes = {
   drawerChoices: PropTypes.array,
   onSelectChoice: PropTypes.func,
   drawerHeaderText: PropTypes.string,
-  label: PropTypes.string
+  label: PropTypes.string,
 };
 
 const styles = StyleSheet.create({
@@ -141,29 +129,28 @@ const styles = StyleSheet.create({
     elevation: 1,
     marginHorizontal: 1,
     borderWidth: 1,
-    borderColor: AUI_COLORS.Iron.hex
+    borderColor: AUI_COLORS.Iron.hex,
   },
   iconWrapper: {
     borderLeftWidth: 1,
-    borderLeftColor: AUI_COLORS.Iron.hex, width: 32
+    borderLeftColor: AUI_COLORS.Iron.hex,
+    width: 32,
   },
   modal: {
     marginTop: 0,
     marginBottom: 0,
     marginRight: 0,
-    marginLeft: 52
+    marginLeft: 52,
   },
   drawerContainer: {
     backgroundColor: 'white',
-    elevation: 8
+    elevation: 8,
   },
   drawerHeader: {
     height: 39,
     backgroundColor: AUI_COLORS.ScampiPurple.hex,
-    paddingLeft: 13
-  }
+    paddingLeft: 13,
+  },
 });
 
-export {
-  DrawerInput
-}
+export { DrawerInput };
