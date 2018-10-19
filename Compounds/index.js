@@ -7,6 +7,10 @@ export {
   ConnectionUserItem
 } from './Connections';
 export {
+  EarnOpportunityCard,
+  EarnPayoutMessage
+} from './Earn';
+export {
   MarketTransactionItem
 } from './Market';
 export {
