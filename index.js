@@ -51,7 +51,9 @@ export {
   Bubble,
   RadioButtonGroup,
   BusyOverlay,
-  ActionCard
+  ActionCard,
+  EarnOpportunityCard,
+  EarnPayoutMessage
 } from './Compounds';
 
 export {

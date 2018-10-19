@@ -121,14 +121,14 @@ class TileActions extends Component {
                   this.state['tile_' + idx2 + '_toggle'] ? tile.iconToggle.activeIconSet : tile.iconToggle.inActiveIconSet
                 ) : (tile.iconSet ? tile.iconSet : 'wala')
               }
-              iconSize={this.props.dense ? 24 : 26}
+              iconSize={this.props.dense ? 21 : 26}
               iconColor={AUI_COLORS.WalaTeal.hex}
             />
             {!this.props.dense ? <Spacer dense /> : null}
             <Caption
               dense={this.props.dense}
               color={AUI_COLORS.WalaTeal.shade2}
-              style={this.props.dense ? {marginBottom: -4} : null}
+              style={this.props.dense ? {marginTop: 3, marginBottom: -3} : null}
             >
               {tile.label.toUpperCase()}
             </Caption>

@@ -7,11 +7,11 @@ import {
   Spacer,
   Icons,
   AUI_COLORS
-} from '../../../../Elements/index';
+} from '../../../Elements/index';
 import {
   AUI_FUNCTIONS,
   AUI_CONSTANTS
-} from "../../../../Helpers/index";
+} from "../../../Helpers/index";
 
 class TimelineFeedLikeAction extends Component {
   constructor(props) {

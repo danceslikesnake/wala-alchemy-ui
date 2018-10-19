@@ -15,6 +15,7 @@ const SmallDisplay = ({
   alignCenter,
   alignRight,
   isFlex,
+  style,
   ...props 
 }) => {
     
@@ -25,15 +26,15 @@ const SmallDisplay = ({
 
   return (
     <Text
-      {...props}
       style={[
         styles.text,
-        this.props.style,
+        style ? style : null,
         color ? {color: color} : null,
         alignCenter ? {textAlign: 'center'} : null,
         alignRight ? {textAlign: 'right'} : null,
         isFlex ? {flex: 1} : null
       ]}
+      {...props}
     >
       {safeChildren}
     </Text>

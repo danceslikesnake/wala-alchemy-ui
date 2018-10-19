@@ -11,14 +11,14 @@ import {
   AUI_COLORS,
   AUI_LAYOUT,
   AUI_TYPOGRAPHY, Divider
-} from '../../../../Elements/index';
+} from '../../../Elements/index';
 import {
   PopoverMenu
-} from '../../../../Compounds/index';
+} from '../../index';
 import {
   AUI_CONSTANTS,
   AUI_FUNCTIONS
-} from "../../../../Helpers/index";
+} from "../../../Helpers/index";
 import { CachedImage } from 'react-native-cached-image';
 
 class TimelineFeedCard extends Component {
