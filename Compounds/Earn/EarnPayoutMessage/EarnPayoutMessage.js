@@ -26,26 +26,16 @@ import {
   AUI_CONSTANTS
 } from '../../../index.js';
 
+
+
 class EarnPayoutMessage extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      isVisible: false
+      isVisible: false,
     };
   }
-
-  _openEarnPayoutMessage = () => {
-    this.setState({
-      isVisible: true
-    });
-  };
-
-  _closeEarnPayoutMessage = () => {
-    this.setState({
-      isVisible: false
-    });
-  };
 
   render() {
     const {
@@ -54,16 +44,38 @@ class EarnPayoutMessage extends Component {
       dalaAmount,
       callToActionLabel,
       callToActionOnPress,
-      renderAdditionalContent
+      renderAdditionalContent,
+      isOpen,
+      onClosed,
     } = this.props;
+
+    // if (dalaAmount) {
+    //   const amountEarnedLessThanThreshold = Big(dalaAmount || 0).lt(Big(THRESHOLD));
+    //   const precision = amountEarnedLessThanThreshold ? null : 2;
+    //   const formattedAmountEarned = formatMoney(dalaAmount, null, 'DALA', {
+    //     precision: precision,
+    //   });
+
+    //   let amountView = <Spacer multiplier={2} />;
+
+
+    //   amountView = (
+    //     <Title fontFamily="Poppins" style={{ color: 'white' }}>
+    //       {formattedAmountEarned}
+    //     </Title>
+    //   );
+    // }
+
+
 
     return (
       <Modal
-        isVisible={this.state.isVisible}
+        visible={isOpen}
         animationIn={'slideInDown'}
         animationOut={'slideOutUp'}
-        onBackdropPress={this._closeEarnPayoutMessage}
-        onBackButtonPress={this._closeEarnPayoutMessage}
+        onBackdropPress={onClosed}
+        onBackButtonPress={onClosed}
+        onDismiss={onClosed}
         backdropColor={AUI_COLORS.Charcoal.hex}
         backdropopacity={0.8}
         style={styles.modal}
@@ -78,7 +90,9 @@ class EarnPayoutMessage extends Component {
             style={{overflow: 'hidden'}}
           >
             <Image source={require('./logomarkBG.png')} style={styles.logomarkBG} />
-            <TouchableNativeFeedback onPress={() => {this._closeEarnPayoutMessage()}}>
+            <TouchableNativeFeedback onPress={
+              onClosed
+            }>
               <Container
                 justifyContent={'center'}
                 alignItems={'center'}
@@ -110,7 +124,7 @@ class EarnPayoutMessage extends Component {
             <CallToActionButton
               onPress={() => {
                 callToActionOnPress();
-                this._closeEarnPayoutMessage();
+                onClosed();
               }}
               label={callToActionLabel}
               addArrow
@@ -127,7 +141,7 @@ EarnPayoutMessage.defaultProps = {
   opportunityTitle: 'Opportunity Title',
   opportunityDescription: 'Opportunity Description',
   dalaAmount: 'đ 0.00000000',
-  callToActionLabel: 'Primary CTA'
+  callToActionLabel: 'Primary CTA',
 };
 
 EarnPayoutMessage.propTypes = {
@@ -136,7 +150,8 @@ EarnPayoutMessage.propTypes = {
   dalaAmount: PropTypes.string.isRequired,
   callToActionOnPress: PropTypes.func.isRequired,
   callToActionLabel: PropTypes.string,
-  renderAdditionalContent: PropTypes.object
+  renderAdditionalContent: PropTypes.object,
+  isOpen: PropTypes.bool,
 };
 
 const styles = StyleSheet.create({
@@ -168,4 +183,4 @@ const styles = StyleSheet.create({
 
 export {
   EarnPayoutMessage
-}
+};
