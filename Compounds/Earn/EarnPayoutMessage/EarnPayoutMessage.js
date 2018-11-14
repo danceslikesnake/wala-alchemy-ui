@@ -29,7 +29,7 @@ function EarnPayoutMessage({
 }) {
   return (
     <Modal
-      visible={isOpen}
+      isVisible={isOpen}
       animationIn={'slideInDown'}
       animationOut={'slideOutUp'}
       onBackdropPress={onClose}
