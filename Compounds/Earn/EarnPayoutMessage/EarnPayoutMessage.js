@@ -25,16 +25,16 @@ function EarnPayoutMessage({
   callToActionOnPress,
   renderAdditionalContent,
   isOpen,
-  onClosed,
+  onClose,
 }) {
   return (
     <Modal
       visible={isOpen}
       animationIn={'slideInDown'}
       animationOut={'slideOutUp'}
-      onBackdropPress={onClosed}
-      onBackButtonPress={onClosed}
-      onDismiss={onClosed}
+      onBackdropPress={onClose}
+      onBackButtonPress={onClose}
+      onDismiss={onClose}
       backdropColor={AUI_COLORS.Charcoal.hex}
       backdropopacity={0.8}
       style={styles.modal}
@@ -52,7 +52,7 @@ function EarnPayoutMessage({
             source={require('./logomarkBG.png')}
             style={styles.logomarkBG}
           />
-          <TouchableNativeFeedback onPress={onClosed}>
+          <TouchableNativeFeedback onPress={onClose}>
             <Container
               justifyContent={'center'}
               alignItems={'center'}
