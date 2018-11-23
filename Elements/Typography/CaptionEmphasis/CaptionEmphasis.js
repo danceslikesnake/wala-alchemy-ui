@@ -7,7 +7,7 @@ import {
 import {
   AUI_COLORS
 } from "../../index";
-import {AUI_TYPOGRAPHY} from "../fontStyles";
+import {AUI_TYPOGRAPHY, defaultTextStyle} from "../fontStyles";
 
 class CaptionEmphasis extends Component {
   constructor(props) {
@@ -27,6 +27,7 @@ class CaptionEmphasis extends Component {
       <Text
         {...props}
         style={[
+          defaultTextStyle,
           dense ? styles.denseText : styles.text,
           this.props.style,
           color ? {color: color} : null,

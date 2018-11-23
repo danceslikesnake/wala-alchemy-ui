@@ -7,7 +7,7 @@ import {
 import {
   AUI_COLORS,
 } from "../../Colors/index";
-import {AUI_TYPOGRAPHY} from "../fontStyles";
+import {AUI_TYPOGRAPHY, defaultTextStyle} from "../fontStyles";
 
 class BodyText extends Component {
   constructor(props) {
@@ -28,6 +28,7 @@ class BodyText extends Component {
       <Text
         {...props}
         style={[
+          defaultTextStyle,
           dense ? styles.denseText : styles.text,
           fontFamily === 'Poppins' ? {fontFamily: AUI_TYPOGRAPHY.Poppins.regular} : {fontFamily: AUI_TYPOGRAPHY.ProximaNova.regular},
           this.props.style,

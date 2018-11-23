@@ -7,7 +7,7 @@ import {
 import {
   AUI_COLORS
 } from "../../index";
-import {AUI_TYPOGRAPHY} from "../fontStyles";
+import {AUI_TYPOGRAPHY, defaultTextStyle} from "../fontStyles";
 
 const SmallDisplay = ({
   children,
@@ -27,6 +27,7 @@ const SmallDisplay = ({
   return (
     <Text
       style={[
+        defaultTextStyle,
         styles.text,
         style ? style : null,
         color ? {color: color} : null,

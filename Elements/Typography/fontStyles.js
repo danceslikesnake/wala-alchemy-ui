@@ -33,6 +33,10 @@ const AUI_TYPOGRAPHY = {
   }
 };
 
+const defaultTextStyle = {
+  textShadowRadius: 0, // https://github.com/facebook/react-native/issues/21507#issuecomment-429406538
+}
+
 export {
   AUI_TYPOGRAPHY
 }

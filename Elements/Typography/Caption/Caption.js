@@ -7,7 +7,7 @@ import {
 import {
   AUI_COLORS
 } from "../../index";
-import {AUI_TYPOGRAPHY} from "../fontStyles";
+import {AUI_TYPOGRAPHY, defaultTextStyle} from "../fontStyles";
 
 class Caption extends Component {
   constructor(props) {
@@ -28,6 +28,7 @@ class Caption extends Component {
       <Text
         {...props}
         style={[
+          defaultTextStyle,
           dense ? styles.denseText : styles.text,
           fontFamily === 'Poppins' ? {fontFamily: AUI_TYPOGRAPHY.Poppins.medium} : {fontFamily: AUI_TYPOGRAPHY.ProximaNova.semibold},
           this.props.style,
