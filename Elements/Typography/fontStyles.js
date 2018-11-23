@@ -38,5 +38,6 @@ const defaultTextStyle = {
 }
 
 export {
-  AUI_TYPOGRAPHY
+  AUI_TYPOGRAPHY,
+  defaultTextStyle
 }
