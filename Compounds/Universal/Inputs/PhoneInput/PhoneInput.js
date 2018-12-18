@@ -83,17 +83,6 @@ class PhoneInput extends Component {
             blurOnSubmit={blurOnSubmit}
             onSubmitEditing={next}
           />
-          <TouchableOpacity
-            style={styles.icon}
-            onPress={() => { this.input.focus(); }}
-          >
-            <Icons
-              iconSet={'material-design'}
-              iconName={'phone'}
-              iconSize={26}
-              iconColor={AUI_COLORS.WalaTeal.hex}
-            />
-          </TouchableOpacity>
           {addContacts && (
             <Container>
               <TouchableOpacity
