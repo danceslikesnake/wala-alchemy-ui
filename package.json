@@ -17,6 +17,7 @@
     "createVersionMajor": "npm version major && git push && git push --tags"
   },
   "dependencies": {
+    "@babel/runtime": "^7.2.0",
     "chroma-js": "^1.3.5",
     "moment": "^2.22.2",
     "prop-types": "^15.6.0",
