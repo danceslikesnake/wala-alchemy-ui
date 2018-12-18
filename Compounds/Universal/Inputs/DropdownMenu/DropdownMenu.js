@@ -31,7 +31,7 @@ class DropdownMenu extends Component {
   render() {
     const {
       label,
-      data,
+      dropdownItems,
       error,
       onChangeText,
       value,
@@ -41,8 +41,8 @@ class DropdownMenu extends Component {
     } = this.props;
 
     const labelsArr = [];
-    if(data) {
-      data.map((item, idx) => {
+    if(dropdownItems) {
+      dropdownItems.map((item, idx) => {
         labelsArr[item.value] = item.label ? item.label : item.value;
       });
     }
@@ -52,7 +52,7 @@ class DropdownMenu extends Component {
         <Caption>{label}</Caption>
         <Spacer dense />
         <Dropdown
-          data={data}
+          data={dropdownItems}
           error={error}
           value={value}
           itemColor={AUI_COLORS.Slate.hex}
@@ -107,7 +107,7 @@ DropdownMenu.defaultProps = {
 DropdownMenu.propTypes = {
   label: PropTypes.string,
   placeholder: PropTypes.string,
-  data: PropTypes.array.isRequired,
+  dropdownItems: PropTypes.array.isRequired,
   error: PropTypes.string,
   onChangeText: PropTypes.func.isRequired,
   value: PropTypes.string,

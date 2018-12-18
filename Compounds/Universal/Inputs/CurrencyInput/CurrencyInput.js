@@ -107,14 +107,16 @@ CurrencyInput.defaultProps = {
 };
 
 CurrencyInput.propTypes = {
-  label: PropTypes.string,
+  label: PropTypes.string.isRequired,
   options: PropTypes.object,
   value: PropTypes.oneOfType([
     PropTypes.number,
     PropTypes.string
   ]),
   onChangeText: PropTypes.func,
-  autoFocus: PropTypes.bool
+  autoFocus: PropTypes.bool,
+  convertedValue: PropTypes.string,
+  error: PropTypes.string
 };
 
 const styles = StyleSheet.create({

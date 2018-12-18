@@ -118,6 +118,7 @@ EarnPayoutMessage.propTypes = {
   callToActionLabel: PropTypes.string,
   renderAdditionalContent: PropTypes.object,
   isOpen: PropTypes.bool,
+  onClose: PropTypes.func
 };
 
 const styles = StyleSheet.create({

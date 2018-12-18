@@ -24,16 +24,16 @@ class PhoneInput extends Component {
   render() {
     const {
       cca2,
-      onChangeCountry,
       searchable,
+      onChangeCountry,
+      onChangePhoneText,
+      addContacts,
       closeable,
       countries,
       phoneNumber,
-      onChangePhoneText,
       returnKeyType,
       next,
       blurOnSubmit,
-      addContacts,
       onAddContactsSelect,
       error
     } = this.props;
@@ -83,6 +83,17 @@ class PhoneInput extends Component {
             blurOnSubmit={blurOnSubmit}
             onSubmitEditing={next}
           />
+          <TouchableOpacity
+            style={styles.icon}
+            onPress={() => { this.input.focus(); }}
+          >
+            <Icons
+              iconSet={'material-design'}
+              iconName={'phone'}
+              iconSize={26}
+              iconColor={AUI_COLORS.WalaTeal.hex}
+            />
+          </TouchableOpacity>
           {addContacts && (
             <Container>
               <TouchableOpacity
@@ -119,7 +130,15 @@ PhoneInput.propTypes = {
   searchable: PropTypes.bool,
   onChangeCountry: PropTypes.func.isRequired,
   onChangePhoneText: PropTypes.func.isRequired,
-  addContacts: PropTypes.bool
+  addContacts: PropTypes.bool,
+  closeable: PropTypes.bool,
+  countries: PropTypes.array.isRequired,
+  phoneNumber: PropTypes.string,
+  returnKeyType: PropTypes.string,
+  next: PropTypes.func,
+  blurOnSubmit: PropTypes.func,
+  onAddContactsSelect: PropTypes.func,
+  error: PropTypes.string,
 };
 
 const styles = StyleSheet.create({

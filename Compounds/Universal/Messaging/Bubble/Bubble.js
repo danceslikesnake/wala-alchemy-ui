@@ -63,7 +63,11 @@ class Bubble extends Component {
           gradientDirection={'vertical'}
         >
           {canBeDismissed &&
-            <TouchableNativeFeedback onPress={this._dismissBubble}>
+            <TouchableNativeFeedback onPress={() => {
+              if(dismissedOnPress)
+                dismissedOnPress();
+              this._dismissBubble();
+            }}>
               <Container
                 justifyContent={'center'}
                 alignItems={'center'}

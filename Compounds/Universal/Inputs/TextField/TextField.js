@@ -34,7 +34,13 @@ class TextField extends Component {
   }
 
   render() {
-    const { label, value, title, error, ...props } = this.props;
+    const {
+      label,
+      value,
+      title,
+      error,
+      ...props
+    } = this.props;
 
     return (
       <Container style={{paddingBottom: (title) ? 0 : 2}}>
@@ -76,7 +82,9 @@ TextField.defaultProps = {
 
 TextField.propTypes = {
   label: PropTypes.string.isRequired,
-  value: PropTypes.string
+  value: PropTypes.string,
+  title: PropTypes.string,
+  error: PropTypes.string
 };
 
 const styles = StyleSheet.create({

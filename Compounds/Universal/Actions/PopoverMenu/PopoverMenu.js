@@ -35,7 +35,7 @@ class PopoverMenu extends Component {
     const {
       options,
       menuButtonSize,
-      menuButtonHeight
+      menuButtonColor
     } = this.props;
 
     const button = (
@@ -48,7 +48,7 @@ class PopoverMenu extends Component {
           iconName={'more-horiz'}
           iconSize={26}
           iconSet={'material-design'}
-          iconColor={AUI_COLORS.Charcoal.tint2}
+          iconColor={menuButtonColor ? menuButtonColor : AUI_COLORS.Charcoal.tint2}
         />
       </Container>
     );
@@ -92,7 +92,8 @@ PopoverMenu.propTypes = {
     PropTypes.array,
     PropTypes.func
   ]).isRequired,
-  menuButtonSize: PropTypes.number
+  menuButtonSize: PropTypes.number,
+  menuButtonColor: PropTypes.string
 };
 
 const localStyles = StyleSheet.create({

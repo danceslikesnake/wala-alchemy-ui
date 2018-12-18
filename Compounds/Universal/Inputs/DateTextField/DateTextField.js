@@ -55,14 +55,20 @@ class DateTextField extends Component {
         {minimumDate ? (
           <DateTimePicker
             isVisible={this.state.isDateTimePickerVisible}
-            onConfirm={onConfirm}
+            onConfirm={(date) => {
+              onConfirm(date);
+              this._hideDateTimePicker();
+            }}
             onCancel={onCancel ? onCancel : this._hideDateTimePicker}
             minimumDate={minimumDate}
           />
         ) : (
           <DateTimePicker
             isVisible={this.state.isDateTimePickerVisible}
-            onConfirm={onConfirm}
+            onConfirm={(date) => {
+              onConfirm(date);
+              this._hideDateTimePicker();
+            }}
             onCancel={onCancel ? onCancel : this._hideDateTimePicker}
           />
         )}
@@ -74,10 +80,10 @@ class DateTextField extends Component {
 DateTextField.defaultProps = {};
 
 DateTextField.propTypes = {
-  label: PropTypes.string,
+  label: PropTypes.string.isRequired,
+  onConfirm: PropTypes.func.isRequired,
   value: PropTypes.string,
   title: PropTypes.string,
-  onConfirm: PropTypes.func,
   onCancel: PropTypes.func,
   minimumDate: PropTypes.object
 };

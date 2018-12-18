@@ -157,7 +157,7 @@ Feedback.propTypes = {
   choices: PropTypes.array.isRequired,
   callToActionDisabledText: PropTypes.string,
   callToActionActiveText: PropTypes.string,
-  callToActionOnPress: PropTypes.func
+  callToActionOnPress: PropTypes.func.isRequired
 };
 
 const localStyles = StyleSheet.create({
