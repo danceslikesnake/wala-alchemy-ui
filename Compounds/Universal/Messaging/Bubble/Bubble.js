@@ -9,7 +9,7 @@ import {
   Caption,
   Icons,
   AUI_COLORS
-} from '../../../../index.js';
+} from '../../../../Elements/index';
 import * as Animatable from 'react-native-animatable';
 
 class Bubble extends Component {

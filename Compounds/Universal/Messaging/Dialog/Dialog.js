@@ -13,7 +13,7 @@ import {
   AUI_TYPOGRAPHY,
   AUI_FUNCTIONS,
   AUI_CONSTANTS
-} from '../../../../index.js';
+} from '../../../../Elements/index';
 import Modal from 'react-native-modalbox';
 
 class Dialog extends Component {

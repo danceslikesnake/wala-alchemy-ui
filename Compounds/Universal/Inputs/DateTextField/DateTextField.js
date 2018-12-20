@@ -8,7 +8,7 @@ import {
 } from '../../../../Elements/index';
 import {
   TextField
-} from '../../../../Compounds/index';
+} from '../../../../Compounds/Universal/Inputs/TextField/TextField';
 import DateTimePicker from 'react-native-modal-datetime-picker';
 import moment from "moment/moment";
 

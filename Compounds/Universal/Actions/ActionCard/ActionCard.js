@@ -11,7 +11,7 @@ import {
   Icons,
   AUI_COLORS,
   AUI_LAYOUT,
-} from '../../../../index.js';
+} from '../../../../Elements/index.js';
 
 class ActionCard extends Component {
   constructor(props) {
