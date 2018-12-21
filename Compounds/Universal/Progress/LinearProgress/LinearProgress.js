@@ -29,7 +29,7 @@ class LinearProgress extends Component {
 
     return (
       <Container actAsRow style={{height: AUI_FUNCTIONS.gridBaseMultiplier(2, true)}} alignItems={'center'}>
-        <Container isFlex style={{height: 4, backgroundColor: trackColor}}>
+        <Container isFlex style={{height: 4, backgroundColor: trackColor, overflow: 'hidden'}}>
           <Animatable.View animation="slideInLeft" easing="ease-out" duration={500}>
             <Container style={{width: percentText + '%', backgroundColor: indicatorColor, height: 4}} />
           </Animatable.View>

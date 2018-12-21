@@ -11,9 +11,11 @@ import {
   AUI_COLORS,
   AUI_LAYOUT,
   AUI_TYPOGRAPHY,
+} from '../../../../Elements/index';
+import {
   AUI_FUNCTIONS,
   AUI_CONSTANTS
-} from '../../../../Elements/index';
+} from '../../../../Helpers/index';
 import Modal from 'react-native-modalbox';
 
 class Dialog extends Component {
