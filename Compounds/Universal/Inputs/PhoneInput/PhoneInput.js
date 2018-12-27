@@ -127,7 +127,7 @@ PhoneInput.propTypes = {
   phoneNumber: PropTypes.string,
   returnKeyType: PropTypes.string,
   next: PropTypes.func,
-  blurOnSubmit: PropTypes.func,
+  blurOnSubmit: PropTypes.bool,
   onAddContactsSelect: PropTypes.func,
   error: PropTypes.string,
 };
