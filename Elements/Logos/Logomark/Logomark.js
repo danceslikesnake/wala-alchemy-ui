@@ -73,7 +73,8 @@ Logomark.propTypes = {
     'logomark',
     'logomarkBlack',
     'logomarkWhite',
-    'logomarkDala'
+    'logomarkDala',
+    'alchemy'
   ]),
   imgHeight: PropTypes.oneOfType([
     PropTypes.number,
