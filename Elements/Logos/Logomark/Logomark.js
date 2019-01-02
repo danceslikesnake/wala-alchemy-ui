@@ -16,6 +16,9 @@ class Logomark extends Component {
       case 'alchemy':
         return require('../img/logomarks/alchemy.png');
         break;
+      case 'alchemyWhite':
+        return require('../img/logomarks/alchemy-white.png');
+        break;
       case 'logomarkWhite':
         return require('../img/logomarks/logomark-white.png');
         break;
@@ -74,7 +77,8 @@ Logomark.propTypes = {
     'logomarkBlack',
     'logomarkWhite',
     'logomarkDala',
-    'alchemy'
+    'alchemy',
+    'alchemyWhite'
   ]),
   imgHeight: PropTypes.oneOfType([
     PropTypes.number,
