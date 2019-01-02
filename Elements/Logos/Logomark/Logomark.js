@@ -13,6 +13,9 @@ class Logomark extends Component {
 
   getImgSource = (variation) => {
     switch(variation) {
+      case 'alchemy':
+        return require('../img/logomarks/alchemy.png');
+        break;
       case 'logomarkWhite':
         return require('../img/logomarks/logomark-white.png');
         break;
