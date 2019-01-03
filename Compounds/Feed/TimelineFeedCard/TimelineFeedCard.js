@@ -166,7 +166,7 @@ class TimelineFeedCard extends Component {
             ) : null}
           </Container>
         )}
-        {footerActions && footerActions.length > 0 &&
+        {footerActions &&
           <Container style={localStyles.footer}>
             <Divider />
             <Container actAsRow justifyContent={'flex-end'}>

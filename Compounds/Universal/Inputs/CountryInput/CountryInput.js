@@ -44,7 +44,8 @@ CountryInput.propTypes = {
   closeable: PropTypes.bool,
   countries: PropTypes.array.isRequired,
   onChange: PropTypes.func.isRequired,
-  tileSelector: PropTypes.bool
+  tileSelector: PropTypes.bool,
+  inputLabel: PropTypes.string
 };
 
 export  {

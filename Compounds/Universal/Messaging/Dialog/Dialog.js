@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import {StyleSheet} from 'react-native';
 import {
+  GradientContainer,
   Container,
   Subheadline,
   Caption,
@@ -10,9 +11,11 @@ import {
   AUI_COLORS,
   AUI_LAYOUT,
   AUI_TYPOGRAPHY,
+} from '../../../../Elements/index';
+import {
   AUI_FUNCTIONS,
   AUI_CONSTANTS
-} from '../../../../index.js';
+} from '../../../../Helpers/index';
 import Modal from 'react-native-modalbox';
 
 class Dialog extends Component {

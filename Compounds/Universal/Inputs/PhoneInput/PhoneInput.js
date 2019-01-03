@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { StyleSheet, TextInput, TouchableOpacity, InteractionManager } from 'react-native';
-import { Container, Caption, CaptionEmphasis, Spacer, AUI_COLORS, AUI_LAYOUT, AUI_TYPOGRAPHY } from '../../../../Elements/index';
+import { Container, Caption, CaptionEmphasis, Spacer, Icons, AUI_COLORS, AUI_LAYOUT, AUI_TYPOGRAPHY } from '../../../../Elements/index';
 import { AUI_FUNCTIONS } from "../../../../Helpers/index";
 
 import CountryPicker from 'react-native-country-picker-modal';
-import {Icons} from "../../../../Elements/index";
 
 class PhoneInput extends Component {
   constructor(props) {
@@ -24,16 +23,16 @@ class PhoneInput extends Component {
   render() {
     const {
       cca2,
-      onChangeCountry,
       searchable,
+      onChangeCountry,
+      onChangePhoneText,
+      addContacts,
       closeable,
       countries,
       phoneNumber,
-      onChangePhoneText,
       returnKeyType,
       next,
       blurOnSubmit,
-      addContacts,
       onAddContactsSelect,
       error
     } = this.props;
@@ -41,48 +40,51 @@ class PhoneInput extends Component {
     return (
       <Container>
         <Caption>{'Mobile Phone'}</Caption>
-        <Container
-          actAsRow={cca2 ? true : false}
-          style={[styles.inputWrapper, error ? {borderBottomColor: AUI_COLORS.TorchRed.hex} : null]}
-        >
-          <CountryPicker
-            ref={countryPicker => (this.countryPicker = countryPicker)}
-            cca2={cca2}
-            closeable={closeable}
-            searchable={searchable}
-            showLetters
-            phoneSelector
-            enableEmptySections
-            requiredCountries={countries}
-            onChange={(value) => {
-              onChangeCountry(value);
+        <Container actAsRow>
+          <Container
+            isFlex
+            actAsRow={cca2 ? true : false}
+            style={[styles.inputWrapper, error ? {borderBottomColor: AUI_COLORS.TorchRed.hex} : null]}
+          >
+            <CountryPicker
+              ref={countryPicker => (this.countryPicker = countryPicker)}
+              cca2={cca2}
+              closeable={closeable}
+              searchable={searchable}
+              showLetters
+              phoneSelector
+              enableEmptySections
+              requiredCountries={countries}
+              onChange={(value) => {
+                onChangeCountry(value);
 
-              InteractionManager.runAfterInteractions(() => {
-                this.focus();
-              });
-            }}
-            pickerIcon={<Icons
-              iconSet={'material-design'}
-              iconName={'phone'}
-              iconSize={26}
-              iconColor={AUI_COLORS.WalaTeal.hex} />}
-          />
-          <TextInput
-            ref={input => (this.input = input)}
-            value={phoneNumber}
-            placeholder={'Phone number'}
-            placeholderTextColor={AUI_COLORS.Iron.hex}
-            style={styles.input}
-            underlineColorAndroid={'transparent'}
-            keyboardType={'phone-pad'}
-            defaultValue={phoneNumber}
-            onChangeText={(value) => {
-              onChangePhoneText(value);
-            }}
-            returnKeyType={returnKeyType}
-            blurOnSubmit={blurOnSubmit}
-            onSubmitEditing={next}
-          />
+                InteractionManager.runAfterInteractions(() => {
+                  this.focus();
+                });
+              }}
+              pickerIcon={<Icons
+                iconSet={'material-design'}
+                iconName={'phone'}
+                iconSize={26}
+                iconColor={AUI_COLORS.WalaTeal.hex} />}
+            />
+            <TextInput
+              ref={input => (this.input = input)}
+              value={phoneNumber}
+              placeholder={'Phone number'}
+              placeholderTextColor={AUI_COLORS.Iron.hex}
+              style={styles.input}
+              underlineColorAndroid={'transparent'}
+              keyboardType={'phone-pad'}
+              defaultValue={phoneNumber}
+              onChangeText={(value) => {
+                onChangePhoneText(value);
+              }}
+              returnKeyType={returnKeyType}
+              blurOnSubmit={blurOnSubmit}
+              onSubmitEditing={next}
+            />
+          </Container>
           {addContacts && (
             <Container>
               <TouchableOpacity
@@ -119,7 +121,15 @@ PhoneInput.propTypes = {
   searchable: PropTypes.bool,
   onChangeCountry: PropTypes.func.isRequired,
   onChangePhoneText: PropTypes.func.isRequired,
-  addContacts: PropTypes.bool
+  addContacts: PropTypes.bool,
+  closeable: PropTypes.bool,
+  countries: PropTypes.array.isRequired,
+  phoneNumber: PropTypes.string,
+  returnKeyType: PropTypes.string,
+  next: PropTypes.func,
+  blurOnSubmit: PropTypes.bool,
+  onAddContactsSelect: PropTypes.func,
+  error: PropTypes.string,
 };
 
 const styles = StyleSheet.create({
@@ -141,8 +151,8 @@ const styles = StyleSheet.create({
   },
   contactIcon: {
     marginTop: 8,
-    marginLeft: 13,
-    paddingLeft: 13,
+    marginLeft: 8,
+    paddingLeft: 8,
     height: 26,
     borderLeftWidth: 1,
     borderLeftColor: AUI_COLORS.Silver.hex

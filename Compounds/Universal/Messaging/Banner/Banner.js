@@ -107,7 +107,10 @@ class Banner extends Component {
           </Container>
           <Spacer dense />
           <Container actAsRow style={{ justifyContent: 'flex-end' }}>
-            {this.props.dismissButtonLabel && (
+            {((this.props.dismissButtonLabel && !this.props.secondaryButtonLabel && !this.props.primaryButtonLabel) ||
+              (!this.props.secondaryButtonLabel && !this.props.primaryButtonLabel) ||
+              (!this.props.secondaryButtonLabel && this.props.primaryButtonLabel) ||
+              (this.props.secondaryButtonLabel && !this.props.primaryButtonLabel)) && (
               <Container actAsRow>
                 <TouchableNativeFeedback
                   onPress={() => {
@@ -122,8 +125,7 @@ class Banner extends Component {
                 <Spacer horizontal />
               </Container>
             )}
-            {this.props.secondaryButtonLabel &&
-            !this.props.addDismissButton && (
+            {this.props.secondaryButtonLabel && !this.props.addDismissButton && this.props.primaryButtonLabel && (
               <Container actAsRow>
                 <TouchableNativeFeedback onPress={this.props.secondaryButtonOnPress}>
                   <Container style={styles.button}>

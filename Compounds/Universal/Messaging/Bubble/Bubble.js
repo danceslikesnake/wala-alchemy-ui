@@ -9,7 +9,7 @@ import {
   Caption,
   Icons,
   AUI_COLORS
-} from '../../../../index.js';
+} from '../../../../Elements/index';
 import * as Animatable from 'react-native-animatable';
 
 class Bubble extends Component {
@@ -63,7 +63,11 @@ class Bubble extends Component {
           gradientDirection={'vertical'}
         >
           {canBeDismissed &&
-            <TouchableNativeFeedback onPress={this._dismissBubble}>
+            <TouchableNativeFeedback onPress={() => {
+              if(dismissedOnPress)
+                dismissedOnPress();
+              this._dismissBubble();
+            }}>
               <Container
                 justifyContent={'center'}
                 alignItems={'center'}

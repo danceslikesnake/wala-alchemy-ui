@@ -16,7 +16,7 @@ export {
 export {
   TimelineFeedCard,
   TimelineFeedLikeAction
-} from './Timeline';
+} from './Feed';
 export {
   BottomSheet,
   DropdownMenu,

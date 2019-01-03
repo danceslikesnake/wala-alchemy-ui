@@ -5,17 +5,13 @@ import {
   Container,
   ImageContainer,
   GradientContainer,
-  Headline,
   Subheadline,
   Caption,
   Spacer,
   Icons,
   AUI_COLORS,
   AUI_LAYOUT,
-  AUI_TYPOGRAPHY,
-  AUI_FUNCTIONS,
-  AUI_CONSTANTS
-} from '../../../../index.js';
+} from '../../../../Elements/index.js';
 
 class ActionCard extends Component {
   constructor(props) {
@@ -32,8 +28,7 @@ class ActionCard extends Component {
       denseCopy,
       accentColor,
       image,
-      imageAccentOpacity,
-      renderBody
+      imageAccentOpacity
     } = this.props;
 
     return (
@@ -46,16 +41,10 @@ class ActionCard extends Component {
           }
           <Spacer horizontal />
           <Container isFlex>
-            {renderBody ? (
-              <Container />
-            ) : (
-              <Container>
-                <Spacer dense={denseCopy}/>
-                <Subheadline dense={denseCopy} color={AUI_COLORS.Charcoal.hex}>{headline}</Subheadline>
-                <Caption dense={denseCopy}>{description}</Caption>
-                <Spacer dense={denseCopy}/>
-              </Container>
-            )}
+              <Spacer dense={denseCopy}/>
+              <Subheadline dense={denseCopy} color={AUI_COLORS.Charcoal.hex}>{headline}</Subheadline>
+              <Caption dense={denseCopy}>{description}</Caption>
+              <Spacer dense={denseCopy}/>
           </Container>
           <Spacer horizontal />
           <Container style={{borderLeftWidth: 1, borderLeftColor: AUI_COLORS.Silver.hex, width: 32}} alignItems={'center'} justifyContent={'center'}>
@@ -88,8 +77,7 @@ ActionCard.propTypes = {
     PropTypes.number,
     PropTypes.object
   ]),
-  imageAccentOpacity: PropTypes.number,
-  renderBody: PropTypes.func
+  imageAccentOpacity: PropTypes.number
 };
 
 const styles = StyleSheet.create({});

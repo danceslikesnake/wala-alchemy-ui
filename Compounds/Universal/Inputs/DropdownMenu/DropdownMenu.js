@@ -2,8 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { StyleSheet, TouchableNativeFeedback } from 'react-native';
 import { Dropdown } from 'react-native-material-dropdown';
-import { Container, Caption, Spacer, Subheadline, AUI_COLORS, AUI_LAYOUT, AUI_TYPOGRAPHY } from '../../../../Elements/index';
-import {Icons} from "../../../../Elements/index";
+import { Container, Caption, CaptionEmphasis, Spacer, Subheadline, Icons, AUI_COLORS, AUI_LAYOUT, AUI_TYPOGRAPHY } from '../../../../Elements/index';
 import {AUI_FUNCTIONS, AUI_CONSTANTS} from "../../../../Helpers/index";
 
 class DropdownMenu extends Component {
@@ -31,7 +30,7 @@ class DropdownMenu extends Component {
   render() {
     const {
       label,
-      data,
+      dropdownItems,
       error,
       onChangeText,
       value,
@@ -41,8 +40,8 @@ class DropdownMenu extends Component {
     } = this.props;
 
     const labelsArr = [];
-    if(data) {
-      data.map((item, idx) => {
+    if(dropdownItems) {
+      dropdownItems.map((item, idx) => {
         labelsArr[item.value] = item.label ? item.label : item.value;
       });
     }
@@ -52,7 +51,7 @@ class DropdownMenu extends Component {
         <Caption>{label}</Caption>
         <Spacer dense />
         <Dropdown
-          data={data}
+          data={dropdownItems}
           error={error}
           value={value}
           itemColor={AUI_COLORS.Slate.hex}
@@ -72,7 +71,12 @@ class DropdownMenu extends Component {
                   alignItems={'center'}
                   style={styles.customInput}
                 >
-                  <Subheadline color={AUI_COLORS.Charcoal.tint1} isFlex>{this.state.customLabel ? labelsArr[this.state.customLabel] : placeholder}</Subheadline>
+                  <Subheadline
+                    color={AUI_COLORS.Charcoal.tint1}
+                    isFlex>
+                    {value ? value :
+                      this.state.customLabel ? labelsArr[this.state.customLabel] : placeholder}
+                  </Subheadline>
                   <Icons
                     iconColor={AUI_COLORS.WalaTeal.hex}
                     iconSet={'font-awesome'}
@@ -80,6 +84,7 @@ class DropdownMenu extends Component {
                     iconName={'chevron-down'}
                   />
                 </Container>
+                {error && <Container><Spacer dense /><CaptionEmphasis color={AUI_COLORS.TorchRed.tint2}>{error}</CaptionEmphasis></Container>}
                 <Spacer />
               </Container>
             );
@@ -105,9 +110,9 @@ DropdownMenu.defaultProps = {
 };
 
 DropdownMenu.propTypes = {
-  label: PropTypes.string,
+  label: PropTypes.string.isRequired,
   placeholder: PropTypes.string,
-  data: PropTypes.array.isRequired,
+  dropdownItems: PropTypes.array.isRequired,
   error: PropTypes.string,
   onChangeText: PropTypes.func.isRequired,
   value: PropTypes.string,

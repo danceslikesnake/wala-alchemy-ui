@@ -37,9 +37,9 @@ class BottomSheet extends Component {
   }
 
   render() {
-    const { header, description, options } = this.props;
+    const { header, description, actions } = this.props;
 
-    const actions = options.map(function(option, i) {
+    const sheetActions = actions.map(function(option, i) {
       return (
         <TouchableNativeFeedback
           key={i}
@@ -79,7 +79,7 @@ class BottomSheet extends Component {
             <Caption>{description}</Caption>
           </Container>
         )}
-        {actions}
+        {sheetActions}
         <Divider size={'large'} />
         <Container style={localStyles.bottomSheetCancel}>
           <CallToActionButton
@@ -98,7 +98,7 @@ class BottomSheet extends Component {
 BottomSheet.propTypes = {
   header: PropTypes.string,
   description: PropTypes.string,
-  options: PropTypes.array,
+  actions: PropTypes.array,
   reference: PropTypes.string,
 };
 

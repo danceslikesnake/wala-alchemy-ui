@@ -12,8 +12,6 @@ import Spinner from 'react-native-spinkit';
 class BusyOverlay extends Component {
   constructor(props) {
     super(props);
-
-    this.state = {};
   }
 
   _open = () => {
